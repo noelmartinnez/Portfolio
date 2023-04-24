@@ -25,14 +25,15 @@ import {
     threejs,
   } from "../assets";
   
+  /* Para los botones del NavBar */
   export const navLinks = [
     {
       id: "about",
       title: "About",
     },
     {
-      id: "work",
-      title: "Work",
+      id: "projects",
+      title: "Projects",
     },
     {
       id: "contact",
@@ -40,6 +41,7 @@ import {
     },
   ];
   
+  /* Para las tarjetas del About */
   const services = [
     {
       title: "Web Developer",
