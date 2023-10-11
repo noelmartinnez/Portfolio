@@ -7,6 +7,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import seo from "./seo.png";
+import drive from "./drive.png";
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -67,4 +68,5 @@ export {
   tripguide,
   comunicamos,
   seo,
+  drive,
 };

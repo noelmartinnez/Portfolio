@@ -26,6 +26,7 @@ import {
   tripguide,
   threejs,
   comunicamos,
+  seo,
 } from "../assets";
 
 /* Para los botones del NavBar */
@@ -233,4 +234,14 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects };
+const certificados = [
+  {
+    name: "Optimización SEO Básica",
+    description:
+      "Cumpliendo con las competencias para ejecutar estrategias básicas/intermedias de optimización SEO.",
+    image: seo,
+    source_code_link: "https://drive.google.com/file/d/1CrLxogiIgwwyfJIJra0Ox_7yqM7Jorux/view?usp=sharing",
+  },
+];
+
+export { services, technologies, experiences, projects, certificados };
