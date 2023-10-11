@@ -53,7 +53,7 @@ const About = () => {
         ¡Trabajemos juntos para hacer realidad tus ideas!
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 select-none">
+      <div className="mt-20 flex flex-wrap justify-center select-none" style={{ gap: '125px' }}>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

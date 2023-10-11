@@ -25,6 +25,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  comunicamos,
 } from "../assets";
 
 /* Para los botones del NavBar */
@@ -60,10 +61,6 @@ const services = [
   {
     title: "React Native Developer",
     icon: mobile,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
   },
 ];
 
@@ -132,16 +129,16 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Nombre trabajo",
-    company_name: "Nombre empresa",
-    icon: starbucks,
+    title: "Gestor de SEO y Desarrollador Web con Elementor",
+    company_name: "Comunicamos Experience",
+    icon: comunicamos,
     iconBg: "#383E56",
-    date: "Fecha inicio - Fecha final",
+    date: "Julio 2023 - Agosto 2023",
     points: [
-      "Tarea 1",
-      "Tarea 2",
-      "Tarea 3",
-      "Tarea 4",
+      "Diseño y maquetación web utilizando Elementor",
+      "Optimización web y Diseño responsive",
+      "Investigación de palabras clave relevantes",
+      "Optimización para una mejor posición en los motores de búsqueda",
     ],
   },
   /* Con ir añadiendo aquí la */
@@ -188,67 +185,51 @@ const experiences = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Connect Four AI Python",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "En este código se ha desarrollado un algoritmo de búsqueda en juegos para el juego Conecta-4. El algoritmo de busqueda que se ha implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
     tags: [
       {
-        name: "react",
+        name: "python",
         color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/noelmartinnez/Connect-Four-AI-with-Python",
   },
   {
-    name: "Job IT",
+    name: "Imperial Commander",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Juego estilo naves espaciales donde cada una de ellas tiene su tripulación, hay grupos de naves, también hay enemigos, batallas entre naves, etc.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
+        name: "java",
         color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/noelmartinnez/Imperial-Commander",
   },
   {
-    name: "Trip Guide",
+    name: "Project Management Web APP with PHP",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "App web desarrollada en Linux usando PHP y con la ayuda de Laravel. Consiste en una página web con diferentes roles de usuarios, diferentes vistas, inicio de sesión, registro. Su función es el manejo de proyectos dentron de una empresa, los proyectos tienen tareas, y las tareas tienen issues (problemas).",
     tags: [
       {
-        name: "nextjs",
+        name: "javascript",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "laravel",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "php",
         color: "pink-text-gradient",
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/noelmartinnez/Project-Management-Web-APP-with-PHP",
   },
 ];
 

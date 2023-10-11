@@ -6,6 +6,7 @@ import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import seo from "./seo.png";
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -27,6 +28,7 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import comunicamos from "./company/comunicamos.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -63,4 +65,6 @@ export {
   carrent,
   jobit,
   tripguide,
+  comunicamos,
+  seo,
 };
