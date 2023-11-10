@@ -27,6 +27,9 @@ import {
   threejs,
   comunicamos,
   seo,
+  js,
+  docker,
+  spring,
 } from "../assets";
 
 /* Para los botones del NavBar */
@@ -38,6 +41,10 @@ export const navLinks = [
   {
     id: "experiencia",
     title: "Experiencia",
+  },
+  {
+    id: "certificados",
+    title: "Certificados",
   },
   {
     id: "proyectos",
@@ -79,25 +86,17 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "React JS",
+    name: "React",
     icon: reactjs,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
   },
   {
     name: "Three JS",
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
-  /* {
-    name: "Swift",
-    icon: swift,
-  }, */
   {
     name: "C C++ C#",
     icon: cs,
@@ -119,13 +118,13 @@ const technologies = [
     icon: php,
   },
   {
-    name: "SQL",
-    icon: sql,
+    name: "Docker",
+    icon: docker,
   },
-  /* {
-    name: "Matlab",
-    icon: matlab,
-  }, */
+  {
+    name: "Spring Boot",
+    icon: spring,
+  },
 ];
 
 const experiences = [
@@ -241,6 +240,13 @@ const certificados = [
       "Cumpliendo con las competencias para ejecutar estrategias básicas/intermedias de optimización SEO.",
     image: seo,
     source_code_link: "https://drive.google.com/file/d/1CrLxogiIgwwyfJIJra0Ox_7yqM7Jorux/view?usp=sharing",
+  },
+  {
+    name: "Programador JavaScript",
+    description:
+      "Demostrando habilidades para implementar estrategias fundamentales de programación en JavaScript, conforme a los estándares y prácticas recomendadas de la industria.",
+    image: js,
+    source_code_link: "https://drive.google.com/file/d/1ToVp3kXaBW32h7LiACkwTNXomqq5mf3E/view?usp=sharing",
   },
 ];
 

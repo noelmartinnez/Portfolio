@@ -7,6 +7,7 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import seo from "./seo.png";
+import js from "./js.png";
 import drive from "./drive.png";
 
 import css from "./tech/css.png";
@@ -24,6 +25,8 @@ import aws from "./tech/aws.png";
 import php from "./tech/php.png";
 import sql from "./tech/sql.png";
 import threejs from "./tech/threejs.svg";
+import docker from "./tech/docker.png";
+import spring from "./tech/spring.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -69,4 +72,7 @@ export {
   comunicamos,
   seo,
   drive,
+  js,
+  spring,
+  docker
 };
