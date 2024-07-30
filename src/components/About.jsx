@@ -46,7 +46,7 @@ const About = () => {
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] select-none"
       >
         Soy un desarrollador de software con conocimientos en JavaScript y en
-        frameworks como React y Three.js. Aprendo rápido y soy capaz de crear
+        frameworks como React y Node.js. Aprendo rápido y soy capaz de crear
         soluciones eficientes, escalables y fáciles de usar que resuelvan
         problemas del mundo real.
         <br/>

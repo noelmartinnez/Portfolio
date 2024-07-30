@@ -27,6 +27,9 @@ import sql from "./tech/sql.png";
 import threejs from "./tech/threejs.svg";
 import docker from "./tech/docker.png";
 import spring from "./tech/spring.png";
+import typeScript from "./tech/typeScript.png";
+import node from "./tech/node.png";
+import ionic from "./tech/ionic.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -37,6 +40,8 @@ import comunicamos from "./company/comunicamos.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import about from "./about.jpg";
+import coche from "./coche.jpg";
 
 export {
   swift,
@@ -74,5 +79,10 @@ export {
   drive,
   js,
   spring,
-  docker
+  docker,
+  typeScript,
+  node,
+  ionic,
+  about,
+  coche,
 };

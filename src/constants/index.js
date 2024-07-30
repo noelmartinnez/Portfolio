@@ -1,3 +1,4 @@
+import { t } from "maath/dist/misc-7d870b3c.esm";
 import {
   mobile,
   backend,
@@ -30,6 +31,11 @@ import {
   js,
   docker,
   spring,
+  typeScript,
+  node,
+  ionic,
+  about,
+  coche,
 } from "../assets";
 
 /* Para los botones del NavBar */
@@ -67,19 +73,19 @@ const services = [
     icon: backend,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "TypeScript",
+    icon: typeScript,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "Node.js",
+    icon: node,
   },
   {
     name: "JavaScript",
@@ -90,8 +96,8 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "Ionic",
+    icon: ionic,
   },
   {
     name: "Git",
@@ -122,7 +128,7 @@ const technologies = [
     icon: docker,
   },
   {
-    name: "Spring Boot",
+    name: "Spring",
     icon: spring,
   },
 ];
@@ -198,38 +204,42 @@ const projects = [
     source_code_link: "https://github.com/noelmartinnez/Connect-Four-AI-with-Python",
   },
   {
-    name: "Imperial Commander",
+    name: "StarWars Ionic APP",
     description:
-      "Juego estilo naves espaciales donde cada una de ellas tiene su tripulación, hay grupos de naves, también hay enemigos, batallas entre naves, etc.",
+      "Se trata de una aplicación para consultar datos sobre el mundo de Star Wars, una especie de wikipedia.",
     tags: [
       {
-        name: "java",
-        color: "green-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/noelmartinnez/Imperial-Commander",
-  },
-  {
-    name: "Project Management Web APP with PHP",
-    description:
-      "App web desarrollada en Linux usando PHP y con la ayuda de Laravel. Consiste en una página web con diferentes roles de usuarios, diferentes vistas, inicio de sesión, registro. Su función es el manejo de proyectos dentron de una empresa, los proyectos tienen tareas, y las tareas tienen issues (problemas).",
-    tags: [
-      {
-        name: "javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "laravel",
+        name: "ionic",
         color: "green-text-gradient",
       },
       {
-        name: "php",
+        name: "angular",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/noelmartinnez/Project-Management-Web-APP-with-PHP",
+    image: about,
+    source_code_link: "https://github.com/noelmartinnez/StarWars-Ionic-APP",
+  },
+  {
+    name: "AutoBnB",
+    description:
+      "Aplicación multiplataforma de Java y Spring Boot. La aplicación permite a los usuarios alquilar vehículos. Por otro lado, al igual que en Airbnb, donde los usuarios ponen en alquiler sus propios hogares, aquí los propietarios de los vehículos pueden poner sus vehículos en alquiler.",
+    tags: [
+      {
+        name: "spring",
+        color: "green-text-gradient",
+      },
+      {
+        name: "java",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: coche,
+    source_code_link: "https://github.com/noelmartinnez/AutoBnB",
   },
 ];
 
