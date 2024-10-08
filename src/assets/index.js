@@ -9,6 +9,8 @@ import close from "./close.svg";
 import seo from "./seo.png";
 import js from "./js.png";
 import drive from "./drive.png";
+import valenciano from "./valenciano.png";
+import english from "./english.png";
 
 import css from "./tech/css.png";
 import git from "./tech/git.png";
@@ -30,12 +32,15 @@ import spring from "./tech/spring.png";
 import typeScript from "./tech/typeScript.png";
 import node from "./tech/node.png";
 import ionic from "./tech/ionic.png";
+import kubernetes from "./tech/kubernetes.png";
+import postgresql from "./tech/postgresql.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import comunicamos from "./company/comunicamos.png";
+import altia from "./company/altia.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -85,4 +90,9 @@ export {
   ionic,
   about,
   coche,
+  altia,
+  valenciano,
+  english,
+  kubernetes,
+  postgresql,
 };

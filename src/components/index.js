@@ -9,6 +9,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Footer from "./Footer";
 import Certificados from './Certificados';
+import Idiomas from './Idiomas';
 
 export {
   Hero,
@@ -25,4 +26,5 @@ export {
   ComputersCanvas, 
   StarsCanvas,
   Certificados,
+  Idiomas,
 };

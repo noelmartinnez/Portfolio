@@ -45,12 +45,10 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] select-none"
       >
-        Soy un desarrollador de software con conocimientos en JavaScript y en
-        frameworks como React y Node.js. Aprendo rápido y soy capaz de crear
-        soluciones eficientes, escalables y fáciles de usar que resuelvan
-        problemas del mundo real.
-        <br/>
-        ¡Trabajemos juntos para hacer realidad tus ideas!
+        Soy un desarrollador de software con experiencia trabajando en el desarrollo de diferentes aplicaciones
+        utilizando principalmente Java, Spring Boot, Kubernetes, microservicios y diferentes bases de datos.
+        <br/><br/>
+        ¡Siempre me esfuerzo para superar mis propias expectativas!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap justify-center select-none" style={{ gap: '125px' }}>

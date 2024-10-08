@@ -5,13 +5,12 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { drive } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { certificados } from "../constants";
+import { idiomas } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
   index,
   name,
-  description,
   image,
   source_code_link,
 }) => {
@@ -49,19 +48,18 @@ const ProjectCard = ({
 
         <div className="mt-5">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
       </Tilt>
     </motion.div>
   );
 };
 
-const Certificados = () => {
+const Idiomas = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} select-none`}>Aprendizaje</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>Certificados</h2>
+        <h2 className={`${styles.sectionHeadText} select-none`}>Idiomas</h2>
       </motion.div>
 
       <div className="w-full flex select-none">
@@ -69,20 +67,19 @@ const Certificados = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Aquí muestro una recopilación de mis logros y reconocimientos en diversos campos; donde 
-          cada certificado representa mi dedicación a la mejora continua y mi compromiso con la adquisición de conocimientos. <br /> <br />
-          Estos documentos validan mis habilidades y experiencia en áreas clave,  
-          respaldando mi capacidad para abordar desafíos y demostrar competencia en diferentes disciplinas.
+          En esta sección, presento mis habilidades lingüísticas.
+          Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender. <br /> <br />
+          Estos conocimientos son una prueba de mi compromiso con el aprendizaje continuo y mi capacidad para adaptarme a contextos variados.
         </motion.p>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {certificados.map((certificado, index) => (
-          <ProjectCard key={`certificado-${index}`} index={index} {...certificado} />
+        {idiomas.map((idioma, index) => (
+          <ProjectCard key={`idioma-${index}`} index={index} {...idioma} />
         ))}
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Certificados, "certificados");
+export default SectionWrapper(Idiomas, "idiomas");

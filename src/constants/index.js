@@ -36,6 +36,11 @@ import {
   ionic,
   about,
   coche,
+  altia,
+  valenciano,
+  english,
+  kubernetes,
+  postgresql,
 } from "../assets";
 
 /* Para los botones del NavBar */
@@ -73,15 +78,15 @@ const services = [
     icon: backend,
   },
   {
-    title: "React Developer",
+    title: "Java Developer",
     icon: mobile,
   },
 ];
 
 const technologies = [
   {
-    name: "TypeScript",
-    icon: typeScript,
+    name: "Kubernetes",
+    icon: kubernetes,
   },
   {
     name: "Node.js",
@@ -100,8 +105,8 @@ const technologies = [
     icon: ionic,
   },
   {
-    name: "Git",
-    icon: git,
+    name: "PostgreSQL",
+    icon: postgresql,
   },
   {
     name: "C C++ C#",
@@ -134,6 +139,20 @@ const technologies = [
 ];
 
 const experiences = [
+  /* Con ir añadiendo aquí la */
+  {
+    title: "Técnico de software. Nivel 1",
+    company_name: "Altia Consultores S.A.",
+    icon: altia,
+    iconBg: "#383E56",
+    date: "Septiembre 2024 - Actualidad",
+    points: [
+      "Gestión y desarrollo de arquitectura de microservicios basada en Java/Springboot.",
+      "Programación y despliegue de aplicaciones de contenedores Docker en Kubernetes.",
+      "Gestión de procesos de negocio BMP con Camunda.",
+      "Integración continua con Jenkins.",
+    ],
+  },
   {
     title: "Gestor de SEO y Desarrollador Web con Elementor",
     company_name: "Comunicamos Experience",
@@ -147,21 +166,7 @@ const experiences = [
       "Optimización para una mejor posición en los motores de búsqueda",
     ],
   },
-  /* Con ir añadiendo aquí la */
-  /* {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
+  /*{
     title: "Web Developer",
     company_name: "Shopify",
     icon: shopify,
@@ -260,4 +265,17 @@ const certificados = [
   },
 ];
 
-export { services, technologies, experiences, projects, certificados };
+const idiomas = [
+  {
+    name: "English B1 Trinity",
+    image: english,
+    source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
+  },
+  {
+    name: "Valenciano C1",
+    image: valenciano,
+    source_code_link: "https://drive.google.com/file/d/1QExdkF5w5sFMJKeogAygoR8o63DvqmFM/view?usp=sharing",
+  },
+];
+
+export { services, technologies, experiences, projects, certificados, idiomas };

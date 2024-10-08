@@ -65,22 +65,6 @@ const Footer = () => {
               </svg>
               <span className="sr-only">LinkedIn profile</span>
             </a>
-            <a
-              target="_blank"
-              href="https://www.infojobs.net/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M14.102,17.645H9.898V9.315h4.205V17.645z M11.999,8.273c-1.122,0-2.029-0.907-2.029-2.029c0-1.122,0.907-2.029,2.029-2.029c1.122,0,2.029,0.907,2.029,2.029C14.028,7.366,13.121,8.273,11.999,8.273z M17.332,17.645h-1.95v-6.082c0-1.123-0.453-1.787-1.605-1.787c-0.872,0-1.392,0.654-1.617,1.283c-0.083,0.215-0.105,0.51-0.105,0.805v5.781h-2.152c0.029-6.343,0-7.234,0-7.234h2.152v1.021c0.288-0.46,0.806-1.123,1.957-1.123c1.432,0,2.504,0.937,2.504,2.929V17.645z" />
-              </svg>
-              <span className="sr-only">InfoJobs</span>
-            </a>
           </div>
         </div>
       </div>
