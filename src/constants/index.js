@@ -268,11 +268,15 @@ const certificados = [
 const idiomas = [
   {
     name: "English B1 Trinity",
+    description:
+      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiéndome comunicarme en diversas situaciones. ",
     image: english,
     source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
   },
   {
     name: "Valenciano C1",
+    description:
+      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiéndome comunicarme en diversas situaciones.",
     image: valenciano,
     source_code_link: "https://drive.google.com/file/d/1QExdkF5w5sFMJKeogAygoR8o63DvqmFM/view?usp=sharing",
   },
