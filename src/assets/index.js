@@ -19,7 +19,6 @@ import javascript from "./tech/javascript.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import swift from "./tech/swift.png";
-//import matlab from "./tech/matlab.png";
 import cs from "./tech/cs.png";
 import python from "./tech/python.png";
 import java from "./tech/java.png";
@@ -48,9 +47,10 @@ import tripguide from "./tripguide.png";
 import about from "./about.jpg";
 import coche from "./coche.jpg";
 
+import cara from "./cara.svg";
+
 export {
   swift,
-  //matlab,
   cs,
   python,
   java,
@@ -95,4 +95,5 @@ export {
   english,
   kubernetes,
   postgresql,
+  cara,
 };

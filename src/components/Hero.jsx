@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
+import { cara } from '../assets';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,7 +24,6 @@ const Hero = () => {
   return (
     <section
       className={`relative w-full ${isMobile ? 'h-auto' : 'h-screen'} mx-auto flex flex-col items-center mt-32`}
-      // `mt-32` ajusta el margen superior para no superponer el navbar
     >
       <div className={`${styles.paddingX} ${isMobile ? 'pt-20' : 'absolute inset-0 top-[120px]'} max-w-7xl mx-auto flex flex-row items-start gap-5`}>
         <div className="flex flex-col justify-center items-center mt-5">
@@ -40,6 +39,17 @@ const Hero = () => {
             especializado en ingeniería de software.
           </p>
         </div>
+
+        {/* Imagen de mi cara */}
+        {!isMobile && (
+          <div className="ml-10">
+            <img 
+              src={cara}
+              // Opciones de tamaño 32 36 40 48 56 64 
+              className="w-48 h-48 rounded-full object-cover shadow-lg" 
+            />
+          </div>
+        )}
       </div>
 
       {!isMobile && <ComputersCanvas />}
