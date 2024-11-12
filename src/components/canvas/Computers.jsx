@@ -59,11 +59,13 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader/>}>
         {/* Con este componente podemos girar el ordenador de derecha a izquierda en 360 grados */}
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
+        {!isMobile && (
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+        )}
         <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
