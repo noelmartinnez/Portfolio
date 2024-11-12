@@ -40,9 +40,9 @@ const NavBar = () => {
           <img src={logo} alt="logo" className="w-24 h-24 object-contain" />
         </Link>
 
-        {/* Vista móvil */}
+        {/* Menú desplegable (hamburguesa) solo para vista móvil */}
         {isMobile ? (
-          <div className="sm:hidden flex flex-1 justify-end items-center select-none">
+          <div className="flex flex-1 justify-end items-center select-none">
             <img
               src={toggle ? close : menu}
               alt="menu"
@@ -119,8 +119,8 @@ const NavBar = () => {
             </div>
           </div>
         ) : (
-          // Vista de escritorio
-          <ul className="list-none hidden sm:flex flex-row gap-10">
+          // Menú de escritorio
+          <ul className="list-none flex flex-row gap-10">
             {navLinks.map((link) => (
               <React.Fragment key={link.id}>
                 {link.dropdown ? (

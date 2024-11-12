@@ -42,11 +42,11 @@ export const navLinks = [
     dropdown: [
       {
         id: "certificados",
-        title: "Certificados",
+        title: "· Certificados",
       },
       {
         id: "idiomas",
-        title: "Idiomas",
+        title: "· Idiomas",
       },
     ],
   },
