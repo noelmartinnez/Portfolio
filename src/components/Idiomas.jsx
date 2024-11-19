@@ -71,7 +71,6 @@ const Idiomas = () => {
         >
           En esta sección, presento mis habilidades lingüísticas.
           Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender. <br /> <br />
-          Estos conocimientos son una prueba de mi compromiso con el aprendizaje continuo y mi capacidad para adaptarme a contextos variados.
         </motion.p>
       </div>
 

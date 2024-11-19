@@ -63,15 +63,15 @@ export const navLinks = [
 /* Para las tarjetas del About */
 const services = [
   {
-    title: "Web Developer",
+    title: "Backend Developer",
     icon: web,
   },
   {
-    title: "Backend Developer",
+    title: "Java Developer",
     icon: backend,
   },
   {
-    title: "Java Developer",
+    title: "Spring Developer",
     icon: mobile,
   },
 ];
@@ -140,7 +140,7 @@ const experiences = [
     iconBg: "#383E56",
     date: "Septiembre 2024 - Actualidad",
     points: [
-      "Gestión y desarrollo de arquitectura de microservicios basada en Java/Springboot.",
+      "Gestión y desarrollo de arquitectura de microservicios basada en Java / Spring Boot.",
       "Programación y despliegue de aplicaciones de contenedores Docker en Kubernetes.",
       "Gestión de procesos de negocio BMP con Camunda.",
       "Integración continua con Jenkins.",
@@ -191,7 +191,7 @@ const projects = [
   {
     name: "Connect Four AI Python",
     description:
-      "En este código se ha desarrollado un algoritmo de búsqueda en juegos para el juego Conecta-4. El algoritmo de busqueda que se ha implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
+      "He desarrollado un algoritmo de búsqueda en juegos para el juego Conecta-4. El algoritmo de busqueda implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
     tags: [
       {
         name: "python",
@@ -262,14 +262,14 @@ const idiomas = [
   {
     name: "English B1 Trinity",
     description:
-      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiéndome comunicarme en diversas situaciones. ",
+      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiendo comunicarme en diversas situaciones. ",
     image: english,
     source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
   },
   {
     name: "Valenciano C1",
     description:
-      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiéndome comunicarme en diversas situaciones.",
+      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiendo comunicarme en diversas situaciones.",
     image: valenciano,
     source_code_link: "https://drive.google.com/file/d/1QExdkF5w5sFMJKeogAygoR8o63DvqmFM/view?usp=sharing",
   },

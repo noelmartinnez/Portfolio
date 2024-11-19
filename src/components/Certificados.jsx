@@ -71,8 +71,6 @@ const Certificados = () => {
         >
           Aquí muestro una recopilación de mis logros y reconocimientos en diversos campos; donde 
           cada certificado representa mi dedicación a la mejora continua y mi compromiso con la adquisición de conocimientos. <br /> <br />
-          Estos documentos validan mis habilidades y experiencia en áreas clave,  
-          respaldando mi capacidad para abordar desafíos y demostrar competencia en diferentes disciplinas.
         </motion.p>
       </div>
 

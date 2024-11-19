@@ -81,9 +81,10 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Los siguientes proyectos muestran mis habilidades y experiencia.
-          Cada proyecto se describe brevemente con enlaces a repositorios de código.
-          Reflejan mi capacidad para resolver problemas complejos y trabajar con diferentes tecnologías.
+          Los siguientes proyectos validan mis habilidades y experiencia, al igual que
+          reflejan mi capacidad para resolver problemas complejos y trabajar con diferentes tecnologías.
+          <br/><br/>
+          Me encanta trabajar en proyectos que me desafíen y me permitan aprender algo nuevo.
         </motion.p>
       </div>
 
