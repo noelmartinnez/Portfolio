@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Tilt } from 'react-tilt';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
 import { cara } from '../assets';
-import { fadeIn } from '../utils/motion';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
+  const [showImage, setShowImage] = useState(true);
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 500px)");
@@ -29,6 +29,11 @@ const Hero = () => {
     };
   }, []);
 
+  // Detecta cambios en isTabletOrMobile y ajusta showImage
+  useEffect(() => {
+    setShowImage(!isTabletOrMobile); // Oculta la imagen si está en tamaño mediano
+  }, [isTabletOrMobile]);
+
   return (
     <section
       className={`relative w-full ${isMobile ? 'h-auto' : 'h-screen'} mx-auto flex flex-col items-center mt-32`}
@@ -48,29 +53,32 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Imagen con transición y efecto Tilt */}
-        {!isTabletOrMobile && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            className={`mt-10 ${isMobile ? '' : 'ml-10'}`}
-          >
-            <Tilt
-              options={{
-                max: 15,
-                scale: 1.05,
-                speed: 400,
-              }}
+        {/* Envuelve la imagen con AnimatePresence */}
+        <AnimatePresence>
+          {showImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+              className={`${isMobile ? 'mt-10' : 'mt-2 ml-10'}`}
             >
-              <img 
-                src={cara}
-                alt="Cara de Noel" // Añadido un alt para accesibilidad
-                className="w-48 h-48 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
-              />
-            </Tilt>
-          </motion.div>
-        )}
+              <Tilt
+                options={{
+                  max: 15,
+                  scale: 1.05,
+                  speed: 400,
+                }}
+              >
+                <img
+                  src={cara}
+                  alt="Cara de Noel"
+                  className="w-48 h-48 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                />
+              </Tilt>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {!isMobile && <ComputersCanvas />}
