@@ -1,4 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   About,
   Contact,
@@ -35,6 +37,7 @@ const App = () => {
           <Footer />
         </div>
       </div>
+      <ToastContainer />
     </BrowserRouter>
   );
 };

@@ -20,6 +20,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
     "react-tilt": "^1.0.2",
+    "react-toastify": "^10.0.6",
     "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.6.0",
     "three": "^0.151.3",
