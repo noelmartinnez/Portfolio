@@ -70,7 +70,7 @@ const Idiomas = () => {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           En esta sección, presento mis habilidades lingüísticas.
-          Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender. <br /> <br />
+          Cada idioma que manejo representa un conjunto de habilidades perfeccionadas y mi dedicación a aprender. <br /> <br />
         </motion.p>
       </div>
 

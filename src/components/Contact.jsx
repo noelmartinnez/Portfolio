@@ -30,6 +30,21 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validación de los campos
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Por favor, completa todos los campos.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    }
+
     setLoading(true);
 
     emailjs
@@ -81,15 +96,14 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText + " select-none"}>Ponte en</p>
-        <h3 className={styles.sectionHeadText + " select-none"}>Contacto</h3>
+        {/* Centrado de texto en pantallas pequeñas y medianas, alineado a la izquierda en pantallas grandes */}
+        <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>Ponte en</p>
+        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>Contacto</h3>
 
         <form
           ref={formRef}
@@ -154,7 +168,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary select-none"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary select-none mx-auto xl:mx-0"
           >
             {loading ? "Enviando..." : "Enviar"}
           </button>
