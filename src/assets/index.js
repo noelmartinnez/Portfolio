@@ -34,11 +34,7 @@ import ionic from "./tech/ionic.png";
 import kubernetes from "./tech/kubernetes.png";
 import postgresql from "./tech/postgresql.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
-import comunicamos from "./company/comunicamos.png";
+import comunicamos from "./company/comunicamos.jpg";
 import altia from "./company/altia.png";
 
 import carrent from "./carrent.png";
@@ -72,10 +68,6 @@ export {
   reactjs,
   tailwind,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
   carrent,
   jobit,
   tripguide,

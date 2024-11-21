@@ -78,56 +78,56 @@ const services = [
 
 const technologies = [
   {
-    name: "Kubernetes",
-    icon: kubernetes,
+    name: "Java",
+    icon: java,
   },
   {
-    name: "Node.js",
-    icon: node,
+    name: "Spring Boot",
+    icon: spring,
   },
   {
     name: "JavaScript",
     icon: javascript,
   },
   {
-    name: "React",
-    icon: reactjs,
-  },
-  {
-    name: "Ionic",
-    icon: ionic,
+    name: "Docker",
+    icon: docker,
   },
   {
     name: "PostgreSQL",
     icon: postgresql,
   },
   {
-    name: "C C++ C#",
-    icon: cs,
+    name: "Kubernetes",
+    icon: kubernetes,
+  },
+  {
+    name: "React",
+    icon: reactjs,
   },
   {
     name: "Python",
     icon: python,
   },
   {
-    name: "Java",
-    icon: java,
+    name: "Node.js",
+    icon: node,
   },
   {
-    name: "AWS",
-    icon: aws,
+    name: "C C++ C#",
+    icon: cs,
   },
   {
     name: "PHP",
     icon: php,
   },
   {
-    name: "Docker",
-    icon: docker,
+    name: "Ionic",
+    icon: ionic,
   },
   {
-    name: "Spring",
-    icon: spring,
+    name: "AWS",
+    icon: aws,
   },
 ];
 
@@ -153,10 +153,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Julio 2023 - Agosto 2023",
     points: [
-      "Diseño y maquetación web utilizando Elementor",
-      "Optimización web y Diseño responsive",
-      "Investigación de palabras clave relevantes",
-      "Optimización para una mejor posición en los motores de búsqueda",
+      "Diseño y maquetación web utilizando Elementor.",
+      "Optimización web y Diseño responsive.",
+      "Investigación de palabras clave relevantes.",
+      "Optimización para una mejor posición en los motores de búsqueda.",
     ],
   },
   /*{
@@ -224,7 +224,7 @@ const projects = [
       "Aplicación multiplataforma de Java y Spring Boot. La aplicación permite a los usuarios alquilar vehículos. Por otro lado, al igual que en Airbnb, donde los usuarios ponen en alquiler sus propios hogares, aquí los propietarios de los vehículos pueden poner sus vehículos en alquiler.",
     tags: [
       {
-        name: "spring",
+        name: "springboot",
         color: "green-text-gradient",
       },
       {
