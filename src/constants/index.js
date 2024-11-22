@@ -71,7 +71,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Spring Developer",
+    title: "Spring Boot Developer",
     icon: mobile,
   },
 ];

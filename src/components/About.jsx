@@ -32,27 +32,58 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
+  const isTablet = window.matchMedia("(min-width: 500px) and (max-width: 1100px)").matches;
+  const isMobile = window.matchMedia("(max-width: 500px)").matches;
+
+  // Filtrar servicios para tablet (máximo 2 tarjetas)
+  const filteredServices = isTablet ? services.slice(0, 2) : services;
+
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText + " select-none"}>Introducción</p>
-        <h2 className={styles.sectionHeadText + " select-none"}>
+      <motion.div
+        variants={textVariant()}
+        className={`w-full ${
+          isTablet || isMobile ? "text-center" : ""
+        }`}
+      >
+        <p
+          className={`${
+            styles.sectionSubText
+          } select-none ${isTablet || isMobile ? "" : "text-left"}`}
+        >
+          Introducción
+        </p>
+        <h2
+          className={`${
+            styles.sectionHeadText
+          } select-none ${isTablet || isMobile ? "" : "text-left"}`}
+        >
           Construyendo{"{"}me{"}"}
         </h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] select-none"
+        className={`mt-4 text-secondary text-[17px] leading-[30px] select-none ${
+          isTablet || isMobile
+            ? "text-center max-w-3xl mx-auto"
+            : "text-left max-w-full md:max-w-3xl"
+        }`}
       >
         Soy un desarrollador de software con experiencia trabajando en el desarrollo de diferentes aplicaciones
         utilizando principalmente Java, Spring Boot, Kubernetes, microservicios y diferentes bases de datos.
-        <br/><br/>
+        <br />
+        <br />
         ¡Siempre me esfuerzo para superar mis propias expectativas!
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap justify-center select-none" style={{ gap: '125px' }}>
-        {services.map((service, index) => (
+      <div
+        className="mt-20 flex flex-wrap justify-center select-none"
+        style={{
+          gap: isMobile ? "30px" : isTablet ? "150px" : "130px",
+        }}
+      >
+        {filteredServices.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>

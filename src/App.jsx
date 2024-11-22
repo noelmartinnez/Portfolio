@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,6 +17,19 @@ import {
 } from "./components";
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 500);
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
@@ -23,7 +37,11 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <About />
+
+        <div className={`mt-${isMobile ? "20" : "0"}`}>
+          <About />
+        </div>
+
         <Experience />
         <Tech />
         <Certificados />
