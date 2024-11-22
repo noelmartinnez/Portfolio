@@ -37,13 +37,18 @@ const Hero = () => {
     <section
       className={`relative w-full ${isMobile ? 'h-auto' : isTabletOrMobile ? 'min-h-[calc(50vh+10px)]' : 'min-h-[calc(85vh+10px)]'} mx-auto flex flex-col items-center mt-32`}
     >
-      <div className={`${styles.paddingX} ${isMobile || isTabletOrMobile ? 'pt-20 flex-col items-center' : 'absolute inset-0 top-[120px] flex-row items-start gap-5'} max-w-7xl mx-auto flex`}>
-        {!isMobile && !isTabletOrMobile && <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>}
-        <div className={`${isMobile ? 'text-center' : ''}`}>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+      <div className={`${styles.paddingX} ${isMobile || isTabletOrMobile ? 'pt-20 flex-col items-center justify-center' : 'absolute inset-0 top-[120px] flex-row items-start gap-5'} max-w-7xl mx-auto flex`}>
+        {/* Solo mostrar el gradiente y el círculo en pantallas grandes */}
+        {!isMobile && !isTabletOrMobile && (
+          <div className="flex flex-col justify-center items-center mt-5">
+            <div className="w-5 h-5 rounded-full bg-[#915eff]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
+        )}
+
+        {/* Contenedor de texto centrado solo en móvil y tablet */}
+        <div className={`${isMobile || isTabletOrMobile ? 'text-center flex flex-col justify-center items-center' : ''}`}>
+          <h1 className={`${styles.heroHeadText} text-white ${isTabletOrMobile ? 'mt-20' : ''}`}>
             Hola, soy <span className="text-[#915eff]">Noel</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
@@ -59,7 +64,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className={`${isMobile ? 'mt-10' : 'mt-2 ml-10'}`}
+              className={`${isMobile ? 'mt-10' : isTabletOrMobile ? 'mt-2 ml-10' : 'mt-[-8px] ml-10'}`}
             >
               <Tilt
                 options={{
@@ -71,7 +76,7 @@ const Hero = () => {
                 <img
                   src={cara}
                   alt="Cara de Noel"
-                  className="w-48 h-48 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="w-56 h-56 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
                 />
               </Tilt>
             </motion.div>
