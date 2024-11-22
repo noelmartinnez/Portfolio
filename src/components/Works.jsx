@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -35,7 +35,6 @@ const ProjectCard = ({
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              /* Con esto abrimos el link en una ventana nueva */
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
@@ -69,27 +68,60 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const tabletQuery = window.matchMedia("(min-width: 500px) and (max-width: 1100px)");
+
+    setIsMobile(mobileQuery.matches);
+    setIsTablet(tabletQuery.matches);
+
+    const handleMobileChange = (event) => setIsMobile(event.matches);
+    const handleTabletChange = (event) => setIsTablet(event.matches);
+
+    mobileQuery.addEventListener("change", handleMobileChange);
+    tabletQuery.addEventListener("change", handleTabletChange);
+
+    return () => {
+      mobileQuery.removeEventListener("change", handleMobileChange);
+      tabletQuery.removeEventListener("change", handleTabletChange);
+    };
+  }, []);
+
+  // Filtrar proyectos para tablet (solo mostrar las primeras dos tarjetas)
+  const filteredProjects = isTablet ? [projects[0], projects[2]] : projects;
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
         <p className={`${styles.sectionSubText} select-none`}>Mi trabajo</p>
         <h2 className={`${styles.sectionHeadText} select-none`}>Proyectos</h2>
       </motion.div>
 
-      <div className="w-full flex select-none">
+      <div className={`w-full flex select-none ${isMobile || isTablet ? 'flex-col items-center justify-center text-center' : ''}`}>
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
           Los siguientes proyectos validan mis habilidades y experiencia, al igual que
           reflejan mi capacidad para resolver problemas complejos y trabajar con diferentes tecnologías.
-          <br/><br/>
+          <br /><br />
           Me encanta trabajar en proyectos que me desafíen y me permitan aprender algo nuevo.
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
+      <div
+        className={`mt-20 ${
+          isMobile
+            ? "grid grid-cols-1 gap-7" 
+            : isTablet
+            ? "grid grid-cols-2 gap-40" 
+            : "flex flex-wrap gap-7" 
+        }`}
+      >
+        {filteredProjects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>

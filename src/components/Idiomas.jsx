@@ -60,8 +60,8 @@ const Idiomas = () => {
   const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 768px)");
-    const tabletQuery = window.matchMedia("(min-width: 769px) and (max-width: 1100px)");
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const tabletQuery = window.matchMedia("(min-width: 500px) and (max-width: 1100px)");
 
     setIsMobile(mobileQuery.matches);
     setIsTablet(tabletQuery.matches);
@@ -99,10 +99,10 @@ const Idiomas = () => {
       <div
         className={`mt-20 ${
           isMobile
-            ? "grid grid-cols-1 gap-7" // Diseño para móvil (una columna)
+            ? "grid grid-cols-1 gap-7" 
             : isTablet
-            ? "grid grid-cols-2 gap-40" // Diseño para tabletas (dos columnas)
-            : "flex flex-wrap gap-7" // Diseño para pantallas grandes (flex)
+            ? "grid grid-cols-2 gap-40" 
+            : "flex flex-wrap gap-7" 
         }`}
       >
         {idiomas.map((idioma, index) => (

@@ -60,8 +60,8 @@ const Certificados = () => {
   const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 768px)");
-    const tabletQuery = window.matchMedia("(min-width: 769px) and (max-width: 1100px)");
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const tabletQuery = window.matchMedia("(min-width: 500px) and (max-width: 1100px)");
 
     setIsMobile(mobileQuery.matches);
     setIsTablet(tabletQuery.matches);
