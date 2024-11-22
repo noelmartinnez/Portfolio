@@ -8,6 +8,7 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
   const [showImage, setShowImage] = useState(true);
+  const [clicked, setClicked] = useState(false);  // Estado para el clic
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 500px)");
@@ -32,6 +33,12 @@ const Hero = () => {
   useEffect(() => {
     setShowImage(!isTabletOrMobile); // Oculta la imagen si está en tamaño mediano
   }, [isTabletOrMobile]);
+
+  // Manejo de clics en la imagen
+  const handleImageClick = () => {
+    setClicked(true); // Activamos el clic
+    setTimeout(() => setClicked(false), 500); // Volvemos a desactivarlo después de 0.5 segundos
+  };
 
   return (
     <section
@@ -73,10 +80,19 @@ const Hero = () => {
                   speed: 400,
                 }}
               >
-                <img
+                <motion.img
                   src={cara}
                   alt="Cara de Noel"
                   className="w-56 h-56 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                  onClick={handleImageClick}
+                  animate={{
+                    scale: clicked ? 1.3 : 1, // Escala más grande al hacer clic
+                    rotate: clicked ? 15 : 0, // Rotación al hacer clic
+                  }}
+                  transition={{
+                    scale: { type: "spring", stiffness: 300, damping: 30 },
+                    rotate: { type: "spring", stiffness: 300, damping: 30 },
+                  }}
                 />
               </Tilt>
             </motion.div>
