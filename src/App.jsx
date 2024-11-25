@@ -1,3 +1,5 @@
+// IR PROBANDO CON LO DEL CHATGPT PARA LO DEL WHATSAPP
+
 import { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -24,7 +26,7 @@ const App = () => {
       setIsMobile(window.innerWidth <= 500);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -33,7 +35,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-      <StarsCanvas />
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -50,6 +51,7 @@ const App = () => {
         <Works />
         <div className="relative z-0">
           <Contact />
+          <StarsCanvas />
         </div>
         <div className="w-full">
           <Footer />
