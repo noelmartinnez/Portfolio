@@ -44,7 +44,7 @@ const Hero = () => {
     <section
       className={`relative w-full ${isMobile ? 'h-auto' : isTabletOrMobile ? 'min-h-[calc(50vh+10px)]' : 'min-h-[calc(85vh+10px)]'} mx-auto flex flex-col items-center mt-32`}
     >
-      <div className={`${styles.paddingX} ${isMobile || isTabletOrMobile ? 'pt-20 flex-col items-center justify-center' : 'absolute inset-0 top-[120px] flex-row items-start gap-5'} max-w-7xl mx-auto flex`}>
+      <div className={`${styles.paddingX} ${isMobile || isTabletOrMobile ? 'pt-20 flex-col items-center justify-center' : 'absolute top-[120px] flex-row items-start gap-12'} max-w-7xl mx-auto flex`}>
         {/* Solo mostrar el gradiente y el círculo en pantallas grandes */}
         {!isMobile && !isTabletOrMobile && (
           <div className="flex flex-col justify-center items-center mt-5">
@@ -71,7 +71,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className={`${isMobile ? 'mt-10' : isTabletOrMobile ? 'mt-2 ml-10' : 'mt-[-8px] ml-10'}`}
+              className={`${isMobile ? 'mt-10' : isTabletOrMobile ? 'mt-2 ml-10' : 'ml-10'}`}
             >
               <Tilt
                 options={{
@@ -87,7 +87,6 @@ const Hero = () => {
                   onClick={handleImageClick}
                   animate={{
                     scale: clicked ? 1.3 : 1, // Escala más grande al hacer clic
-                    rotate: clicked ? 15 : 0, // Rotación al hacer clic
                   }}
                   transition={{
                     scale: { type: "spring", stiffness: 300, damping: 30 },
