@@ -71,7 +71,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.75, ease: "easeOut" }}
-              className={`${isMobile ? 'mt-10' : isTabletOrMobile ? 'mt-2 ml-10' : 'ml-10'}`}
+              className={`${isMobile ? 'mt-14 mb-14' : isTabletOrMobile ? 'mt-2 ml-10' : 'ml-10'}`}
             >
               <Tilt
                 options={{
@@ -83,7 +83,8 @@ const Hero = () => {
                 <motion.img
                   src={cara}
                   alt="Cara de Noel"
-                  className="w-56 h-56 rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                  className={`rounded-full object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 
+                              ${isMobile ? 'w-36 h-36' : 'w-56 h-56'}`}
                   onClick={handleImageClick}
                   animate={{
                     scale: clicked ? 1.3 : 1, // Escala más grande al hacer clic

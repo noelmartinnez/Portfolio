@@ -113,12 +113,12 @@ const Works = () => {
       </div>
 
       <div
-        className={`mt-20 ${
+        className={`${
           isMobile
-            ? "grid grid-cols-1 gap-7" 
+            ? "grid grid-cols-1 gap-7 mt-14" 
             : isTablet
-            ? "grid grid-cols-2 gap-40" 
-            : "flex flex-wrap gap-7" 
+            ? "grid grid-cols-2 gap-40 mt-14" 
+            : "flex flex-wrap gap-7 mt-20" 
         }`}
       >
         {filteredProjects.map((project, index) => (

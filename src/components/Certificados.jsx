@@ -91,17 +91,17 @@ const Certificados = () => {
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
           Aquí muestro una recopilación de mis logros y reconocimientos en diversos campos. 
-          Cada certificado representa mi dedicación a la mejora continua y mi compromiso con la adquisición de conocimientos. <br /> <br />
+          Cada certificado representa mi dedicación a la mejora continua y mi compromiso con la adquisición de conocimientos.
         </motion.p>
       </div>
 
       <div
-        className={`mt-20 ${
+        className={`${
           isMobile
-            ? "grid grid-cols-1 gap-7" // Diseño para móvil (una columna)
+            ? "grid grid-cols-1 gap-7 mt-14" // Diseño para móvil (una columna)
             : isTablet
-            ? "grid grid-cols-2 gap-40" // Diseño para tabletas (dos columnas)
-            : "flex flex-wrap gap-7" // Diseño para pantallas grandes (flex)
+            ? "grid grid-cols-2 gap-40 mt-14" // Diseño para tabletas (dos columnas)
+            : "flex flex-wrap gap-7 mt-20" // Diseño para pantallas grandes (flex)
         }`}
       >
         {certificados.map((certificado, index) => (

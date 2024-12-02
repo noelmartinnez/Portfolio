@@ -78,7 +78,9 @@ const About = () => {
       </motion.p>
 
       <div
-        className="mt-20 flex flex-wrap justify-center select-none"
+        className={`flex flex-wrap justify-center select-none ${
+          isMobile ? "mt-14" : "mt-20"
+        }`}
         style={{
           gap: isMobile ? "30px" : isTablet ? "150px" : "130px",
         }}

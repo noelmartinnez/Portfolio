@@ -92,17 +92,17 @@ const Idiomas = () => {
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
           En esta sección, presento mis habilidades lingüísticas.
-          Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender. <br /> <br />
+          Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender.
         </motion.p>
       </div>
 
       <div
-        className={`mt-20 ${
+        className={`${
           isMobile
-            ? "grid grid-cols-1 gap-7" 
+            ? "grid grid-cols-1 gap-7 mt-14" 
             : isTablet
-            ? "grid grid-cols-2 gap-40" 
-            : "flex flex-wrap gap-7" 
+            ? "grid grid-cols-2 gap-40 mt-14" 
+            : "flex flex-wrap gap-7 mt-20" 
         }`}
       >
         {idiomas.map((idioma, index) => (
