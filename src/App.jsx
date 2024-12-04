@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,41 +14,64 @@ import {
   Footer,
   Certificados,
   Idiomas,
-  SpheresCanvas
+  SpheresCanvas,
 } from "./components";
 
 const App = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  // const [showMessage, setShowMessage] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [showMessage, setShowMessage] = useState(true);
+  const [buttonStyles, setButtonStyles] = useState({ bottom: "16px", right: "16px" });
+  const footerRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 500);
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    const updateButtonStyles = () => {
+      if (footerRef.current) {
+        const footerRect = footerRef.current.getBoundingClientRect();
+        const footerIsVisible = footerRect.top < window.innerHeight;
 
-    /*const timer = setTimeout(() => setShowMessage(false), 3000);
+        if (footerIsVisible) {
+          setButtonStyles({
+            bottom: isMobile ? "95px" : "60px",
+            right: "8px",
+          });
+        } else {
+          setButtonStyles({
+            bottom: "16px",
+            right: "16px",
+          });
+        }
+      }
+    };
+
+    // Ejecutar al montar la página
+    updateButtonStyles();
+
+    // Eventos de actualización
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", updateButtonStyles);
+
+    const timer = setTimeout(() => setShowMessage(false), 5000);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", updateButtonStyles);
       clearTimeout(timer);
-    };*/
-    
-    return () => window.removeEventListener("resize", handleResize);
-
-  }, []);
+    };
+  }, [isMobile]); // Dependencia para actualizar estilos si cambia `isMobile`
 
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div >
-            <div className="relative z-10">
-            <SpheresCanvas /> {/* Fondo animado */}
-              <Navbar />
-              <Hero />
-            </div>
+        <div>
+          <div className="relative z-10">
+            <SpheresCanvas />
+            <Navbar />
+            <Hero />
+          </div>
         </div>
 
         <div className={`mt-${isMobile ? "20" : "0"}`}>
@@ -64,12 +87,18 @@ const App = () => {
           <Contact />
           <StarsCanvas />
         </div>
-        <div className="w-full">
+        <div className="w-full" ref={footerRef}>
           <Footer />
         </div>
 
-        {/* WhatsApp Button
-        <div className="fixed bottom-4 right-4 z-50">
+        {/* Botón flotante de WhatsApp */}
+        <div
+          className="fixed z-50"
+          style={{
+            bottom: buttonStyles.bottom,
+            right: buttonStyles.right,
+          }}
+        >
           <a
             href="https://wa.link/xzujgs"
             target="_blank"
@@ -87,7 +116,7 @@ const App = () => {
               </div>
             )}
           </a>
-        </div>*/}
+        </div>
       </div>
       <ToastContainer />
     </BrowserRouter>
