@@ -111,8 +111,8 @@ const App = () => {
               className="w-8 h-8"
             />
             {showMessage && (
-              <div className="absolute bottom-14 right-0 bg-black text-white text-sm px-3 py-2 rounded-md shadow-md">
-                Ponte en contacto
+              <div className="absolute left-[-130px] bottom-1 bg-white text-green-500 font-bold text-sm px-4 py-2 rounded-md shadow-lg animate-pulse transition-opacity duration-300">
+                ¿Hablamos?
               </div>
             )}
           </a>
