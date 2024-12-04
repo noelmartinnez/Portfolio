@@ -113,7 +113,7 @@ const technologies = [
     name: "Node.js",
     icon: node,
   },
-  /*{
+  {
     name: "C C++ C#",
     icon: cs,
   },
@@ -128,7 +128,7 @@ const technologies = [
   {
     name: "AWS",
     icon: aws,
-  },*/
+  },
 ];
 
 const experiences = [
