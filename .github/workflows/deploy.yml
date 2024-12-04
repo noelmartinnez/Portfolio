@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+name: Build and Deploy to Hostinger Branch
 
 on:
   push:
@@ -6,31 +6,48 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+    # 1. Clona el repositorio
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
+    # 2. Configura Node.js
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: 16
 
+    # 3. Instala dependencias
     - name: Install dependencies
-      run: |
-        npm install
+      run: npm install
 
-    - name: Build project
-      run: |
-        npm run build
+    # 4. Construye el proyecto
+    - name: Build the project
+      run: npm run build
 
-    - name: Upload to Hostinger via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: noelmartinez.es
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/
-        server-dir: ./public_html/
-        dangerous-clean-slate: true
+    # 5. Publica la carpeta dist en la rama "hostinger"
+    - name: Deploy dist to hostinger branch
+      run: |
+        # Configura Git
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Crea una rama temporal
+        git checkout --orphan temp-branch
+        
+        # Añade solo la carpeta dist
+        rm -rf .gitignore
+        echo "dist/" > .gitignore
+        git add dist -f
+        
+        # Commit con el contenido de dist
+        git commit -m "Deploy dist folder to hostinger branch"
+        
+        # Fuerza los cambios a la rama "hostinger"
+        git push --force origin temp-branch:hostinger
+        
+        # Limpia la rama temporal
+        git branch -D temp-branch
