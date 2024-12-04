@@ -121,11 +121,11 @@ const technologies = [
     name: "PHP",
     icon: php,
   },
-  {
+  /*{
     name: "Ionic",
     icon: ionic,
   },
-  /*{
+  {
     name: "AWS",
     icon: aws,
   },*/

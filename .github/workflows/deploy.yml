@@ -28,17 +28,7 @@ jobs:
     - name: Build the project
       run: npm run build
 
-    # 5. Elimina los archivos en el servidor (FTP)
-    - name: Delete files on Hostinger server (FTP)
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: 92.113.18.41
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
-        dangerous-clean-slate: true  # Elimina los archivos en /public_html/
-
-    # 6. Publica la carpeta dist en la rama "hostinger"
+    # 5. Publica la carpeta dist en la rama "hostinger"
     - name: Deploy dist to hostinger branch
       run: |
           # Configura Git
