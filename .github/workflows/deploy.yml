@@ -37,6 +37,9 @@ jobs:
           
           # Crea una rama temporal
           git checkout --orphan temp-branch
+
+          # Añadir node_modules a .gitignore temporalmente para evitar que se suba
+          echo "node_modules/" >> .gitignore
           
           # Limpia todo excepto dist
           git rm -rf . || true
