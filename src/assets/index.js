@@ -28,7 +28,7 @@ import sql from "./tech/sql.png";
 import threejs from "./tech/threejs.svg";
 import docker from "./tech/docker.png";
 import spring from "./tech/spring.png";
-import typeScript from "./tech/typeScript.png";
+import typescript from "./tech/typescript.png";
 import node from "./tech/node.png";
 import ionic from "./tech/ionic.png";
 import kubernetes from "./tech/kubernetes.png";
@@ -77,7 +77,7 @@ export {
   js,
   spring,
   docker,
-  typeScript,
+  typescript,
   node,
   ionic,
   about,
