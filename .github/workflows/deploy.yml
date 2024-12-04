@@ -31,5 +31,5 @@ jobs:
         server: ftp://92.113.18.41 
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ./dist
-        remote-dir: /public_html
+        local-dir: ./dist
+        server-dir: /public_html/
