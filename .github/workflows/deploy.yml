@@ -36,7 +36,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /public_html/
-        action: "delete"  # Elimina los archivos en /public_html/
+        dangerous-clean-slate: true  # Elimina los archivos en /public_html/
 
     # 6. Publica la carpeta dist en la rama "hostinger"
     - name: Deploy dist to hostinger branch

@@ -125,10 +125,10 @@ const technologies = [
     name: "Ionic",
     icon: ionic,
   },
-  {
+  /*{
     name: "AWS",
     icon: aws,
-  },
+  },*/
 ];
 
 const experiences = [
