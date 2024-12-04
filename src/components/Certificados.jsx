@@ -14,6 +14,7 @@ const ProjectCard = ({
   description,
   image,
   source_code_link,
+  isTablet,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -23,7 +24,9 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className={`bg-tertiary p-5 rounded-2xl ${
+          isTablet ? "sm:w-[400px]" : "sm:w-[360px]"
+        } w-full`}
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -97,15 +100,13 @@ const Certificados = () => {
 
       <div
         className={`${
-          isMobile
-            ? "grid grid-cols-1 gap-7 mt-14" // Diseño para móvil (una columna)
-            : isTablet
-            ? "grid grid-cols-2 gap-40 mt-14" // Diseño para tabletas (dos columnas)
+          isMobile || isTablet
+            ? "grid grid-cols-1 gap-7 mt-14 justify-items-center items-center" // Diseño para móvil y tablets (una columna)
             : "flex flex-wrap gap-7 mt-20" // Diseño para pantallas grandes (flex)
         }`}
       >
         {certificados.map((certificado, index) => (
-          <ProjectCard key={`certificado-${index}`} index={index} {...certificado} />
+          <ProjectCard key={`certificado-${index}`} index={index} isTablet={isTablet} {...certificado} />
         ))}
       </div>
     </>

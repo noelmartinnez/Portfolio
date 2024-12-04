@@ -54,7 +54,8 @@ const Hero = () => {
         )}
 
         {/* Contenedor de texto centrado solo en móvil y tablet */}
-        <div className={`${isMobile || isTabletOrMobile ? 'text-center flex flex-col justify-center items-center' : ''}`}>
+        <div className={`${isMobile ? 'text-center flex flex-col justify-center items-center' :
+                           isTabletOrMobile ? 'text-center flex flex-col justify-center items-cente mt-10' : ''}`}>
           <h1 className={`${styles.heroHeadText} text-white ${isTabletOrMobile ? 'mt-20' : ''}`}>
             Hola, soy <span className="text-[#915eff]">Noel</span>
           </h1>

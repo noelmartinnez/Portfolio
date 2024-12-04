@@ -82,7 +82,7 @@ const About = () => {
           isMobile ? "mt-14" : "mt-20"
         }`}
         style={{
-          gap: isMobile ? "30px" : isTablet ? "150px" : "130px",
+          gap: isMobile ? "30px" : isTablet ? "100px" : "130px",
         }}
       >
         {filteredServices.map((service, index) => (

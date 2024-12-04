@@ -15,6 +15,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  isTablet,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -24,7 +25,9 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className={`bg-tertiary p-5 rounded-2xl ${
+          isTablet ? "sm:w-[400px]" : "sm:w-[360px]"
+        } w-full`}
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -114,15 +117,13 @@ const Works = () => {
 
       <div
         className={`${
-          isMobile
-            ? "grid grid-cols-1 gap-7 mt-14" 
-            : isTablet
-            ? "grid grid-cols-2 gap-40 mt-14" 
+          isMobile || isTablet
+            ? "grid grid-cols-1 gap-7 mt-14 justify-items-center items-center" 
             : "flex flex-wrap gap-7 mt-20" 
         }`}
       >
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={`project-${index}`} index={index} isTablet={isTablet} {...project} />
         ))}
       </div>
     </>

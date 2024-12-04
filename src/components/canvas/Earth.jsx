@@ -51,6 +51,7 @@ const EarthCanvas = () => {
           minPolarAngle={Math.PI / 2}
           enableRotate={!isMobile}    // Desactiva la rotación manual en móviles
           enablePan={!isMobile}       // Desactiva el paneo manual en móviles
+          touchEnabled={!isMobile}    // Desactiva la interacción táctil en móviles
         />
         <Earth />
         <Preload all />
