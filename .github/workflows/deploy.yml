@@ -29,8 +29,8 @@ jobs:
       run: npm run build
 
     # 5. Publica la carpeta dist en la rama "hostinger"
-    - name: Deploy dist to hostinger branch
-      run: |
+   - name: Deploy dist to hostinger branch
+    run: |
         # Configura Git
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -38,16 +38,22 @@ jobs:
         # Crea una rama temporal
         git checkout --orphan temp-branch
         
-        # Añade solo la carpeta dist
-        rm -rf .gitignore
-        echo "dist/" > .gitignore
-        git add dist -f
+        # Limpia todo excepto dist
+        git rm -rf . || true
+        mv dist/* .
+        rm -rf dist
+        
+        # Añade solo el contenido de dist
+        git add .
         
         # Commit con el contenido de dist
         git commit -m "Deploy dist folder to hostinger branch"
         
         # Fuerza los cambios a la rama "hostinger"
-        git push --force origin temp-branch:hostinger
+        git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" temp-branch:hostinger
+        
+        # Cambia a un estado desconectado para poder eliminar la rama temporal
+        git checkout --detach
         
         # Limpia la rama temporal
         git branch -D temp-branch
