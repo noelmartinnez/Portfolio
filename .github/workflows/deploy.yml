@@ -60,3 +60,12 @@ jobs:
           
           # Limpia la rama temporal
           git branch -D temp-branch
+
+    # 6. Crea una nueva etiqueta (tag)
+    - name: Create and push tag
+      run: |
+          # Crea una nueva etiqueta basada en el commit actual
+          git tag -a "v1.0.${{ github.run_number }}" -m "Deployment for v1.0.${{ github.run_number }}"
+          
+          # Empuja la etiqueta al repositorio
+          git push origin "v1.0.${{ github.run_number }}"
