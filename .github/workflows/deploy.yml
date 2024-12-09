@@ -44,7 +44,6 @@ jobs:
           rm -rf dist node_modules
           
           # Asegura que .gitignore y .git no se suban
-          echo ".git" > .gitignore
           echo ".gitignore" >> .gitignore
 
           # Añade únicamente los archivos del directorio actual
