@@ -19,13 +19,15 @@ import {
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
+  const [isTablet, setIsTablet] = useState(window.innerWidth > 500 && window.innerWidth <= 1100);
   const [showMessage, setShowMessage] = useState(true);
-  const [buttonStyles, setButtonStyles] = useState({ bottom: "16px", right: "16px" });
+  const [buttonStyles, setButtonStyles] = useState({ bottom: "8px", right: "8px" });
   const footerRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 500);
+      setIsTablet(window.innerWidth > 500 && window.innerWidth <= 1100);
     };
 
     const updateButtonStyles = () => {
@@ -40,8 +42,8 @@ const App = () => {
           });
         } else {
           setButtonStyles({
-            bottom: "16px",
-            right: "16px",
+            bottom: "8px",
+            right: "8px",
           });
         }
       }
@@ -61,7 +63,7 @@ const App = () => {
       window.removeEventListener("scroll", updateButtonStyles);
       clearTimeout(timer);
     };
-  }, [isMobile]);
+  }, [isMobile, isTablet]);
 
   return (
     <BrowserRouter>
@@ -92,7 +94,7 @@ const App = () => {
         </div>
 
         {/* Botón flotante de WhatsApp */}
-        {!isMobile && (
+        {!isMobile && !isTablet && (
           <div
             className="fixed z-50"
             style={{
