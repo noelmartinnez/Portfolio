@@ -61,7 +61,7 @@ const App = () => {
       window.removeEventListener("scroll", updateButtonStyles);
       clearTimeout(timer);
     };
-  }, [isMobile]); // Dependencia para actualizar estilos si cambia `isMobile`
+  }, [isMobile]);
 
   return (
     <BrowserRouter>
