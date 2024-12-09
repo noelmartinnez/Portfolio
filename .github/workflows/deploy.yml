@@ -37,17 +37,15 @@ jobs:
           
           # Crea una rama temporal
           git checkout --orphan temp-branch
-
-          # Añadir node_modules a .gitignore temporalmente para evitar que se suba
-          echo "node_modules/" >> .gitignore
           
           # Limpia todo excepto dist
           git rm -rf . || true
           mv dist/* .
-          rm -rf dist
+          rm -rf dist node_modules
           
-          # Añade solo el contenido de dist
-          git add .
+          # Añade archivos ignorando node_modules explícitamente
+          echo "node_modules/" >> .gitignore
+          git add --all
           
           # Commit con el contenido de dist
           git commit -m "Deploy dist folder to hostinger branch"

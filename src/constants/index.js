@@ -113,22 +113,22 @@ const technologies = [
     name: "Node.js",
     icon: node,
   },
-  /*{
+  {
     name: "C C++ C#",
     icon: cs,
-  },*/
+  },
   {
     name: "PHP",
     icon: php,
   },
-  /*{
+  {
     name: "Ionic",
     icon: ionic,
   },
   {
     name: "AWS",
     icon: aws,
-  },*/
+  },
 ];
 
 const experiences = [
