@@ -35,7 +35,7 @@ const App = () => {
 
         if (footerIsVisible) {
           setButtonStyles({
-            bottom: isMobile ? "95px" : "60px",
+            bottom: "60px",
             right: "8px",
           });
         } else {
@@ -92,31 +92,33 @@ const App = () => {
         </div>
 
         {/* Botón flotante de WhatsApp */}
-        <div
-          className="fixed z-50"
-          style={{
-            bottom: buttonStyles.bottom,
-            right: buttonStyles.right,
-          }}
-        >
-          <a
-            href="https://wa.link/xzujgs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+        {!isMobile && (
+          <div
+            className="fixed z-50"
+            style={{
+              bottom: buttonStyles.bottom,
+              right: buttonStyles.right,
+            }}
           >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-              alt="WhatsApp"
-              className="w-8 h-8"
-            />
-            {showMessage && (
-              <div className="absolute left-[-130px] bottom-1 bg-white text-green-500 font-bold text-sm px-4 py-2 rounded-md shadow-lg transition-opacity duration-300">
-                ¿Hablamos?
-              </div>
-            )}
-          </a>
-        </div>
+            <a
+              href="https://wa.link/xzujgs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WhatsApp"
+                className="w-8 h-8"
+              />
+              {showMessage && (
+                <div className="absolute left-[-130px] bottom-1 bg-white text-green-500 font-bold text-sm px-4 py-2 rounded-md shadow-lg transition-opacity duration-300">
+                  ¿Hablamos?
+                </div>
+              )}
+            </a>
+          </div>
+        )}
       </div>
       <ToastContainer />
     </BrowserRouter>
