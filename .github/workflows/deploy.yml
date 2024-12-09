@@ -43,9 +43,12 @@ jobs:
           mv dist/* .
           rm -rf dist node_modules
           
-          # Añade archivos ignorando node_modules explícitamente
-          echo "node_modules/" >> .gitignore
-          git add --all
+          # Asegura que .gitignore y .git no se suban
+          echo ".git" > .gitignore
+          echo ".gitignore" >> .gitignore
+
+          # Añade únicamente los archivos del directorio actual
+          git add *
           
           # Commit con el contenido de dist
           git commit -m "Deploy dist folder to hostinger branch"
