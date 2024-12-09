@@ -21,7 +21,7 @@ const App = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
   const [isTablet, setIsTablet] = useState(window.innerWidth > 500 && window.innerWidth <= 1100);
   const [showMessage, setShowMessage] = useState(true);
-  const [buttonStyles, setButtonStyles] = useState({ bottom: "8px", right: "8px" });
+  const [buttonStyles, setButtonStyles] = useState({ bottom: "16px", right: "16px" });
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -42,8 +42,8 @@ const App = () => {
           });
         } else {
           setButtonStyles({
-            bottom: "8px",
-            right: "8px",
+            bottom: "16px",
+            right: "16px",
           });
         }
       }
