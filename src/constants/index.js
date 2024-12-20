@@ -4,10 +4,8 @@ import {
   web,
   javascript,
   reactjs,
-  cs,
   python,
   java,
-  aws,
   php,
   carrent,
   comunicamos,
@@ -16,7 +14,6 @@ import {
   docker,
   spring,
   node,
-  ionic,
   about,
   coche,
   altia,
@@ -24,9 +21,9 @@ import {
   english,
   kubernetes,
   postgresql,
+  cpp,
 } from "../assets";
 
-/* Para los botones del NavBar */
 export const navLinks = [
   {
     id: "about",
@@ -60,7 +57,6 @@ export const navLinks = [
   },
 ];
 
-/* Para las tarjetas del About */
 const services = [
   {
     title: "Backend Developer",
@@ -114,25 +110,16 @@ const technologies = [
     icon: node,
   },
   {
-    name: "C C++ C#",
-    icon: cs,
+    name: "C++",
+    icon: cpp,
   },
   {
     name: "PHP",
     icon: php,
   },
-  {
-    name: "Ionic",
-    icon: ionic,
-  },
-  {
-    name: "AWS",
-    icon: aws,
-  },
 ];
 
 const experiences = [
-  /* Con ir añadiendo aquí la */
   {
     title: "Técnico de software. Nivel 1",
     company_name: "Altia Consultores S.A.",
@@ -141,9 +128,9 @@ const experiences = [
     date: "Septiembre 2024 - Actualidad",
     points: [
       "Gestión y desarrollo de arquitectura de microservicios basada en Java / Spring Boot.",
-      "Programación y despliegue de aplicaciones de contenedores Docker en Kubernetes.",
-      "Gestión de procesos de negocio BMP con Camunda.",
-      "Integración continua con Jenkins.",
+      "Despliegue de aplicaciones en contenedores Docker sobre Kubernetes.",
+      "Gestión de procesos de negocio (BMP) utilizando Camunda.",
+      "Gestión de procesos de CI/CD con Jenkins, Harbor y Argo.",
     ],
   },
   {
@@ -159,39 +146,13 @@ const experiences = [
       "Optimización para una mejor posición en los motores de búsqueda.",
     ],
   },
-  /*{
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  }, */
 ];
 
 const projects = [
   {
-    name: "Connect Four AI Python",
+    name: "Connect Four AI",
     description:
-      "He desarrollado un algoritmo de búsqueda en juegos para el juego Conecta-4. El algoritmo de busqueda implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
+      "He desarrollado un algoritmo de búsqueda para el juego Conecta-4. El algoritmo de busqueda implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
     tags: [
       {
         name: "python",
@@ -202,9 +163,9 @@ const projects = [
     source_code_link: "https://github.com/noelmartinnez/Connect-Four-AI-with-Python",
   },
   {
-    name: "StarWars Ionic APP",
+    name: "StarWars APP",
     description:
-      "Se trata de una aplicación para consultar datos sobre el mundo de Star Wars, una especie de wikipedia.",
+      "Se trata de una aplicación para consultar datos sobre el mundo de Star Wars, una especie de Wikipedia.",
     tags: [
       {
         name: "ionic",
@@ -262,14 +223,14 @@ const idiomas = [
   {
     name: "English B1 Trinity",
     description:
-      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiendo comunicarme en diversas situaciones. ",
+      "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
     image: english,
     source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
   },
   {
     name: "Valenciano C1",
     description:
-      "Este idioma representa un nivel de competencia que he adquirido a través de dedicación y esfuerzo, permitiendo comunicarme en diversas situaciones.",
+      "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
     image: valenciano,
     source_code_link: "https://drive.google.com/file/d/1QExdkF5w5sFMJKeogAygoR8o63DvqmFM/view?usp=sharing",
   },

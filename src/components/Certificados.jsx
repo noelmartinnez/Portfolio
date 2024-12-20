@@ -17,7 +17,7 @@ const ProjectCard = ({
   isTablet,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -93,8 +93,8 @@ const Certificados = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          Aquí muestro una recopilación de mis logros y reconocimientos en diversos campos. 
-          Cada certificado representa mi dedicación a la mejora continua y mi compromiso con la adquisición de conocimientos.
+          Las certificaciones son clave en mi desarrollo profesional, reflejando mi compromiso con la mejora continua y el aprendizaje constante.
+          Cada una de ellas respalda mi dedicación a mantenerme actualizado y a perfeccionar mis habilidades en diversas áreas.
         </motion.p>
       </div>
 

@@ -17,7 +17,7 @@ const ProjectCard = ({
   isTablet,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -94,8 +94,7 @@ const Idiomas = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          En esta sección, presento mis habilidades lingüísticas.
-          Cada idioma que manejo representa un conjunto de habilidades y mi dedicación a aprender.
+          En esta sección, destaco mis habilidades lingüísticas, que reflejan mi capacidad para comunicarme en diversos contextos y mi compromiso con el aprendizaje continuo.
         </motion.p>
       </div>
 

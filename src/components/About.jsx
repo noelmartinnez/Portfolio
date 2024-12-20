@@ -10,7 +10,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      variants={fadeIn("right", "spring", index * 0.75, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
       <div
@@ -58,7 +58,7 @@ const About = () => {
             styles.sectionHeadText
           } select-none ${isTablet || isMobile ? "" : "text-left"}`}
         >
-          Construyendo{"{"}me{"}"}
+          Desarrollando{"{"}me{"}"}
         </h2>
       </motion.div>
 
@@ -70,8 +70,7 @@ const About = () => {
             : "text-left max-w-full md:max-w-3xl"
         }`}
       >
-        Soy un desarrollador de software con experiencia trabajando en el desarrollo de diferentes aplicaciones
-        utilizando principalmente Java, Spring Boot, Kubernetes, microservicios y diferentes bases de datos.
+        Soy un desarrollador de software con experiencia en Java, Spring Boot, Kubernetes, arquitecturas de microservicios y bases de datos como PostgreSQL y Oracle SQL Developer.
         <br />
         <br />
         ¡Siempre me esfuerzo para superar mis propias expectativas!

@@ -18,7 +18,7 @@ const ProjectCard = ({
   isTablet,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)}>
       <Tilt
         options={{
           max: 45,
@@ -108,10 +108,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          Los siguientes proyectos validan mis habilidades y experiencia, al igual que
-          reflejan mi capacidad para resolver problemas complejos y trabajar con diferentes tecnologías.
+          Los siguientes proyectos respaldan mis habilidades y experiencia, y demuestran mi capacidad para resolver problemas complejos mientras trabajo con diversas tecnologías.
           <br /><br />
-          Me encanta trabajar en proyectos que me desafíen y me permitan aprender algo nuevo.
+          Disfruto de trabajar en proyectos desafiantes que me den la oportunidad de aprender y crecer continuamente.
         </motion.p>
       </div>
 

@@ -33,6 +33,7 @@ import node from "./tech/node.png";
 import ionic from "./tech/ionic.png";
 import kubernetes from "./tech/kubernetes.png";
 import postgresql from "./tech/postgresql.png";
+import cpp from "./tech/cpp.png";
 
 import comunicamos from "./company/comunicamos.jpg";
 import altia from "./company/altia.png";
@@ -88,4 +89,5 @@ export {
   kubernetes,
   postgresql,
   cara,
+  cpp,
 };
