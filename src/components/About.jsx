@@ -73,7 +73,7 @@ const About = () => {
         Soy un desarrollador de software con experiencia en Java, Spring Boot, Kubernetes, arquitecturas de microservicios y bases de datos como PostgreSQL y Oracle SQL Developer.
         <br />
         <br />
-        ¡Siempre me esfuerzo para superar mis propias expectativas!
+        ¡Siempre me esfuerzo para superar mis propias expectativas! 
       </motion.p>
 
       <div
