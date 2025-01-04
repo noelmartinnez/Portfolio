@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import backend from "./backend.png";
+import java_developer from "./java-developer.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
@@ -55,7 +55,7 @@ export {
   php,
   sql,
   logo,
-  backend,
+  java_developer,
   creator,
   mobile,
   web,

@@ -1,6 +1,6 @@
 import {
   mobile,
-  backend,
+  java_developer,
   web,
   javascript,
   reactjs,
@@ -64,7 +64,7 @@ const services = [
   },
   {
     title: "Java Developer",
-    icon: backend,
+    icon: java_developer,
   },
   {
     title: "Spring Boot Developer",
