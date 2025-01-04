@@ -15,6 +15,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   isTablet,
+  isMobile,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)}>
@@ -49,7 +50,11 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5">
+        <div
+          className={`mt-5 ${
+            isMobile ? "flex flex-col items-center text-center" : ""
+          }`}
+        >
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
@@ -106,7 +111,7 @@ const Idiomas = () => {
         }`}
       >
         {idiomas.map((idioma, index) => (
-          <ProjectCard key={`idioma-${index}`} index={index} isTablet={isTablet} {...idioma} />
+          <ProjectCard key={`idioma-${index}`} index={index} isTablet={isTablet} isMobile={isMobile} {...idioma} />
         ))}
       </div>
     </>

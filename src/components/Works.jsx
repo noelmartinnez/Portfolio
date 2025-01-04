@@ -16,6 +16,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   isTablet,
+  isMobile,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)}>
@@ -50,12 +51,20 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5">
+        <div
+          className={`mt-5 ${
+            isMobile ? "flex flex-col items-center text-center" : ""
+          }`}
+        >
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div
+          className={`mt-4 flex flex-wrap gap-2 ${
+            isMobile ? "justify-center" : ""
+          }`}
+        >
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
@@ -122,7 +131,7 @@ const Works = () => {
         }`}
       >
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} isTablet={isTablet} {...project} />
+          <ProjectCard key={`project-${index}`} index={index} isTablet={isTablet} isMobile={isMobile} {...project} />
         ))}
       </div>
     </>
