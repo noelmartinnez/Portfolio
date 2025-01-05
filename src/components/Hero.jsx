@@ -8,7 +8,7 @@ const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTabletOrMobile, setIsTabletOrMobile] = useState(false);
   const [showImage, setShowImage] = useState(true);
-  const [clicked, setClicked] = useState(false);  // Estado para el clic
+  const [clicked, setClicked] = useState(false); // Estado para manejar el clic en la imagen
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 500px)");
@@ -31,7 +31,7 @@ const Hero = () => {
 
   // Detecta cambios en isTabletOrMobile y ajusta showImage
   useEffect(() => {
-    setShowImage(!isTabletOrMobile); // Oculta la imagen si está en tamaño mediano
+    setShowImage(!isTabletOrMobile);
   }, [isTabletOrMobile]);
 
   // Manejo de clics en la imagen

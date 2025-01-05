@@ -49,7 +49,6 @@ const App = () => {
       }
     };
 
-    // Ejecutar al montar la página
     updateButtonStyles();
 
     // Eventos de actualización

@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify"; 
-
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
@@ -101,7 +100,6 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        {/* Centrado de texto en pantallas pequeñas y medianas, alineado a la izquierda en pantallas grandes */}
         <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>Ponte en</p>
         <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>Contacto</h3>
 

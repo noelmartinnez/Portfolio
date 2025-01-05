@@ -20,7 +20,7 @@ const Spheres = (props) => {
         <PointMaterial
           transparent
           color='#d4a1f5' // Color púrpura claro
-          size={0.01} // Tamaño más grande que el anterior
+          size={0.01}
           sizeAttenuation={true}
           depthWrite={false}
         />
