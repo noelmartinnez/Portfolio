@@ -22,6 +22,7 @@ import {
   kubernetes,
   postgresql,
   cpp,
+  diploma_jenkins,
 } from "../assets";
 
 export const navLinks = [
@@ -216,6 +217,13 @@ const certificados = [
       "Demostrando habilidades para implementar estrategias fundamentales de programación en JavaScript, conforme a los estándares y prácticas recomendadas de la industria.",
     image: js,
     source_code_link: "https://drive.google.com/file/d/1ToVp3kXaBW32h7LiACkwTNXomqq5mf3E/view?usp=sharing",
+  },
+  {
+    name: "Jenkins",
+    description:
+      "Validando habilidades en la configuración y administración de Jenkins, herramienta de integración continua y entrega continua (CI/CD), para automatizar procesos de desarrollo y despliegue.",
+    image: diploma_jenkins,
+    source_code_link: "https://drive.google.com/file/d/1khS0DbdeQ73pGXkQ4x4m86L-P4C2nVIm/view?usp=sharing",
   },
 ];
 

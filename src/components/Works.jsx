@@ -102,8 +102,7 @@ const Works = () => {
     };
   }, []);
 
-  // Filtrar proyectos para tablet (solo mostrar las primeras dos tarjetas)
-  const filteredProjects = isTablet ? [projects[0], projects[2]] : projects;
+  const filteredProjects = projects;
 
   return (
     <>

@@ -10,6 +10,7 @@ import close from "./close.svg";
 
 import seo from "./seo.png";
 import js from "./js.png";
+import diploma_jenkins from "./diploma-jenkins.png"; 
 
 import drive from "./drive.png";
 import github from "./github.png";
@@ -66,4 +67,5 @@ export {
   postgresql,
   cara,
   cpp,
+  diploma_jenkins,
 };
