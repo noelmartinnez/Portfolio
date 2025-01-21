@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-white rounded-none shadow m-0 dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center md:flex-row md:justify-between">
         <span className="text-sm text-gray-500 text-center dark:text-gray-400 select-none">
-          © 2024 Noel Martínez. All Rights Reserved.
+          © 2025 Noel Martínez. All Rights Reserved.
         </span>
         <div className="flex mt-4 space-x-6 justify-center md:mt-0">
           <a
