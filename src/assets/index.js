@@ -36,6 +36,7 @@ import cpp from "./tech/cpp.png";
 
 import comunicamos from "./company/comunicamos.jpg";
 import altia from "./company/altia.png";
+import fundamentia from "./company/fundamentia.jpeg";
 
 export {
   python,
@@ -68,4 +69,5 @@ export {
   cara,
   cpp,
   diploma_jenkins,
+  fundamentia,
 };

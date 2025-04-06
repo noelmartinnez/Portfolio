@@ -23,6 +23,7 @@ import {
   postgresql,
   cpp,
   diploma_jenkins,
+  fundamentia,
 } from "../assets";
 
 export const navLinks = [
@@ -122,11 +123,23 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Programador Junior",
+    company_name: "Fundamentia Business Consulting, S.L.",
+    icon: fundamentia,
+    iconBg: "#383E56",
+    date: "Marzo 2025 - Actualidad",
+    points: [
+      "Desarrollo y mantenimiento de módulos de extracción de datos con Java 17 en proyectos sensibles.",
+      "Uso de Python, regex y SonarQube para mejorar la calidad del código.",
+      "Cumplimiento de estrictos protocolos de seguridad y confidencialidad.",
+    ],
+  },
+  {
     title: "Técnico de software. Nivel 1",
-    company_name: "Altia Consultores S.A.",
+    company_name: "Altia Consultores, S.A.",
     icon: altia,
     iconBg: "#383E56",
-    date: "Septiembre 2024 - Actualidad",
+    date: "Septiembre 2024 - Marzo 2025",
     points: [
       "Gestión y desarrollo de arquitectura de microservicios basada en Java / Spring Boot.",
       "Despliegue de aplicaciones en contenedores Docker sobre Kubernetes.",
