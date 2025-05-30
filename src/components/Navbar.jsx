@@ -108,7 +108,7 @@ const NavBar = () => {
                     className="select-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 text-center mr-3 md:mr-0 dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     onClick={() =>
                       abrirEnlace(
-                        "https://drive.google.com/file/d/1BKFovLxmy1gElkh9gG4WySx0WftrrM_p/view?usp=drive_link"
+                        "https://drive.google.com/file/d/1lByCyQLnrKPHJ9BA255iMeycKDinUA7N/view?usp=drive_link"
                       )
                     }
                   >
@@ -162,7 +162,7 @@ const NavBar = () => {
                 className="select-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 text-center mr-3 md:mr-0 dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 onClick={() =>
                   abrirEnlace(
-                    "https://drive.google.com/file/d/1BKFovLxmy1gElkh9gG4WySx0WftrrM_p/view?usp=drive_link"
+                    "https://drive.google.com/file/d/1lByCyQLnrKPHJ9BA255iMeycKDinUA7N/view?usp=drive_link"
                   )
                 }
               >
