@@ -1,8 +1,6 @@
-import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -33,9 +31,6 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   const isTablet = window.matchMedia("(min-width: 500px) and (max-width: 1100px)").matches;
   const isMobile = window.matchMedia("(max-width: 500px)").matches;
-
-  // Filtrar servicios para tablet (máximo 2 tarjetas)
-  const filteredServices = isTablet ? services.slice(0, 2) : services;
 
   return (
     <>
@@ -69,24 +64,16 @@ const About = () => {
             : "text-left max-w-full md:max-w-3xl"
         }`}
       >
-        Soy un desarrollador de software con experiencia en Java, Spring Boot, Kubernetes, arquitecturas de microservicios y bases de datos como PostgreSQL y Oracle SQL Developer.
+        Soy un desarrollador backend con sólida experiencia en Java, Spring Boot y arquitecturas basadas en microservicios.
+        Tengo un perfil técnico orientado a la estabilidad, la eficiencia y la calidad del software, con conocimientos avanzados en despliegue de aplicaciones sobre infraestructuras Docker y Kubernetes, así como en la aplicación de prácticas DevOps e integración continua.
         <br />
         <br />
-        ¡Siempre me esfuerzo para superar mis propias expectativas! 
+        Mi enfoque de trabajo se basa en el código limpio, la automatización de procesos y la mejora continua.
+        Me implico en cada fase del desarrollo, aportando soluciones escalables, seguras y alineadas con los objetivos técnicos y funcionales del proyecto.
+        <br />
+        <br />
+        ¡Trabajo con responsabilidad, criterio técnico y una actitud siempre proactiva!
       </motion.p>
-
-      <div
-        className={`flex flex-wrap justify-center select-none ${
-          isMobile ? "mt-14" : "mt-20"
-        }`}
-        style={{
-          gap: isMobile ? "30px" : isTablet ? "100px" : "130px",
-        }}
-      >
-        {filteredServices.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
-      </div>
     </>
   );
 };

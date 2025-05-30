@@ -1,15 +1,9 @@
 import {
-  mobile,
-  java_developer,
-  web,
   javascript,
   reactjs,
   python,
   java,
-  php,
   carrent,
-  comunicamos,
-  seo,
   js,
   docker,
   spring,
@@ -20,7 +14,6 @@ import {
   valenciano,
   english,
   kubernetes,
-  postgresql,
   cpp,
   diploma_jenkins,
   fundamentia,
@@ -59,21 +52,6 @@ export const navLinks = [
   },
 ];
 
-const services = [
-  {
-    title: "Backend Developer",
-    icon: web,
-  },
-  {
-    title: "Java Developer",
-    icon: java_developer,
-  },
-  {
-    title: "Spring Boot Developer",
-    icon: mobile,
-  },
-];
-
 const technologies = [
   {
     name: "Java",
@@ -84,58 +62,50 @@ const technologies = [
     icon: spring,
   },
   {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
     name: "Docker",
     icon: docker,
-  },
-  {
-    name: "PostgreSQL",
-    icon: postgresql,
   },
   {
     name: "Kubernetes",
     icon: kubernetes,
   },
   {
-    name: "React",
-    icon: reactjs,
-  },
-  {
-    name: "Python",
-    icon: python,
+    name: "JavaScript",
+    icon: javascript,
   },
   {
     name: "Node.js",
     icon: node,
   },
   {
-    name: "C++",
-    icon: cpp,
+    name: "Python",
+    icon: python,
   },
   {
-    name: "PHP",
-    icon: php,
+    name: "React",
+    icon: reactjs,
+  },
+  {
+    name: "C++",
+    icon: cpp,
   },
 ];
 
 const experiences = [
   {
-    title: "Programador Junior",
+    title: "Software Developer",
     company_name: "Fundamentia Business Consulting, S.L.",
     icon: fundamentia,
     iconBg: "#383E56",
     date: "Marzo 2025 - Actualidad",
     points: [
       "Desarrollo y mantenimiento de módulos de extracción de datos con Java 17 en proyectos sensibles.",
-      "Uso de Python, regex y SonarQube para mejorar la calidad del código.",
+      "Mejora del código con Python, expresiones regulares y SonarQube.",
       "Cumplimiento de estrictos protocolos de seguridad y confidencialidad.",
     ],
   },
   {
-    title: "Técnico de software. Nivel 1",
+    title: "Backend & Infrastructure Engineer",
     company_name: "Altia Consultores, S.A.",
     icon: altia,
     iconBg: "#383E56",
@@ -145,19 +115,6 @@ const experiences = [
       "Despliegue de aplicaciones en contenedores Docker sobre Kubernetes.",
       "Gestión de procesos de negocio (BMP) utilizando Camunda.",
       "Gestión de procesos de CI/CD con Jenkins, Harbor y Argo.",
-    ],
-  },
-  {
-    title: "Gestor de SEO y Desarrollador Web con Elementor",
-    company_name: "Comunicamos Experience",
-    icon: comunicamos,
-    iconBg: "#383E56",
-    date: "Julio 2023 - Agosto 2023",
-    points: [
-      "Diseño y maquetación web utilizando Elementor.",
-      "Optimización web y Diseño responsive.",
-      "Investigación de palabras clave relevantes.",
-      "Optimización para una mejor posición en los motores de búsqueda.",
     ],
   },
 ];
@@ -218,13 +175,6 @@ const projects = [
 
 const certificados = [
   {
-    name: "Optimización SEO Básica",
-    description:
-      "Cumpliendo con las competencias para ejecutar estrategias básicas/intermedias de optimización SEO.",
-    image: seo,
-    source_code_link: "https://drive.google.com/file/d/1CrLxogiIgwwyfJIJra0Ox_7yqM7Jorux/view?usp=sharing",
-  },
-  {
     name: "Programador JavaScript",
     description:
       "Demostrando habilidades para implementar estrategias fundamentales de programación en JavaScript, conforme a los estándares y prácticas recomendadas de la industria.",
@@ -257,4 +207,4 @@ const idiomas = [
   },
 ];
 
-export { services, technologies, experiences, projects, certificados, idiomas };
+export { technologies, experiences, projects, certificados, idiomas };
