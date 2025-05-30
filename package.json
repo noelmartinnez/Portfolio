@@ -15,17 +15,13 @@
     "@react-three/fiber": "^8.12.2",
     "framer-motion": "^10.12.4",
     "maath": "^0.5.3",
-    "portfolio": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
     "react-tilt": "^1.0.2",
     "react-toastify": "^10.0.6",
-    "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.151.3",
-    "tsparticles": "^3.6.0"
+    "three": "^0.151.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
