@@ -26,6 +26,7 @@ import spring from "./tech/spring.png";
 import node from "./tech/node.png";
 import kubernetes from "./tech/kubernetes.png";
 import cpp from "./tech/cpp.png";
+import aws from "./tech/aws.png";
 
 import altia from "./company/altia.png";
 import fundamentia from "./company/fundamentia.jpeg";
@@ -55,4 +56,5 @@ export {
   cpp,
   diploma_jenkins,
   fundamentia,
+  aws,
 };

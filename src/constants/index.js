@@ -17,6 +17,7 @@ import {
   cpp,
   diploma_jenkins,
   fundamentia,
+  aws,
 } from "../assets";
 
 export const navLinks = [
@@ -60,6 +61,10 @@ const technologies = [
   {
     name: "Spring Boot",
     icon: spring,
+  },
+  {
+    name: "AWS",
+    icon: aws,
   },
   {
     name: "Docker",

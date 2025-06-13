@@ -72,6 +72,9 @@ const About = () => {
         Me implico en cada fase del desarrollo, aportando soluciones escalables, seguras y alineadas con los objetivos técnicos y funcionales del proyecto.
         <br />
         <br />
+        Además, estoy profundizando en entornos Cloud, explorando AWS a través de servicios como EC2, S3, RDS y Lambda, y aprendiendo a automatizar infraestructuras con Terraform y CloudFormation.
+        <br />
+        <br />
         ¡Trabajo con responsabilidad, criterio técnico y una actitud siempre proactiva!
       </motion.p>
     </>
