@@ -64,18 +64,22 @@ const About = () => {
             : "text-left max-w-full md:max-w-3xl"
         }`}
       >
-        Soy un desarrollador backend con sólida experiencia en Java, Spring Boot y arquitecturas basadas en microservicios.
-        Tengo un perfil técnico orientado a la estabilidad, la eficiencia y la calidad del software, con conocimientos avanzados en despliegue de aplicaciones sobre infraestructuras Docker y Kubernetes, así como en la aplicación de prácticas DevOps e integración continua.
+        Soy Ingeniero de Software especializado en arquitecturas de microservicios distribuidos y la integración de sistemas de misión crítica. Convierto requerimientos complejos en soluciones robustas, seguras y escalables.
         <br />
         <br />
-        Mi enfoque de trabajo se basa en el código limpio, la automatización de procesos y la mejora continua.
-        Me implico en cada fase del desarrollo, aportando soluciones escalables, seguras y alineadas con los objetivos técnicos y funcionales del proyecto.
+        En Arquitectura y Backend, tengo experiencia sólida con Java, Spring Boot, contenedores Docker y Kubernetes. Diseño e implemento soluciones resilientes, incluyendo sistemas de mensajería con Apache Kafka y modelado de procesos con Camunda (BPM).
         <br />
         <br />
-        Además, estoy profundizando en entornos Cloud, explorando AWS a través de servicios como EC2, S3, RDS y Lambda, y aprendiendo a automatizar infraestructuras con Terraform y CloudFormation.
+        En Automatización y DevOps, desarrollo automatizaciones con Python y JavaScript (Node.js), y construyo flujos CI/CD con Jenkins, Harbor y Argo CD para una entrega continua de valor.
         <br />
         <br />
-        ¡Trabajo con responsabilidad, criterio técnico y una actitud siempre proactiva!
+        En Infraestructura y Datos, gestiono entornos on-premise y en la nube (AWS), y trabajo con bases de datos relacionales como PostgreSQL, Oracle Database y MySQL.
+        <br />
+        <br />
+        Además, destaco por mi resolución de problemas complejos (L3): identifico la causa raíz en sistemas distribuidos y garantizo la estabilidad operativa.
+        <br />
+        <br />
+        Siempre abierto a conectar y explorar nuevos retos tecnológicos. ¡Hablemos!
       </motion.p>
     </>
   );

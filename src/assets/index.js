@@ -18,15 +18,17 @@ import about from "./about.jpg";
 import coche from "./coche.jpg";
 
 import javascript from "./tech/javascript.png";
-import reactjs from "./tech/reactjs.png";
 import python from "./tech/python.png";
 import java from "./tech/java.png";
 import docker from "./tech/docker.png";
 import spring from "./tech/spring.png";
 import node from "./tech/node.png";
 import kubernetes from "./tech/kubernetes.png";
-import cpp from "./tech/cpp.png";
 import aws from "./tech/aws.png";
+import argocd from "./tech/argocd.png";
+import camunda from "./tech/camunda.png";
+import jenkins from "./tech/jenkins.png";
+import kafka from "./tech/kafka.png";
 
 import altia from "./company/altia.png";
 import fundamentia from "./company/fundamentia.jpeg";
@@ -39,7 +41,6 @@ export {
   menu,
   close,
   javascript,
-  reactjs,
   carrent,
   drive,
   js,
@@ -53,8 +54,11 @@ export {
   english,
   kubernetes,
   cara,
-  cpp,
   diploma_jenkins,
   fundamentia,
   aws,
+  argocd,
+  camunda,
+  jenkins,
+  kafka,
 };

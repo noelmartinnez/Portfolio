@@ -1,6 +1,5 @@
 import {
   javascript,
-  reactjs,
   python,
   java,
   carrent,
@@ -14,10 +13,13 @@ import {
   valenciano,
   english,
   kubernetes,
-  cpp,
   diploma_jenkins,
   fundamentia,
   aws,
+  argocd,
+  camunda,
+  jenkins,
+  kafka,
 } from "../assets";
 
 export const navLinks = [
@@ -85,14 +87,24 @@ const technologies = [
   {
     name: "Python",
     icon: python,
+    
   },
   {
-    name: "React",
-    icon: reactjs,
+    name: "Apache Kafka",
+    icon: kafka,
+    
   },
   {
-    name: "C++",
-    icon: cpp,
+    name: "Camunda",
+    icon: camunda,
+  },
+    {
+    name: "Jenkins",
+    icon: jenkins,
+  },
+    {
+    name: "Argo CD",
+    icon: argocd,
   },
 ];
 
@@ -104,9 +116,13 @@ const experiences = [
     iconBg: "#383E56",
     date: "Marzo 2025 - Actualidad",
     points: [
-      "Desarrollo y mantenimiento de módulos de extracción de datos con Java 17 en proyectos sensibles.",
-      "Mejora del código con Python, expresiones regulares y SonarQube.",
-      "Cumplimiento de estrictos protocolos de seguridad y confidencialidad.",
+      "Migración integral de un sistema de Java (v8) a Java (v17).",
+      "Diseño e implementación de microservicios con Java (v17) y Spring Boot.", 
+      "Integración de Apache Kafka como sistema de mensajería para flujos internos.",
+      "Desarrollo de un sistema de automatización con JavaScript usando Puppeteer.",
+      "Contenerización con Docker para entornos de desarrollo y despliegue.",
+      "Ejecución de pruebas QA, validando funcionalidades clave.",
+      "Uso de RegEx para extracción de información estructurada.",
     ],
   },
   {
@@ -116,10 +132,11 @@ const experiences = [
     iconBg: "#383E56",
     date: "Septiembre 2024 - Marzo 2025",
     points: [
-      "Gestión y desarrollo de arquitectura de microservicios basada en Java / Spring Boot.",
-      "Despliegue de aplicaciones en contenedores Docker sobre Kubernetes.",
-      "Gestión de procesos de negocio (BMP) utilizando Camunda.",
-      "Gestión de procesos de CI/CD con Jenkins, Harbor y Argo.",
+      "Diseño y desarrollo de arquitectura de microservicios en Java (v17) y Spring Boot.",
+      "Despliegue y orquestación de contenedores Docker en clústeres de Kubernetes.",
+      "Modelado e integración de procesos de negocio (BPM) con Camunda.",
+      "Automatización de pipelines CI/CD con Jenkins, Harbor y Argo CD.",
+      "Implementación de pruebas unitarias con Mockito.",
     ],
   },
 ];
@@ -128,7 +145,7 @@ const projects = [
   {
     name: "Connect Four AI",
     description:
-      "He desarrollado un algoritmo de búsqueda para el juego Conecta-4. El algoritmo de busqueda implementado es el algoritmo MinMax junto a la poda de decisiones Alpha-Beta.",
+      "He desarrollado un algoritmo de inteligencia artificial para jugar a Conecta 4, utilizando técnicas clásicas de búsqueda adversarial. El motor de decisión se basa en el algoritmo MinMax optimizado mediante poda Alpha-Beta.",
     tags: [
       {
         name: "python",
@@ -141,7 +158,7 @@ const projects = [
   {
     name: "StarWars APP",
     description:
-      "Se trata de una aplicación para consultar datos sobre el mundo de Star Wars, una especie de Wikipedia.",
+      "Aplicación desarrollada con Ionic Framework y AngularJS que actúa como una enciclopedia interactiva del universo Star Wars. La app consume una API REST externa para obtener datos sobre personajes, planetas, naves y películas, que se presentan en una interfaz móvil responsive.",
     tags: [
       {
         name: "ionic",
@@ -158,15 +175,15 @@ const projects = [
   {
     name: "AutoBnB",
     description:
-      "Aplicación multiplataforma de Java y Spring Boot. La aplicación permite a los usuarios alquilar vehículos. Por otro lado, al igual que en Airbnb, donde los usuarios ponen en alquiler sus propios hogares, aquí los propietarios de los vehículos pueden poner sus vehículos en alquiler.",
+      "Aplicación web multiplataforma inspirada en el modelo de negocio de Airbnb, pero centrada en vehículos. La plataforma permite tanto a usuarios como a propietarios gestionar de forma sencilla el proceso de alquiler de coches, motos u otros vehículos, de manera flexible y autogestionada.",
     tags: [
-      {
-        name: "springboot",
-        color: "green-text-gradient",
-      },
       {
         name: "java",
         color: "blue-text-gradient",
+      },
+      {
+        name: "springboot",
+        color: "green-text-gradient",
       },
       {
         name: "javascript",
@@ -180,7 +197,7 @@ const projects = [
 
 const certificados = [
   {
-    name: "Programador JavaScript",
+    name: "JavaScript",
     description:
       "Demostrando habilidades para implementar estrategias fundamentales de programación en JavaScript, conforme a los estándares y prácticas recomendadas de la industria.",
     image: js,
@@ -197,14 +214,14 @@ const certificados = [
 
 const idiomas = [
   {
-    name: "English B1 Trinity",
+    name: "English - B1 (Trinity)",
     description:
       "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
     image: english,
     source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
   },
   {
-    name: "Valenciano C1",
+    name: "Valenciano - C1",
     description:
       "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
     image: valenciano,
