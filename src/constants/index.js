@@ -119,10 +119,9 @@ const experiences = [
       "Migración integral de un sistema de Java (v8) a Java (v17).",
       "Diseño e implementación de microservicios con Java (v17) y Spring Boot.", 
       "Integración de Apache Kafka como sistema de mensajería para flujos internos.",
-      "Desarrollo de un sistema de automatización con JavaScript usando Puppeteer.",
       "Contenerización con Docker para entornos de desarrollo y despliegue.",
-      "Ejecución de pruebas QA, validando funcionalidades clave.",
       "Uso de RegEx para extracción de información estructurada.",
+      "Desarrollo de un robot de software (RPA) con JavaScript (Node.js) + Selenium/Puppeteer.",
     ],
   },
   {
