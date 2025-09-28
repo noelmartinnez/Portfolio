@@ -116,12 +116,12 @@ const experiences = [
     iconBg: "#383E56",
     date: "Marzo 2025 - Actualidad",
     points: [
-      "Migración integral de un sistema de Java (v8) a Java (v17).",
       "Diseño e implementación de microservicios con Java (v17) y Spring Boot.", 
+      "Desarrollo de un robot de software (RPA) con JavaScript (Node.js) + Selenium/Puppeteer.",
       "Integración de Apache Kafka como sistema de mensajería para flujos internos.",
       "Contenerización con Docker para entornos de desarrollo y despliegue.",
       "Uso de RegEx para extracción de información estructurada.",
-      "Desarrollo de un robot de software (RPA) con JavaScript (Node.js) + Selenium/Puppeteer.",
+      "Automatización de tareas específicas mediante Python.",
     ],
   },
   {
