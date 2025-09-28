@@ -67,6 +67,9 @@ const About = () => {
         Soy <strong>Ingeniero de Software</strong> especializado en arquitecturas de microservicios distribuidos y la integración de sistemas de misión crítica. Convierto requerimientos complejos en soluciones robustas, seguras y escalables, incorporando automatización (RPA) para aporta valor al negocio.
         <br />
         <br />
+        Experiencia en proyectos estratégicos para el <strong>sector bancario</strong> (BBVA, Banco Santander, OPPLUS) y <strong>estatal</strong> (ANCERT).
+        <br />
+        <br />
         En <strong>Arquitectura</strong> y <strong>Backend</strong>, tengo experiencia sólida con <strong>Java</strong>, <strong>Spring Boot</strong>, contenedores <strong>Docker</strong> y <strong>Kubernetes</strong>. Diseño e implemento soluciones resilientes, incluyendo sistemas de mensajería con <strong>Apache Kafka</strong> y modelado de procesos con <strong>Camunda</strong> (BPM).
         <br />
         <br />
