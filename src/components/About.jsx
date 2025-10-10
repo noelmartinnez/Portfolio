@@ -64,7 +64,7 @@ const About = () => {
             : "text-left max-w-full md:max-w-3xl"
         }`}
       >
-        Soy <strong>Ingeniero de Software</strong> especializado en arquitecturas de microservicios distribuidos y la integración de sistemas de misión crítica. Convierto requerimientos complejos en soluciones robustas, seguras y escalables, incorporando automatización (RPA) para aporta valor al negocio.
+        <strong>Ingeniero de Software</strong> especializado en <strong>QA Automation</strong> y desarrollo <strong>backend</strong>, con experiencia en la creación de arquitecturas de microservicios distribuidos y la automatización de pruebas y flujos web en entornos críticos. Transformo requerimientos complejos en soluciones robustas, seguras y escalables, aplicando prácticas de calidad, testing automatizado y metodologías ágiles (<strong>SCRUM</strong>).
         <br />
         <br />
         Experiencia en proyectos estratégicos para el <strong>sector bancario</strong> (BBVA, Banco Santander, OPPLUS) y <strong>estatal</strong> (ANCERT).
@@ -73,16 +73,16 @@ const About = () => {
         En <strong>Arquitectura</strong> y <strong>Backend</strong>, tengo experiencia sólida con <strong>Java</strong>, <strong>Spring Boot</strong>, contenedores <strong>Docker</strong> y <strong>Kubernetes</strong>. Diseño e implemento soluciones resilientes, incluyendo sistemas de mensajería con <strong>Apache Kafka</strong> y modelado de procesos con <strong>Camunda</strong> (BPM).
         <br />
         <br />
-        En <strong>Automatización</strong>, desarrollo y diseño automatizaciones con <strong>Python</strong> y <strong>JavaScript</strong> (<strong>Node.js</strong>), incluyendo robots (<strong>RPA</strong>) con <strong>Selenium</strong>/<strong>Puppeteer</strong> para cumplimentar formularios web a partir de ficheros estructurados, con validaciones, trazabilidad (logs/capturas) y reintentos controlados.
+        En <strong>Automatización</strong> y <strong>Testing</strong>, desarrollo y diseño pruebas automatizadas web con <strong>JavaScript</strong> (<strong>Node.js</strong>), <strong>Selenium</strong>, <strong>Puppeteer</strong>, <strong>Allure Report</strong> y <strong>Mocha</strong>, validando datos estructurados y flujos completos en plataformas oficiales.
         <br />
         <br />
         En <strong>DevOps</strong>, construyo flujos <strong>CI/CD</strong> con <strong>Jenkins</strong>, <strong>Harbor</strong> y <strong>Argo CD</strong> para una entrega continua de valor.
         <br />
         <br />
-        En <strong>Infraestructura</strong> y <strong>Datos</strong>, gestiono entornos on-premise y en la nube (<strong>AWS</strong>), y trabajo con bases de datos relacionales como <strong>PostgreSQL</strong>, <strong>Oracle Database</strong> y <strong>MySQL</strong>.
+        En <strong>Infraestructura</strong> y <strong>Datos</strong>, gestiono entornos on-premise y cloud (<strong>AWS</strong>), y trabajo con bases de datos relacionales como <strong>PostgreSQL</strong>, <strong>Oracle Database</strong> y <strong>MySQL</strong>.
         <br />
         <br />
-        Además, destaco por mi resolución de problemas complejos (<strong>L3</strong>): identifico la causa raíz en sistemas distribuidos y garantizo la estabilidad operativa.
+        Además, destaco por mi enfoque analítico, mi capacidad para resolver incidencias complejas (<strong>L3</strong>) y mi compromiso con la estabilidad, fiabilidad y calidad del software.
         <br />
         <br />
         Siempre abierto a conectar y explorar nuevos retos tecnológicos. ¡Hablemos!

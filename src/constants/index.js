@@ -110,18 +110,18 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Software Developer",
+    title: "Software Engineer",
     company_name: "Fundamentia Business Consulting, S.L.",
     icon: fundamentia,
     iconBg: "#383E56",
     date: "Marzo 2025 - Actualidad",
     points: [
       "Diseño e implementación de microservicios con Java (v17) y Spring Boot.", 
-      "Desarrollo de un robot de software (RPA) con JavaScript (Node.js) + Selenium/Puppeteer.",
+      "Automatización de pruebas y flujos web con Selenium y Puppeteer (Node.js).",
+      "Validación de escenarios (+1000 pruebas) con reporting (Allure Report + Mocha).",
       "Integración de Apache Kafka como sistema de mensajería para flujos internos.",
       "Contenerización con Docker para entornos de desarrollo y despliegue.",
-      "Uso de RegEx para extracción de información estructurada.",
-      "Automatización de tareas específicas mediante Python.",
+      "Uso de expresiones regulares (RegEx) para la extracción de datos estructurados.",
     ],
   },
   {
@@ -135,7 +135,7 @@ const experiences = [
       "Despliegue y orquestación de contenedores Docker en clústeres de Kubernetes.",
       "Modelado e integración de procesos de negocio (BPM) con Camunda.",
       "Automatización de pipelines CI/CD con Jenkins, Harbor y Argo CD.",
-      "Implementación de pruebas unitarias con Mockito.",
+      "Implementación de pruebas unitarias con Mockito y JUnit",
     ],
   },
 ];
