@@ -65,10 +65,6 @@ const technologies = [
     icon: spring,
   },
   {
-    name: "AWS",
-    icon: aws,
-  },
-  {
     name: "Docker",
     icon: docker,
   },
@@ -81,30 +77,12 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "Node.js",
-    icon: node,
-  },
-  {
-    name: "Python",
-    icon: python,
-    
-  },
-  {
-    name: "Apache Kafka",
-    icon: kafka,
-    
-  },
-  {
     name: "Camunda",
     icon: camunda,
   },
-    {
-    name: "Jenkins",
-    icon: jenkins,
-  },
-    {
-    name: "Argo CD",
-    icon: argocd,
+  {
+    name: "AWS",
+    icon: aws,
   },
 ];
 
@@ -116,12 +94,16 @@ const experiences = [
     iconBg: "#383E56",
     date: "Marzo 2025 - Actualidad",
     points: [
-      "Diseño e implementación de microservicios con Java (v17) y Spring Boot.", 
-      "Automatización de pruebas y flujos web con Selenium y Puppeteer (Node.js).",
-      "Validación de escenarios (+1000 pruebas) con reporting (Allure Report + Mocha).",
-      "Integración de Apache Kafka como sistema de mensajería para flujos internos.",
-      "Contenerización con Docker para entornos de desarrollo y despliegue.",
-      "Uso de expresiones regulares (RegEx) para la extracción de datos estructurados.",
+      "Diseño e implementación de microservicios con Java (v17) y Spring Boot para entornos bancarios.",
+      "Migración de proyecto Java de versión 8 a 17, optimizando compatibilidad y dependencias.",
+      "Procesamiento, lectura y transformación de datos en formato XML y JSON.",
+      "Automatización de pruebas funcionales y de regresión con Selenium y Puppeteer (Node.js).",
+      "Validación de escenarios (+1000 pruebas) con Allure Report y Mocha, generando reportes automáticos.",
+      "Integración de Apache Kafka como sistema de mensajería para flujos internos y externos.",
+      "Uso de expresiones regulares (RegEx) para la extracción y normalización de datos estructurados.",
+      "Transferencia de archivos mediante FTP en Java y herramientas complementarias como FileZilla.",
+      "Utilización de MySQL para el almacenamiento y recuperación eficiente de datos dentro del sistema.",
+      "Contenerización con Docker para entornos de desarrollo y despliegue."
     ],
   },
   {
@@ -131,11 +113,15 @@ const experiences = [
     iconBg: "#383E56",
     date: "Septiembre 2024 - Marzo 2025",
     points: [
-      "Diseño y desarrollo de arquitectura de microservicios en Java (v17) y Spring Boot.",
+      "Diseño y desarrollo de microservicios en Java (v17), Spring Boot (v2.2.7) y Spring Cloud.",
+      "Implementación de servicios REST y comunicación entre microservicios con Feign Client.",
+      "Creación de APIs RESTful, incluyendo controladores, servicios y DTOs.",
+      "Uso de Postman para el diseño, prueba y validación de endpoints REST.",
       "Despliegue y orquestación de contenedores Docker en clústeres de Kubernetes.",
       "Modelado e integración de procesos de negocio (BPM) con Camunda.",
-      "Automatización de pipelines CI/CD con Jenkins, Harbor y Argo CD.",
-      "Implementación de pruebas unitarias con Mockito y JUnit",
+      "Creación y mantenimiento de pipelines de integración continua (CI/CD) con Jenkins, Harbor y Argo CD.", 
+      "Interacción con bases de datos PostgreSQL y Oracle Database.",
+      "Desarrollo de pruebas unitarias y de integración con Mockito y JUnit."
     ],
   },
 ];
