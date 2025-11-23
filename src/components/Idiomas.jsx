@@ -89,8 +89,8 @@ const Idiomas = () => {
     <>
       {/* Centrado de texto para móvil y tablet */}
       <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
-        <p className={`${styles.sectionSubText} select-none`}>Aprendizaje</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>Idiomas</h2>
+        <p className={`${styles.sectionSubText} select-none`}>Learning</p>
+        <h2 className={`${styles.sectionHeadText} select-none`}>Languages</h2>
       </motion.div>
 
       <div className={`w-full flex select-none ${isMobile || isTablet ? 'flex-col items-center justify-center text-center' : ''}`}>
@@ -98,7 +98,7 @@ const Idiomas = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          En esta sección, destaco mis habilidades lingüísticas, que reflejan mi capacidad para comunicarme en diversos contextos y mi compromiso con el aprendizaje continuo.
+          In this section, I highlight my language skills, which reflect my ability to communicate in various contexts and my commitment to continuous learning.
         </motion.p>
       </div>
 
@@ -117,4 +117,4 @@ const Idiomas = () => {
   );
 };
 
-export default SectionWrapper(Idiomas, "idiomas");
+export default SectionWrapper(Idiomas, "languages");

@@ -25,33 +25,33 @@ import {
 export const navLinks = [
   {
     id: "about",
-    title: "Acerca de mí",
+    title: "About me",
   },
   {
-    id: "experiencia",
-    title: "Experiencia",
+    id: "experience",
+    title: "Experience",
   },
   {
-    id: "titulos",
-    title: "Títulos",
+    id: "titles",
+    title: "Titles",
     dropdown: [
       {
-        id: "certificados",
-        title: "· Certificados",
+        id: "certificates",
+        title: "· Certificates",
       },
       {
-        id: "idiomas",
-        title: "· Idiomas",
+        id: "languages",
+        title: "· Languages",
       },
     ],
   },
   {
-    id: "proyectos",
-    title: "Proyectos",
+    id: "proyects",
+    title: "Proyects",
   },
   {
-    id: "contacto",
-    title: "Contacto",
+    id: "contact",
+    title: "Contact",
   },
 ];
 
@@ -81,8 +81,8 @@ const technologies = [
     icon: camunda,
   },
   {
-    name: "AWS",
-    icon: aws,
+    name: "Python",
+    icon: python,
   },
 ];
 
@@ -92,18 +92,18 @@ const experiences = [
     company_name: "Fundamentia Business Consulting, S.L.",
     icon: fundamentia,
     iconBg: "#383E56",
-    date: "Marzo 2025 - Actualidad",
+    date: "March 2025 - Present",
     points: [
-      "Diseño e implementación de microservicios con Java (v17) y Spring Boot para entornos bancarios.",
-      "Migración de proyecto Java de versión 8 a 17, optimizando compatibilidad y dependencias.",
-      "Procesamiento, lectura y transformación de datos en formato XML y JSON.",
-      "Automatización de pruebas funcionales y de regresión con Selenium y Puppeteer (Node.js).",
-      "Validación de escenarios (+1000 pruebas) con Allure Report y Mocha, generando reportes automáticos.",
-      "Integración de Apache Kafka como sistema de mensajería para flujos internos y externos.",
-      "Uso de expresiones regulares (RegEx) para la extracción y normalización de datos estructurados.",
-      "Transferencia de archivos mediante FTP en Java y herramientas complementarias como FileZilla.",
-      "Utilización de MySQL para el almacenamiento y recuperación eficiente de datos dentro del sistema.",
-      "Contenerización con Docker para entornos de desarrollo y despliegue."
+      "Design and implementation of Java and Spring Boot microservices.",
+      "Complete migration of a Java project from version 8 to 17.",
+      "Processing, analysis, and transformation of XML/JSON data.",
+      "Integration of Apache Kafka and optimization of MySQL persistence.",
+      "Application of RegEx for structured data extraction, cleaning, and normalization.",
+      "Fine-tuning NER models using Python, PyTorch, and HuggingFace.",
+      "Corpus preparation and automated data extraction using Label Studio.",
+      "Experiment tracking, model versioning, and metric analysis with MLflow.",
+      "Data versioning and lineage management using lakeFS.",
+      "Development of web automation and scraping tools with JavaScript, Selenium, and Puppeteer."
     ],
   },
   {
@@ -111,17 +111,16 @@ const experiences = [
     company_name: "Altia Consultores, S.A.",
     icon: altia,
     iconBg: "#383E56",
-    date: "Septiembre 2024 - Marzo 2025",
+    date: "September 2024 - March 2025",
     points: [
-      "Diseño y desarrollo de microservicios en Java (v17), Spring Boot (v2.2.7) y Spring Cloud.",
-      "Implementación de servicios REST y comunicación entre microservicios con Feign Client.",
-      "Creación de APIs RESTful, incluyendo controladores, servicios y DTOs.",
-      "Uso de Postman para el diseño, prueba y validación de endpoints REST.",
-      "Despliegue y orquestación de contenedores Docker en clústeres de Kubernetes.",
-      "Modelado e integración de procesos de negocio (BPM) con Camunda.",
-      "Creación y mantenimiento de pipelines de integración continua (CI/CD) con Jenkins, Harbor y Argo CD.", 
-      "Interacción con bases de datos PostgreSQL y Oracle Database.",
-      "Desarrollo de pruebas unitarias y de integración con Mockito y JUnit."
+      "Development of microservice architectures using Java, Spring Boot, and Spring Cloud.",
+      "Creation of RESTful APIs, including controllers, services, and DTOs.",
+      "Integration of relational databases (PostgreSQL and Oracle Database).",
+      "Use of Postman for designing, testing, and validating REST endpoints.",
+      "Deployment and orchestration of Docker containers in Kubernetes production clusters.",
+      "Modeling and integration of business processes (BPM) with Camunda.",
+      "Creation and maintenance of CI/CD pipelines with Jenkins, Harbor, and Argo CD.",
+      "Development of unit and integration tests with Mockito and JUnit."
     ],
   },
 ];
@@ -130,7 +129,7 @@ const projects = [
   {
     name: "Connect Four AI",
     description:
-      "He desarrollado un algoritmo de inteligencia artificial para jugar a Conecta 4, utilizando técnicas clásicas de búsqueda adversarial. El motor de decisión se basa en el algoritmo MinMax optimizado mediante poda Alpha-Beta.",
+      "I have developed an artificial intelligence algorithm to play Connect 4, using classic adversarial search techniques. The decision engine is based on the MinMax algorithm optimised using Alpha-Beta pruning.",
     tags: [
       {
         name: "python",
@@ -143,7 +142,7 @@ const projects = [
   {
     name: "StarWars APP",
     description:
-      "Aplicación desarrollada con Ionic Framework y AngularJS que actúa como una enciclopedia interactiva del universo Star Wars. La app consume una API REST externa para obtener datos sobre personajes, planetas, naves y películas, que se presentan en una interfaz móvil responsive.",
+      "Application developed with Ionic Framework and AngularJS that acts as an interactive encyclopaedia of the Star Wars universe. The app uses an external REST API to obtain data on characters, planets, ships and films, which are presented in a responsive mobile interface.",
     tags: [
       {
         name: "ionic",
@@ -160,7 +159,7 @@ const projects = [
   {
     name: "AutoBnB",
     description:
-      "Aplicación web multiplataforma inspirada en el modelo de negocio de Airbnb, pero centrada en vehículos. La plataforma permite tanto a usuarios como a propietarios gestionar de forma sencilla el proceso de alquiler de coches, motos u otros vehículos, de manera flexible y autogestionada.",
+      "A multi-platform web application inspired by the Airbnb business model, but focused on vehicles. The platform allows both users and owners to easily manage the process of renting cars, motorcycles, or other vehicles in a flexible and self-managed way.",
     tags: [
       {
         name: "java",
@@ -184,14 +183,14 @@ const certificados = [
   {
     name: "JavaScript",
     description:
-      "Demostrando habilidades para implementar estrategias fundamentales de programación en JavaScript, conforme a los estándares y prácticas recomendadas de la industria.",
+      "Demonstrating skills in implementing fundamental programming strategies in JavaScript, in accordance with industry standards and best practices.",
     image: js,
     source_code_link: "https://drive.google.com/file/d/1ToVp3kXaBW32h7LiACkwTNXomqq5mf3E/view?usp=sharing",
   },
   {
     name: "Jenkins",
     description:
-      "Validando habilidades en la configuración y administración de Jenkins, herramienta de integración continua y entrega continua (CI/CD), para automatizar procesos de desarrollo y despliegue.",
+      "Validating skills in the configuration and administration of Jenkins, a continuous integration and continuous delivery (CI/CD) tool, to automate development and deployment processes.",
     image: diploma_jenkins,
     source_code_link: "https://drive.google.com/file/d/1khS0DbdeQ73pGXkQ4x4m86L-P4C2nVIm/view?usp=sharing",
   },
@@ -201,14 +200,14 @@ const idiomas = [
   {
     name: "English - B1 (Trinity)",
     description:
-      "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
+      "This language reflects the level of proficiency I have achieved through my dedication and effort, enabling me to communicate effectively in a variety of situations.",
     image: english,
     source_code_link: "https://drive.google.com/file/d/1EPXq2uUIQjOEHVtYS5Qlg2KIqLFD8fXT/view?usp=sharing",
   },
   {
     name: "Valenciano - C1",
     description:
-      "Este idioma refleja el nivel de competencia alcanzado gracias a mi dedicación y esfuerzo, lo que me permite comunicarme eficazmente en diversas situaciones.",
+      "This language reflects the level of proficiency I have achieved through my dedication and effort, enabling me to communicate effectively in a variety of situations.",
     image: valenciano,
     source_code_link: "https://drive.google.com/file/d/1QExdkF5w5sFMJKeogAygoR8o63DvqmFM/view?usp=sharing",
   },

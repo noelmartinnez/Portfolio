@@ -107,8 +107,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
-        <p className={`${styles.sectionSubText} select-none`}>Mi trabajo</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>Proyectos</h2>
+        <p className={`${styles.sectionSubText} select-none`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} select-none`}>Proyects</h2>
       </motion.div>
 
       <div className={`w-full flex select-none ${isMobile || isTablet ? 'flex-col items-center justify-center text-center' : ''}`}>
@@ -116,9 +116,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          Los siguientes proyectos respaldan mis habilidades y experiencia, y demuestran mi capacidad para resolver problemas complejos mientras trabajo con diversas tecnologías.
+          The following projects support my skills and experience, and demonstrate my ability to solve complex problems while working with diverse technologies.
           <br /><br />
-          Disfruto de trabajar en proyectos desafiantes que me den la oportunidad de aprender y crecer continuamente.
+          I enjoy working on challenging projects that give me the opportunity to continuously learn and grow.
         </motion.p>
       </div>
 
@@ -137,4 +137,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "proyectos");
+export default SectionWrapper(Works, "proyects");

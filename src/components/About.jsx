@@ -45,14 +45,14 @@ const About = () => {
             styles.sectionSubText
           } select-none ${isTablet || isMobile ? "" : "text-left"}`}
         >
-          Introducción
+          Introduction
         </p>
         <h2
           className={`${
             styles.sectionHeadText
           } select-none ${isTablet || isMobile ? "" : "text-left"}`}
         >
-          Desarrollando{"{"}me{"}"}
+          About {"{"}me{"}"}
         </h2>
       </motion.div>
 
@@ -64,39 +64,10 @@ const About = () => {
             : "text-left max-w-full md:max-w-3xl"
         }`}
       >
-        ► Ingeniero de Software especializado en desarrollo <strong>backend</strong> y <strong>QA Automation</strong>, con experiencia en el diseño de arquitecturas distribuidas de microservicios y en la creación de entornos de despliegue automatizados bajo estándares de alta disponibilidad y seguridad.
-        <br></br>
-        <br></br>
-        ► He participado en proyectos estratégicos para el sector <strong>bancario</strong> y <strong>estatal</strong> (BBVA, Banco Santander, OPPLUS, ANCERT), diseñando soluciones escalables, resilientes y orientadas a resultados.
-        <br></br>
-        <br></br>
-        ► Áreas de especialización:
-        <br></br>
-        <br></br>
-        → <strong>Arquitectura y Backend</strong>
-        <br></br>
-        Desarrollo de soluciones en <strong>Java</strong>, <strong>Spring Boot</strong>, <strong>Spring Cloud</strong> y <strong>Node.js</strong>, implementando <strong>APIs RESTful</strong>, comunicación entre microservicios con <strong>Feign Client</strong> y sistemas de mensajería con <strong>Apache Kafka</strong>. Diseño de arquitecturas mantenibles y escalables con despliegues en <strong>Docker</strong> y <strong>Kubernetes</strong>.
-        <br></br>
-        <br></br>
-        → <strong>DevOps e Infraestructura</strong>
-        <br></br> 
-        Experiencia en la creación de pipelines CI/CD con <strong>Jenkins</strong>, <strong>Harbor</strong> y <strong>Argo CD</strong>, gestión de entornos productivos y monitorización de servicios en <strong>AWS</strong>.
-        <br></br>
-        <br></br>
-        → <strong>Procesos y Datos</strong>
-        <br></br>
-        Integración de procesos de negocio con <strong>Camunda (BPM)</strong> y manejo avanzado de bases de datos relacionales como <strong>PostgreSQL</strong>, <strong>Oracle Database</strong> y <strong>MySQL</strong>, optimizando rendimiento y consultas.
-        <br></br>
-        <br></br>
-        → <strong>Calidad y Testing</strong>
-        <br></br>
-        Diseño y ejecución de pruebas automatizadas con <strong>Selenium</strong>, <strong>Puppeteer</strong>, <strong>Allure Report</strong> y <strong>Mocha</strong>, validando flujos funcionales y regresiones end-to-end en entornos web.
-        <br></br>
-        <br></br>
-        ► Destaco por mi enfoque analítico, mi capacidad para resolver incidencias complejas (L3) y mi compromiso con la estabilidad, fiabilidad y calidad del software.
-        <br></br>
-        <br></br>
-        Siempre abierto a conectar, aprender y explorar nuevos retos tecnológicos.
+        <strong>Software Engineer</strong> specialized in <strong>backend</strong> development, <strong>Machine Learning</strong>, and <strong>infrastructure</strong>, with
+        experience in designing distributed <strong>microservices architectures</strong> and automated deployment environments.
+        Currently working on high-level projects for the <strong>banking</strong> and <strong>public sectors</strong>, transforming complex requirements
+        into robust, secure, and scalable software solutions.
       </motion.p>
     </>
   );

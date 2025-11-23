@@ -32,7 +32,7 @@ const Contact = () => {
     
     // Validación de los campos
     if (!form.name || !form.email || !form.message) {
-      toast.error("Por favor, completa todos los campos.", {
+      toast.error("Please complete all fields.", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -62,7 +62,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          toast.success("¡Muchas gracias! Te contactaré lo antes posible.", {
+          toast.success("Thank you! I will contact you as soon as possible.", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -81,7 +81,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          toast.error("Ups, algo ha ido mal. Por favor, inténtalo de nuevo.", {
+          toast.error("Oops, something went wrong. Please try again.", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -100,8 +100,8 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>Ponte en</p>
-        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>Contacto</h3>
+        <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>Get in</p>
+        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>Contact</h3>
 
         <form
           ref={formRef}
@@ -111,7 +111,7 @@ const Contact = () => {
           {/* Campos de entrada */}
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4 select-none">
-              Escribe tu nombre
+              Enter your name
             </span>
             <input
               type="text"
@@ -124,7 +124,7 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4 select-none">
-              Escribe tu email
+              Enter your email
             </span>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -151,14 +151,14 @@ const Contact = () => {
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4 select-none">
-              Escribe tu mensaje
+              Enter your message
             </span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="¿Qué quieres decirme?"
+              placeholder="What do you want to tell me?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               style={{ resize: "none" }}
             />
@@ -168,7 +168,7 @@ const Contact = () => {
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary select-none mx-auto xl:mx-0"
           >
-            {loading ? "Enviando..." : "Enviar"}
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>
@@ -182,4 +182,4 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contacto");
+export default SectionWrapper(Contact, "contact");

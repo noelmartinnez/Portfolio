@@ -88,8 +88,8 @@ const Certificados = () => {
   return (
     <>
       <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
-        <p className={`${styles.sectionSubText} select-none`}>Aprendizaje</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>Certificados</h2>
+        <p className={`${styles.sectionSubText} select-none`}>Learning</p>
+        <h2 className={`${styles.sectionHeadText} select-none`}>Certificates</h2>
       </motion.div>
 
       <div className={`w-full flex select-none ${isMobile || isTablet ? 'flex-col items-center justify-center text-center' : ''}`}>
@@ -97,8 +97,8 @@ const Certificados = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
         >
-          Las certificaciones son clave en mi desarrollo profesional, reflejando mi compromiso con la mejora continua y el aprendizaje constante.
-          Cada una de ellas respalda mi dedicación a mantenerme actualizado y a perfeccionar mis habilidades en diversas áreas.
+          Certifications are key to my professional development, reflecting my commitment to continuous improvement and lifelong learning.
+          Each one supports my dedication to staying up to date and honing my skills in various areas.
         </motion.p>
       </div>
 
@@ -117,4 +117,4 @@ const Certificados = () => {
   );
 };
 
-export default SectionWrapper(Certificados, "certificados");
+export default SectionWrapper(Certificados, "certificates");

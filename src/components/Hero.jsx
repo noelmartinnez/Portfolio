@@ -57,11 +57,11 @@ const Hero = () => {
         <div className={`${isMobile ? 'text-center flex flex-col justify-center items-center' :
                            isTabletOrMobile ? 'text-center flex flex-col justify-center items-cente mt-10' : ''}`}>
           <h1 className={`${styles.heroHeadText} text-white ${isTabletOrMobile ? 'mt-20' : ''}`}>
-            Hola, soy <span className="text-[#915eff]">Noel</span>
+            Hi, I'm <span className="text-[#915eff]">Noel</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Ingeniero Informático <br className="sm:block hidden" />
-            especializado en Ingeniería de Software
+            Computer Engineer <br className="sm:block hidden" />
+            specialising in Software Engineering
           </p>
         </div>
 
