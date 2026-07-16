@@ -36,12 +36,9 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, active = true }) => {
   return (
-    <Canvas
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas dpr={[1, 2]} frameloop={active ? "always" : "never"}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />

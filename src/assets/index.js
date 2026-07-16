@@ -1,64 +1,46 @@
-import cara from "./cara.svg";
+import cara from "./cara.webp";
 
 import logo from "./logo.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import js from "./js.png";
-import diploma_jenkins from "./diploma-jenkins.png"; 
+import js from "./js.webp";
+import diploma_jenkins from "./diploma-jenkins.webp";
 
-import drive from "./drive.png";
-import github from "./github.png";
-
-import valenciano from "./valenciano.png";
-import english from "./english.png";
-
-import carrent from "./carrent.png";
-import about from "./about.jpg";
-import coche from "./coche.jpg";
+import drive from "./drive.webp";
 
 import javascript from "./tech/javascript.png";
 import python from "./tech/python.png";
 import java from "./tech/java.png";
 import docker from "./tech/docker.png";
 import spring from "./tech/spring.png";
+import springai from "./tech/springai.webp";
 import node from "./tech/node.png";
 import kubernetes from "./tech/kubernetes.png";
-import aws from "./tech/aws.png";
-import argocd from "./tech/argocd.png";
-import camunda from "./tech/camunda.png";
-import jenkins from "./tech/jenkins.png";
 import kafka from "./tech/kafka.png";
 
 import altia from "./company/altia.png";
 import fundamentia from "./company/fundamentia.jpeg";
+import UA from "./UA.jpg";
 
 export {
   python,
   java,
   logo,
-  github,
   menu,
   close,
   javascript,
-  carrent,
   drive,
   js,
   spring,
+  springai,
   docker,
   node,
-  about,
-  coche,
   altia,
-  valenciano,
-  english,
   kubernetes,
   cara,
   diploma_jenkins,
   fundamentia,
-  aws,
-  argocd,
-  camunda,
-  jenkins,
   kafka,
+  UA,
 };

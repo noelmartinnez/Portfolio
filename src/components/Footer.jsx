@@ -1,11 +1,13 @@
 import React from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-white rounded-none shadow m-0 dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center md:flex-row md:justify-between">
         <span className="text-sm text-gray-500 text-center dark:text-gray-400 select-none">
-          © 2025 Noel Martínez. All Rights Reserved.
+          {t("footer.rights")}
         </span>
         <div className="flex mt-4 space-x-6 justify-center md:mt-0">
           <a
@@ -25,7 +27,7 @@ const Footer = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="sr-only">Instagram page</span>
+            <span className="sr-only">{t("footer.instagram")}</span>
           </a>
           <a
             target="_blank"
@@ -44,7 +46,7 @@ const Footer = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="sr-only">GitHub account</span>
+            <span className="sr-only">{t("footer.github")}</span>
           </a>
           <a
             target="_blank"
@@ -62,7 +64,7 @@ const Footer = () => {
                 d="M20.625 2H3.375C2.015 2 1 3.015 1 4.375V19.625C1 20.985 2.015 22 3.375 22H20.625C21.985 22 23 20.985 23 19.625V4.375C23 3.015 21.985 2 20.625 2ZM7.275 17.275H4.9V9.958H7.275V17.275ZM6.087 8.912C5.144 8.912 4.375 8.152 4.375 7.225C4.375 6.298 5.144 5.538 6.087 5.538C7.029 5.538 7.8 6.298 7.8 7.225C7.8 8.152 7.029 8.912 6.087 8.912ZM18.275 17.275H15.9V13.608C15.9 12.508 15.304 11.725 14.425 11.725C13.521 11.725 12.975 12.475 12.975 13.525V17.275H10.6V9.958H12.9V11.3H12.975C13.325 10.575 14.15 9.95 15.325 9.95C17.3 9.95 18.275 11.325 18.275 13.475V17.275Z"
               />
             </svg>
-            <span className="sr-only">LinkedIn profile</span>
+            <span className="sr-only">{t("footer.linkedin")}</span>
           </a>
         </div>
       </div>

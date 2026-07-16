@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { drive } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { certificados } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useLanguage } from "../context/LanguageContext";
 
 const ProjectCard = ({
   index,
@@ -32,6 +32,9 @@ const ProjectCard = ({
           <img
             src={image}
             alt={name}
+            width={360}
+            height={230}
+            loading="lazy"
             className="w-full h-full object-cover rounded-2xl"
           />
 
@@ -43,6 +46,9 @@ const ProjectCard = ({
               <img
                 src={drive}
                 alt="github"
+                width={20}
+                height={20}
+                loading="lazy"
                 className="w-1/2 h-1/2 object-contain"
               />
             </div>
@@ -51,11 +57,10 @@ const ProjectCard = ({
 
         <div
           className={`mt-5 ${
-            isMobile ? "flex flex-col items-center text-center" : ""
+            isMobile || isTablet ? "flex flex-col items-center text-center" : ""
           }`}
         >
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
       </Tilt>
     </motion.div>
@@ -63,6 +68,8 @@ const ProjectCard = ({
 };
 
 const Certificados = () => {
+  const { t, data } = useLanguage();
+  const certificados = data.certificados;
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -88,19 +95,9 @@ const Certificados = () => {
   return (
     <>
       <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
-        <p className={`${styles.sectionSubText} select-none`}>Learning</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>Certificates</h2>
+        <p className={`${styles.sectionSubText} select-none`}>{t("certificates.subtitle")}</p>
+        <h2 className={`${styles.sectionHeadText} select-none`}>{t("certificates.title")}</h2>
       </motion.div>
-
-      <div className={`w-full flex select-none ${isMobile || isTablet ? 'flex-col items-center justify-center text-center' : ''}`}>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className={`mt-3 text-secondary text-[17px] max-w-full md:max-w-2xl leading-[30px] ${isMobile || isTablet ? 'text-center' : ''}`}
-        >
-          Certifications are key to my professional development, reflecting my commitment to continuous improvement and lifelong learning.
-          Each one supports my dedication to staying up to date and honing my skills in various areas.
-        </motion.p>
-      </div>
 
       <div
         className={`${

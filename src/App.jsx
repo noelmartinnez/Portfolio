@@ -1,28 +1,45 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useLanguage } from "./context/LanguageContext";
 import {
-  About,
   Contact,
   Experience,
   Hero,
   Navbar,
-  Tech,
+  Skills,
   Works,
-  StarsCanvas,
   Footer,
   Certificados,
+  Educacion,
   Idiomas,
-  SpheresCanvas,
 } from "./components";
 
+const SpheresCanvas = lazy(() => import("./components/canvas/SpheresCanvas"));
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
+const Demos = lazy(() => import("./components/Demos"));
+
 const App = () => {
+  const { t } = useLanguage();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
   const [isTablet, setIsTablet] = useState(window.innerWidth > 500 && window.innerWidth <= 1100);
   const [showMessage, setShowMessage] = useState(true);
   const [buttonStyles, setButtonStyles] = useState({ bottom: "8px", right: "8px" });
   const footerRef = useRef(null);
+
+  const updateButtonStyles = useCallback(() => {
+    if (!footerRef.current) return;
+    const footerRect = footerRef.current.getBoundingClientRect();
+    const footerIsVisible = footerRect.top < window.innerHeight;
+
+    setButtonStyles((prev) => {
+      const next = footerIsVisible
+        ? { bottom: "60px", right: "8px" }
+        : { bottom: "8px", right: "8px" };
+      return prev.bottom === next.bottom ? prev : next;
+    });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,63 +47,59 @@ const App = () => {
       setIsTablet(window.innerWidth > 500 && window.innerWidth <= 1100);
     };
 
-    const updateButtonStyles = () => {
-      if (footerRef.current) {
-        const footerRect = footerRef.current.getBoundingClientRect();
-        const footerIsVisible = footerRect.top < window.innerHeight;
-
-        if (footerIsVisible) {
-          setButtonStyles({
-            bottom: "60px",
-            right: "8px",
-          });
-        } else {
-          setButtonStyles({
-            bottom: "8px",
-            right: "8px",
-          });
-        }
-      }
-    };
-
     updateButtonStyles();
 
-    // Eventos de actualización
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", updateButtonStyles);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateButtonStyles();
+        ticking = false;
+      });
+    };
 
-    const timer = setTimeout(() => setShowMessage(false), 5000);
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", updateButtonStyles);
-      clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
     };
-  }, [isMobile, isTablet]);
+  }, [updateButtonStyles]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowMessage(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
         <div>
           <div className="relative z-10">
-            <SpheresCanvas />
+            <Suspense fallback={null}>
+              <SpheresCanvas />
+            </Suspense>
             <Navbar />
             <Hero />
           </div>
         </div>
 
-        <div className={`mt-${isMobile ? "20" : "0"}`}>
-          <About />
-        </div>
-
         <Experience />
-        <Tech />
+        <Skills />
+        <Suspense fallback={null}>
+          <Demos />
+        </Suspense>
+        <Educacion />
         <Certificados />
         <Idiomas />
         <Works />
         <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
+          <Suspense fallback={null}>
+            <StarsCanvas />
+          </Suspense>
         </div>
         <div className="w-full" ref={footerRef}>
           <Footer />
@@ -114,7 +127,7 @@ const App = () => {
               />
               {showMessage && (
                 <div className="absolute left-[-130px] bottom-1 bg-white text-green-500 font-bold text-sm px-4 py-2 rounded-md shadow-lg transition-opacity duration-300">
-                  Can we talk?
+                  {t("whatsapp.message")}
                 </div>
               )}
             </a>

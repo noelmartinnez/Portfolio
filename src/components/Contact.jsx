@@ -1,13 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { useLanguage } from "../context/LanguageContext";
+
+const EarthCanvas = lazy(() => import("./canvas/Earth"));
 
 const Contact = () => {
+  const { t } = useLanguage();
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -16,6 +19,17 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    setIsMobile(mobileQuery.matches);
+
+    const handleMobileChange = (event) => setIsMobile(event.matches);
+    mobileQuery.addEventListener("change", handleMobileChange);
+
+    return () => mobileQuery.removeEventListener("change", handleMobileChange);
+  }, []);
 
   const handleChange = (e) => {
     const { target } = e;
@@ -32,7 +46,7 @@ const Contact = () => {
     
     // Validación de los campos
     if (!form.name || !form.email || !form.message) {
-      toast.error("Please complete all fields.", {
+      toast.error(t("contact.errorFields"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -62,7 +76,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          toast.success("Thank you! I will contact you as soon as possible.", {
+          toast.success(t("contact.success"), {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -81,7 +95,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          toast.error("Oops, something went wrong. Please try again.", {
+          toast.error(t("contact.errorGeneric"), {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -100,8 +114,8 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>Get in</p>
-        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>Contact</h3>
+        <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>{t("contact.subtitle")}</p>
+        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>{t("contact.title")}</h3>
 
         <form
           ref={formRef}
@@ -110,8 +124,8 @@ const Contact = () => {
         >
           {/* Campos de entrada */}
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4 select-none">
-              Enter your name
+            <span className={`text-white font-medium mb-4 select-none ${isMobile ? "text-center" : ""}`}>
+              {t("contact.nameLabel")}
             </span>
             <input
               type="text"
@@ -123,8 +137,8 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4 select-none">
-              Enter your email
+            <span className={`text-white font-medium mb-4 select-none ${isMobile ? "text-center" : ""}`}>
+              {t("contact.emailLabel")}
             </span>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -150,15 +164,15 @@ const Contact = () => {
             </div>
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4 select-none">
-              Enter your message
+            <span className={`text-white font-medium mb-4 select-none ${isMobile ? "text-center" : ""}`}>
+              {t("contact.messageLabel")}
             </span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What do you want to tell me?"
+              placeholder={t("contact.messagePlaceholder")}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               style={{ resize: "none" }}
             />
@@ -168,7 +182,7 @@ const Contact = () => {
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary select-none mx-auto xl:mx-0"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? t("contact.sending") : t("contact.send")}
           </button>
         </form>
       </motion.div>
@@ -176,7 +190,9 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <EarthCanvas />
+        <Suspense fallback={null}>
+          <EarthCanvas />
+        </Suspense>
       </motion.div>
     </div>
   );
