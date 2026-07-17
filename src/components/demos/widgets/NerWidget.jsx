@@ -74,7 +74,7 @@ const NerWidget = ({ ui }) => {
               style={{
                 color: ENTITY_COLORS[segment.type],
                 background: `${ENTITY_COLORS[segment.type]}22`,
-                boxShadow: `0 0 12px ${ENTITY_COLORS[segment.type]}55`,
+                boxShadow: `0 0 3px ${ENTITY_COLORS[segment.type]}0d`,
               }}
             >
               {segment.text}
@@ -93,7 +93,7 @@ const NerWidget = ({ ui }) => {
           >
             <span
               className="w-2 h-2 rounded-full"
-              style={{ background: ENTITY_COLORS[type], boxShadow: `0 0 6px ${ENTITY_COLORS[type]}` }}
+              style={{ background: ENTITY_COLORS[type], boxShadow: `0 0 4px ${ENTITY_COLORS[type]}80` }}
             />
             {ui.legend[type]} · {counts[type] || 0}
           </span>

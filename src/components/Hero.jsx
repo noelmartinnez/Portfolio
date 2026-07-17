@@ -44,9 +44,9 @@ const Hero = () => {
 
   return (
     <section
-      className={`relative w-full ${isMobile ? 'h-auto' : isTabletOrMobile ? 'min-h-[60vh]' : 'min-h-[80vh]'} mx-auto flex flex-col items-center mt-32 pb-16`}
+      className={`relative w-full ${isMobile ? 'h-auto' : isTabletOrMobile ? 'min-h-[60vh]' : 'min-h-[80vh]'} mx-auto flex flex-col items-center justify-center mt-32 pb-16`}
     >
-      <div className={`${styles.paddingX} ${centered ? 'pt-20 flex-col items-center justify-center' : 'pt-16 flex-row items-start gap-12'} max-w-7xl mx-auto flex w-full`}>
+      <div className={`${styles.paddingX} ${centered ? 'pt-20 flex-col items-center justify-center' : 'pt-16 flex-row items-start justify-center gap-12'} max-w-7xl mx-auto flex w-full`}>
         {/* Gradiente + círculo solo en escritorio */}
         {!centered && (
           <div className="flex flex-col justify-center items-center mt-5">
@@ -117,7 +117,7 @@ const Hero = () => {
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className={`relative rounded-full p-[3px] bg-gradient-to-br from-[#915eff] via-[#c9a6ff] to-[#915eff] ${isMobile ? 'w-36 h-36' : 'w-56 h-56'}`}
-                  style={{ boxShadow: "0 0 45px 10px rgba(145,94,255,0.45)" }}
+                  style={{ boxShadow: "0 0 35px 8px rgba(145,94,255,0.33)" }}
                 >
                   <img
                     src={cara}
