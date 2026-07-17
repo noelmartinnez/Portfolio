@@ -50,7 +50,7 @@ const NavBar = () => {
   const isMobile = windowWidth <= 1100;
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 bg-primary`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 bg-primary border-b border-white/10`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
