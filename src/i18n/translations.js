@@ -2,9 +2,9 @@
 // Array content (experiences, projects, skills…) lives in ./data.js.
 
 const CV_URL_ES =
-  "https://drive.google.com/file/d/1Hp9RcBHrYdwBHnPTa8iZuNqLUjZelKfJ/view?usp=sharing";
+  "https://drive.google.com/file/d/1NrhatGW6SMf8_n9rUyIhUJR0PajR68OM/view?usp=sharing";
 const CV_URL_EN =
-  "https://drive.google.com/file/d/13wywOSFMXbOU-2Uzqzy4pk0fQd0nCHRK/view?usp=sharing";
+  "https://drive.google.com/file/d/18T3jgGLPYZ_ROrvB2RIq02uAYlyOXRDW/view?usp=sharing";
 
 export const translations = {
   en: {
