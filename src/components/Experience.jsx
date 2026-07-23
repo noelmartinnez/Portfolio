@@ -8,7 +8,7 @@ import { useLanguage } from "../context/LanguageContext";
 const ExperienceCard = ({ index, experience, isMobile }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.3, 0.75)}
-    className="w-full bg-tertiary rounded-2xl p-6 sm:p-8 shadow-card border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_10px_30px_-12px_rgba(145,94,255,0.35)]"
+    className="w-full bg-tertiary rounded-2xl p-6 sm:p-8 shadow-card border border-white/10"
   >
     <div className="flex items-center gap-4 max-[500px]:flex-col max-[500px]:text-center">
       {!isMobile && (

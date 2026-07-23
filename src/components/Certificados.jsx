@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className={`bg-tertiary p-5 rounded-2xl ${
+        className={`bg-tertiary p-5 rounded-2xl shadow-card border border-white/10 ${
           isTablet ? "sm:w-[400px]" : "sm:w-[360px]"
         } w-full`}
       >
