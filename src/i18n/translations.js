@@ -1,12 +1,14 @@
 // UI "chrome" strings per language. Keys must match across `en` and `es`.
 // Array content (experiences, projects, skills…) lives in ./data.js.
 
-const CV_URL =
+const CV_URL_ES =
   "https://drive.google.com/file/d/1Hp9RcBHrYdwBHnPTa8iZuNqLUjZelKfJ/view?usp=sharing";
+const CV_URL_EN =
+  "https://drive.google.com/file/d/13wywOSFMXbOU-2Uzqzy4pk0fQd0nCHRK/view?usp=sharing";
 
 export const translations = {
   en: {
-    meta: { cvUrl: CV_URL },
+    meta: { cvUrl: CV_URL_EN },
     nav: {
       experience: "Experience",
       skills: "Skills",
@@ -106,7 +108,7 @@ export const translations = {
   },
 
   es: {
-    meta: { cvUrl: CV_URL },
+    meta: { cvUrl: CV_URL_ES },
     nav: {
       experience: "Experiencia",
       skills: "Skills",

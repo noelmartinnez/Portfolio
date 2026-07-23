@@ -38,7 +38,7 @@ const NerWidget = ({ ui }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex gap-2">
+      <div className="flex gap-2 max-[500px]:justify-center">
         {["detect", "anonymize"].map((m) => (
           <button
             key={m}

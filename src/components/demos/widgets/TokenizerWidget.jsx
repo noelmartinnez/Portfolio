@@ -19,7 +19,7 @@ const TokenizerWidget = ({ ui }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex gap-2">
+      <div className="flex gap-2 max-[500px]:justify-center">
         {["word", "subword", "char"].map((m) => (
           <button
             key={m}
@@ -29,7 +29,7 @@ const TokenizerWidget = ({ ui }) => {
               mode === m
                 ? "bg-[#915eff] border-[#915eff] text-white"
                 : "border-white/15 text-secondary hover:border-[#915eff]/60"
-            }`}
+            } ${m === "subword" ? "max-[500px]:hidden" : ""}`}
           >
             {ui.modeLabels[m]}
           </button>
@@ -45,7 +45,7 @@ const TokenizerWidget = ({ ui }) => {
       />
       <p className="text-secondary text-[12px] -mt-2 self-end">{text.length}/300</p>
 
-      <div className="flex flex-wrap gap-1.5 bg-black-100/40 border border-white/10 rounded-xl p-4 min-h-[64px]">
+      <div className="flex flex-wrap gap-1.5 bg-black-100/40 border border-white/10 rounded-xl p-4 min-h-[64px] max-[500px]:justify-center">
         <AnimatePresence mode="popLayout">
           {tokens.map((token) => (
             <motion.span
@@ -69,7 +69,7 @@ const TokenizerWidget = ({ ui }) => {
         </AnimatePresence>
       </div>
 
-      <div className="flex gap-6 text-[13px] text-secondary">
+      <div className="flex gap-6 text-[13px] text-secondary max-[500px]:justify-center">
         <span>
           {ui.tokensLabel}: <strong className="text-white">{tokens.length}</strong>
         </span>

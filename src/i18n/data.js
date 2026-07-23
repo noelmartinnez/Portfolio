@@ -53,7 +53,7 @@ export const dataTranslations = {
       backprop: {
         name: "Backpropagation from Scratch",
         description:
-          "Academic project for the Intelligent Systems course that implements a multilayer perceptron and its forward propagation phase from scratch, with worked examples that walk through how the backpropagation algorithm updates weights during supervised learning.",
+          "Project that implements a multilayer perceptron and its forward propagation phase from scratch, with worked examples that walk through how the backpropagation algorithm updates weights during supervised learning.",
       },
       imgtwin: {
         name: "ImgTwin",
@@ -198,7 +198,7 @@ export const dataTranslations = {
       starwars: {
         name: "StarWars APP",
         description:
-          "Aplicación desarrollada con Ionic Framework y AngularJS que actúa como una enciclopedia interactiva del universo de Star Wars. Usa una API REST externa para obtener datos de personajes, planetas, naves y películas, presentados en una interfaz móvil responsive.",
+          "Aplicación desarrollada con Ionic Framework y AngularJS que actúa como una enciclopedia interactiva del universo de Star Wars. Usa una API REST externa para obtener datos de personajes, planetas, naves y películas, presentados en una interfaz móvil.",
       },
       autobnb: {
         name: "AutoBnB",
@@ -208,12 +208,12 @@ export const dataTranslations = {
       mnist: {
         name: "Clasificador de dígitos MNIST",
         description:
-          "Proyecto académico de la asignatura Sistemas Inteligentes (Ingeniería Informática, Universidad de Alicante) que entrena y evalúa redes neuronales para clasificar dígitos manuscritos del dataset MNIST, incluyendo experimentos con varias arquitecturas para comparar y mejorar la precisión.",
+          "Proyecto académico de la asignatura Sistemas Inteligentes que entrena y evalúa redes neuronales para clasificar dígitos manuscritos del dataset MNIST, incluyendo experimentos con varias arquitecturas para comparar y mejorar la precisión.",
       },
       backprop: {
         name: "Backpropagation desde cero",
         description:
-          "Proyecto académico de Sistemas Inteligentes que implementa un perceptrón multicapa y su fase de propagación hacia delante desde cero, con ejemplos resueltos que explican cómo el algoritmo de backpropagation actualiza los pesos durante el aprendizaje supervisado.",
+          "Proyecto que implementa un perceptrón multicapa y su fase de propagación hacia delante desde cero, con ejemplos resueltos que explican cómo el algoritmo de backpropagation actualiza los pesos durante el aprendizaje supervisado.",
       },
       imgtwin: {
         name: "ImgTwin",
