@@ -38,7 +38,7 @@ const NerWidget = ({ ui }) => {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex gap-2">
+      <div className="flex gap-2 max-[500px]:justify-center">
         {["detect", "anonymize"].map((m) => (
           <button
             key={m}
@@ -74,7 +74,7 @@ const NerWidget = ({ ui }) => {
               style={{
                 color: ENTITY_COLORS[segment.type],
                 background: `${ENTITY_COLORS[segment.type]}22`,
-                boxShadow: `0 0 12px ${ENTITY_COLORS[segment.type]}55`,
+                boxShadow: `0 0 3px ${ENTITY_COLORS[segment.type]}0d`,
               }}
             >
               {segment.text}
@@ -93,7 +93,7 @@ const NerWidget = ({ ui }) => {
           >
             <span
               className="w-2 h-2 rounded-full"
-              style={{ background: ENTITY_COLORS[type], boxShadow: `0 0 6px ${ENTITY_COLORS[type]}` }}
+              style={{ background: ENTITY_COLORS[type], boxShadow: `0 0 4px ${ENTITY_COLORS[type]}80` }}
             />
             {ui.legend[type]} · {counts[type] || 0}
           </span>

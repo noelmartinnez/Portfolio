@@ -4,6 +4,8 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 import { useLanguage } from "../context/LanguageContext";
+import esFlag from "flag-icons/flags/4x3/es.svg";
+import gbFlag from "flag-icons/flags/4x3/gb.svg";
 
 // ES/EN switch with flags. Highlights the active language.
 const LangSwitch = ({ lang, setLanguage, t }) => (
@@ -13,22 +15,22 @@ const LangSwitch = ({ lang, setLanguage, t }) => (
       onClick={() => setLanguage("es")}
       aria-label={t("lang.es")}
       title={t("lang.es")}
-      className={`text-[22px] leading-none transition-transform hover:scale-110 ${
+      className={`transition-transform hover:scale-110 ${
         lang === "es" ? "opacity-100 scale-110" : "opacity-50"
       }`}
     >
-      🇪🇸
+      <img src={esFlag} alt="ES" className="w-[24px] h-[18px] rounded-[3px] object-cover" />
     </button>
     <button
       type="button"
       onClick={() => setLanguage("en")}
       aria-label={t("lang.en")}
       title={t("lang.en")}
-      className={`text-[22px] leading-none transition-transform hover:scale-110 ${
+      className={`transition-transform hover:scale-110 ${
         lang === "en" ? "opacity-100 scale-110" : "opacity-50"
       }`}
     >
-      🇬🇧
+      <img src={gbFlag} alt="GB" className="w-[24px] h-[18px] rounded-[3px] object-cover" />
     </button>
   </div>
 );
@@ -50,7 +52,7 @@ const NavBar = () => {
   const isMobile = windowWidth <= 1100;
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 bg-primary`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 bg-primary border-b border-white/10`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"

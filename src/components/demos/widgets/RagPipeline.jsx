@@ -49,7 +49,7 @@ const RagPipeline = ({ ui }) => {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2">
+      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 max-[500px]:hidden">
         {STAGE_KEYS.map((key, i) => (
           <Fragment key={key}>
             <div className="flex flex-col items-center gap-2 min-w-[84px]">
@@ -79,7 +79,7 @@ const RagPipeline = ({ ui }) => {
       </div>
 
       <div className="grid gap-3">
-        <div className="bg-black-100/40 border border-white/10 rounded-xl p-4">
+        <div className="bg-black-100/40 border border-white/10 rounded-xl p-4 max-[500px]:text-center">
           <p className="text-[11px] uppercase tracking-wider text-secondary mb-1">{ui.steps.query}</p>
           <p className="text-[14px] text-white-100">{ui.query}</p>
         </div>
@@ -108,7 +108,7 @@ const RagPipeline = ({ ui }) => {
         )}
 
         {stageIndex >= 3 && (
-          <div className="bg-black-100/40 border border-[#915eff]/40 rounded-xl p-4 shadow-[0_0_20px_#915eff33]">
+          <div className="bg-black-100/40 border border-[#915eff]/40 rounded-xl p-4 shadow-[0_0_20px_#915eff33] max-[500px]:text-center">
             <p className="text-[11px] uppercase tracking-wider text-secondary mb-1">{ui.steps.generate}</p>
             <p className="text-[14px] text-white-100 min-h-[22px]">
               {answer}
@@ -118,7 +118,7 @@ const RagPipeline = ({ ui }) => {
         )}
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 max-[500px]:justify-center">
         <button
           type="button"
           onClick={() => setStageIndex((i) => Math.min(i + 1, STAGE_KEYS.length - 1))}

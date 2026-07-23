@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { widgetRegistry } from "./registry";
 
 const DemoPanel = ({ index, category, categoryLabel, title, subtitle, concept, keyPoints, widgetKey, accent, ui, isMobile }) => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [open, setOpen] = useState(false);
   const Widget = widgetRegistry[widgetKey];
+
+  useEffect(() => {
+    setOpen(false);
+  }, [lang]);
 
   return (
     <motion.div
@@ -51,9 +55,9 @@ const DemoPanel = ({ index, category, categoryLabel, title, subtitle, concept, k
           onClick={() => setOpen((o) => !o)}
           className="text-[13px] font-semibold px-4 py-2 rounded-full border transition-colors"
           style={{
-            color: open ? "#fff" : accent,
-            borderColor: `${accent}55`,
-            background: open ? accent : `${accent}14`,
+            color: accent,
+            borderColor: open ? accent : `${accent}55`,
+            background: `${accent}14`,
           }}
         >
           {open ? t("demos.hideLabel") : t("demos.tryLabel")}
