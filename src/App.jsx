@@ -11,9 +11,8 @@ import {
   Skills,
   Works,
   Footer,
-  Certificados,
-  Educacion,
-  Idiomas,
+  Freelance,
+  Formacion,
 } from "./components";
 
 const SpheresCanvas = lazy(() => import("./components/canvas/SpheresCanvas"));
@@ -91,10 +90,9 @@ const App = () => {
         <Suspense fallback={null}>
           <Demos />
         </Suspense>
-        <Educacion />
-        <Certificados />
-        <Idiomas />
         <Works />
+        <Freelance />
+        <Formacion />
         <div className="relative z-0">
           <Contact />
           <Suspense fallback={null}>

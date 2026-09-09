@@ -2,9 +2,9 @@
 // Array content (experiences, projects, skills…) lives in ./data.js.
 
 const CV_URL_ES =
-  "https://drive.google.com/file/d/1NrhatGW6SMf8_n9rUyIhUJR0PajR68OM/view?usp=sharing";
+  "https://drive.google.com/file/d/1qX2S9phtCmry6eF_hGpD5RKaWAVC6OIU/view?usp=sharing";
 const CV_URL_EN =
-  "https://drive.google.com/file/d/18T3jgGLPYZ_ROrvB2RIq02uAYlyOXRDW/view?usp=sharing";
+  "https://drive.google.com/file/d/1WELpLhilwe4-W1kQRlDWLZ-KN5TFEtzE/view?usp=sharing";
 
 export const translations = {
   en: {
@@ -13,11 +13,9 @@ export const translations = {
       experience: "Experience",
       skills: "Skills",
       demos: "Demos",
-      titles: "Titles",
-      certificates: "· Certificates",
-      education: "· Education",
-      languages: "· Languages",
       proyects: "Proyects",
+      freelance: "Freelance",
+      formacion: "Background",
       contact: "Contact",
     },
     hero: {
@@ -56,6 +54,17 @@ export const translations = {
       categories: { nlp: "NLP", llm: "LLM" },
       tryLabel: "Try demo",
       hideLabel: "Hide demo",
+    },
+    freelance: {
+      subtitle: "Client work",
+      title: "Freelance",
+      paragraph:
+        "Alongside my main job I design and build websites for real clients, taking care of everything from the design and the copy to the deployment and the ongoing maintenance.",
+      viewSite: "Visit site",
+    },
+    formacion: {
+      subtitle: "Where I come from",
+      title: "Education & Training",
     },
     certificates: {
       subtitle: "Learning",
@@ -113,11 +122,9 @@ export const translations = {
       experience: "Experiencia",
       skills: "Skills",
       demos: "Demos",
-      titles: "Títulos",
-      certificates: "· Certificados",
-      education: "· Educación",
-      languages: "· Idiomas",
       proyects: "Proyectos",
+      freelance: "Freelance",
+      formacion: "Formación",
       contact: "Contacto",
     },
     hero: {
@@ -159,6 +166,17 @@ export const translations = {
       categories: { nlp: "NLP", llm: "LLM" },
       tryLabel: "Probar demo",
       hideLabel: "Ocultar demo",
+    },
+    freelance: {
+      subtitle: "Trabajos para clientes",
+      title: "Freelance",
+      paragraph:
+        "Además de mi trabajo principal, diseño y desarrollo webs para clientes reales, encargándome de todo: desde el diseño y los textos hasta el despliegue y el mantenimiento posterior.",
+      viewSite: "Ver web",
+    },
+    formacion: {
+      subtitle: "De dónde vengo",
+      title: "Formación",
     },
     certificates: {
       subtitle: "Aprendizaje",

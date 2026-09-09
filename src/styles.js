@@ -10,6 +10,9 @@ const styles = {
       "text-white font-black md:text-[46px] sm:text-[42px] xs:text-[40px] text-[40px]",
     sectionSubText:
       "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
+    // Título de sub-bloque dentro de una sección (p. ej. Educación dentro de Formación).
+    sectionSubHeadText:
+      "text-white font-bold md:text-[30px] sm:text-[28px] text-[24px]",
   };
   
   export { styles };

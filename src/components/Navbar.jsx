@@ -40,8 +40,6 @@ const NavBar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [dropdownActive, setDropdownActive] = useState("");
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -81,90 +79,34 @@ const NavBar = () => {
             >
               <ul className="list-none flex justify-end items-start flex-col gap-4">
                 {navLinks.map((link) => (
-                  <React.Fragment key={link.id}>
-                    {link.dropdown ? (
-                      <>
-                        <li
-                          className="font-poppins font-medium cursor-pointer text-[16px] flex items-center text-secondary"
-                          onClick={() =>
-                            setDropdownActive(dropdownActive === link.id ? "" : link.id)
-                          }
-                        >
-                          <span>{t(link.titleKey)}</span>
-                          <span className="ml-2">{dropdownActive === link.id ? "▾" : "▴"}</span>
-                        </li>
-                        {dropdownActive === link.id && (
-                          <ul className="ml-4 space-y-2">
-                            {link.dropdown.map((sublink) => (
-                              <li
-                                key={sublink.id}
-                                onClick={() => {
-                                  setActive(sublink.id);
-                                  setDropdownActive("");
-                                  setToggle(false);
-                                }}
-                                className="text-secondary hover:text-white cursor-pointer"
-                              >
-                                <a href={`#${sublink.id}`}>{t(sublink.titleKey)}</a>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </>
-                    ) : (
-                      <li
-                        className={`${
-                          active === link.id ? "text-white" : "text-secondary"
-                        } font-poppins font-medium cursor-pointer text-[16px]`}
-                        onClick={() => {
-                          setActive(link.id);
-                          setToggle(false);
-                        }}
-                      >
-                        <a href={`#${link.id}`}>{t(link.titleKey)}</a>
-                      </li>
-                    )}
-                  </React.Fragment>
+                  <li
+                    key={link.id}
+                    className={`${
+                      active === link.id ? "text-white" : "text-secondary"
+                    } font-poppins font-medium cursor-pointer text-[16px]`}
+                    onClick={() => {
+                      setActive(link.id);
+                      setToggle(false);
+                    }}
+                  >
+                    <a href={`#${link.id}`}>{t(link.titleKey)}</a>
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
         ) : (
-          <ul className="list-none flex flex-row items-center gap-10">
+          <ul className="list-none flex flex-row items-center gap-8">
             {navLinks.map((link) => (
-              <React.Fragment key={link.id}>
-                {link.dropdown ? (
-                  <li
-                    className="relative text-secondary hover:text-white text-[18px] font-medium cursor-pointer select-none flex items-center"
-                    onClick={() => setShowDropdown(showDropdown === link.id ? "" : link.id)}
-                  >
-                    <span>{t(link.titleKey)}</span>
-                    <span className="ml-2">{showDropdown === link.id ? "▾" : "▴"}</span>
-                    {showDropdown === link.id && (
-                      <ul className="absolute top-full left-0 mt-2 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg p-4 space-y-2 shadow-lg w-[200px] border border-gray-600">
-                        {link.dropdown.map((sublink) => (
-                          <li
-                            key={sublink.id}
-                            onClick={() => setActive(sublink.id)}
-                            className="text-secondary hover:text-white cursor-pointer transition duration-200 ease-in-out"
-                          >
-                            <a href={`#${sublink.id}`}>{t(sublink.titleKey)}</a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ) : (
-                  <li
-                    className={`${
-                      active === link.id ? "text-white" : "text-secondary"
-                    } hover:text-white text-[18px] font-medium cursor-pointer select-none transition duration-200 ease-in-out`}
-                    onClick={() => setActive(link.id)}
-                  >
-                    <a href={`#${link.id}`}>{t(link.titleKey)}</a>
-                  </li>
-                )}
-              </React.Fragment>
+              <li
+                key={link.id}
+                className={`${
+                  active === link.id ? "text-white" : "text-secondary"
+                } hover:text-white text-[18px] font-medium cursor-pointer select-none transition duration-200 ease-in-out`}
+                onClick={() => setActive(link.id)}
+              >
+                <a href={`#${link.id}`}>{t(link.titleKey)}</a>
+              </li>
             ))}
             <li>
               <LangSwitch lang={lang} setLanguage={setLanguage} t={t} />

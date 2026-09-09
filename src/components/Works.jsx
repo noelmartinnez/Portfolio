@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
+import { useResponsive } from "../hooks/useResponsive";
 
 const ProjectCard = ({
   index,
@@ -70,27 +71,7 @@ const ProjectCard = ({
 
 const Works = () => {
   const { t, data } = useLanguage();
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 500px)");
-    const tabletQuery = window.matchMedia("(min-width: 500px) and (max-width: 1100px)");
-
-    setIsMobile(mobileQuery.matches);
-    setIsTablet(tabletQuery.matches);
-
-    const handleMobileChange = (event) => setIsMobile(event.matches);
-    const handleTabletChange = (event) => setIsTablet(event.matches);
-
-    mobileQuery.addEventListener("change", handleMobileChange);
-    tabletQuery.addEventListener("change", handleTabletChange);
-
-    return () => {
-      mobileQuery.removeEventListener("change", handleMobileChange);
-      tabletQuery.removeEventListener("change", handleTabletChange);
-    };
-  }, []);
+  const { isMobile, isTablet } = useResponsive();
 
   const filteredProjects = data.projects;
 

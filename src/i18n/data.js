@@ -7,14 +7,14 @@ export const dataTranslations = {
       fundamentia: {
         title: "Backend Software Engineer",
         company_name: "Fundamentia Business Consulting",
-        date: "March 2025 - Present",
+        date: "March 2025 - August 2026",
         points: [
-          "Lead backend developer on a European project for entity anonymization and AI/LLM integration.",
-          "Design and implementation of backend architecture, microservices, and REST APIs with Java, Spring Boot, Kafka, and MySQL.",
-          "Integration of Spring AI with Azure AI Foundry to evaluate LLMs applied to entity extraction and anonymization, reaching 99% accuracy in identifying the entities specified in the prompts.",
-          "Fine-tuning of NER models (Python, PyTorch, Hugging Face) achieving a 90% F1-score, designing and optimizing prompts through precision, recall, timing, and cost metrics.",
-          "Development of RPA solutions (Node.js, Selenium, Puppeteer) that automate the processing of ~400 XMLs per month with no manual intervention.",
-          "Participation in architecture decisions and presentation of technical results to the team.",
+          "Led backend development on a European project focused on entity anonymisation and AI/LLM integration.",
+          "Implemented the backend architecture, microservices and REST APIs using Java, Spring Boot, Kafka and MySQL.",
+          "Integrated Spring AI with Azure AI Foundry to evaluate LLMs applied to entity extraction and anonymisation, achieving 99% accuracy in identifying entities specified in the input prompts.",
+          "Fine-tuned NER models (Python, PyTorch, Hugging Face) to a 90% F1-score, designing and optimising prompts based on precision, recall, latency and cost metrics.",
+          "Developed RPA solutions (Node.js, Selenium, Puppeteer) that automated the processing of ~400 XML files per month without manual intervention.",
+          "Participated in architectural decisions and presented technical results to the team.",
         ],
       },
       altia: {
@@ -59,6 +59,20 @@ export const dataTranslations = {
         name: "ImgTwin",
         description:
           "A lightweight tool that detects and removes duplicate or near-duplicate images. It extracts MobileNet embeddings, compresses them with PCA, and indexes them with FAISS for fast similarity search, offering an interactive Matplotlib UI to review and delete matches.",
+      },
+    },
+    freelance: {
+      esencia: {
+        name: "ESENCIA",
+        client: "Wellness centre · Maite Pomares Agulló",
+        description:
+          "Official website for a wellness and beauty centre: services catalogue, FAQs, contact form and a direct booking call-to-action.",
+      },
+      anabelperez: {
+        name: "Anabel Pérez Lara",
+        client: "Personal portfolio",
+        description:
+          "Bilingual portfolio (ES/EN) showcasing her academic and professional work. Built in React and deployed on Vercel, with a typographic design, smooth animations and a fully responsive layout.",
       },
     },
     certificados: {
@@ -167,14 +181,14 @@ export const dataTranslations = {
       fundamentia: {
         title: "Backend Software Engineer",
         company_name: "Fundamentia Business Consulting",
-        date: "Marzo 2025 - Actualidad",
+        date: "Marzo 2025 - Agosto 2026",
         points: [
-          "Desarrollador backend principal en un proyecto europeo de anonimización de entidades e integración de IA/LLMs.",
-          "Diseño e implementación de arquitectura backend, microservicios y APIs REST con Java, Spring Boot, Kafka y MySQL.",
-          "Integración de Spring AI con Azure AI Foundry para evaluar LLMs aplicados a la extracción y anonimización de entidades, alcanzando un 99% de precisión en la identificación de las entidades especificadas en los prompts.",
-          "Fine-tuning de modelos NER (Python, PyTorch, Hugging Face) con un F1-score del 90%, diseñando y optimizando prompts mediante métricas de precision, recall, tiempos y costes.",
-          "Desarrollo de soluciones RPA (Node.js, Selenium, Puppeteer) que automatizan el procesamiento de ~400 XMLs al mes sin intervención manual.",
-          "Participación en decisiones de arquitectura y presentación de resultados técnicos ante el equipo.",
+          "Lideré el desarrollo backend de un proyecto europeo de anonimización de entidades e integración de IA/LLMs.",
+          "Diseñé e implementé la arquitectura backend, microservicios y APIs REST con Java, Spring Boot, Kafka y MySQL.",
+          "Integré Spring AI con Azure AI Foundry para evaluar LLMs aplicados a extracción y anonimización de entidades, alcanzando un 99% de precisión en la identificación de entidades especificadas en los prompts.",
+          "Realicé fine-tuning de modelos NER (Python, PyTorch, Hugging Face) con un F1-score del 90%, diseñando y optimizando prompts mediante métricas de precision, recall, tiempos y costes.",
+          "Desarrollé soluciones RPA (Node.js, Selenium, Puppeteer) que automatizan el procesamiento de ~400 XMLs al mes sin intervención manual.",
+          "Participé en decisiones de arquitectura y presenté resultados técnicos ante el equipo.",
         ],
       },
       altia: {
@@ -219,6 +233,20 @@ export const dataTranslations = {
         name: "ImgTwin",
         description:
           "Herramienta ligera que detecta y elimina imágenes duplicadas o muy similares. Extrae embeddings con MobileNet, los comprime con PCA y los indexa con FAISS para una búsqueda de similitud rápida, con una interfaz interactiva en Matplotlib para revisar y eliminar coincidencias.",
+      },
+    },
+    freelance: {
+      esencia: {
+        name: "ESENCIA",
+        client: "Centro de bienestar · Maite Pomares Agulló",
+        description:
+          "Web oficial de un centro de bienestar y belleza: catálogo de servicios, FAQs, formulario de contacto y llamada directa a la reserva.",
+      },
+      anabelperez: {
+        name: "Anabel Pérez Lara",
+        client: "Portfolio personal",
+        description:
+          "Portfolio bilingüe (ES/EN) donde recoge sus trabajos universitarios y profesionales. Desarrollado en React y desplegado en Vercel, con diseño tipográfico, animaciones suaves y totalmente responsive.",
       },
     },
     certificados: {

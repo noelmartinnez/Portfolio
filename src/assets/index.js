@@ -23,6 +23,9 @@ import altia from "./company/altia.png";
 import fundamentia from "./company/fundamentia.jpeg";
 import UA from "./UA.jpg";
 
+import esencia from "./freelance/esencia.webp";
+import anabelperez from "./freelance/anabelperez.webp";
+
 export {
   python,
   java,
@@ -43,4 +46,6 @@ export {
   fundamentia,
   kafka,
   UA,
+  esencia,
+  anabelperez,
 };

@@ -11,6 +11,8 @@ import {
   kafka,
   node,
   UA,
+  esencia,
+  anabelperez,
 } from "../assets";
 
 // Nav links: `id` = section anchor; `titleKey` points at the translated label.
@@ -28,17 +30,16 @@ export const navLinks = [
     titleKey: "nav.demos",
   },
   {
-    id: "titles",
-    titleKey: "nav.titles",
-    dropdown: [
-      { id: "education", titleKey: "nav.education" },
-      { id: "certificates", titleKey: "nav.certificates" },
-      { id: "languages", titleKey: "nav.languages" },
-    ],
-  },
-  {
     id: "proyects",
     titleKey: "nav.proyects",
+  },
+  {
+    id: "freelance",
+    titleKey: "nav.freelance",
+  },
+  {
+    id: "formacion",
+    titleKey: "nav.formacion",
   },
   {
     id: "contact",
@@ -127,6 +128,20 @@ const certificadosBase = [
   },
 ];
 
+// Webs desarrolladas para clientes como trabajo freelance.
+const freelanceBase = [
+  {
+    id: "esencia",
+    image: esencia,
+    live_link: "https://bellezaconesencia.es/",
+  },
+  {
+    id: "anabelperez",
+    image: anabelperez,
+    live_link: "https://anabelperez.vercel.app/",
+  },
+];
+
 const idiomasBase = [
   { id: "spanish" },
   {
@@ -164,6 +179,7 @@ export {
   experiencesBase,
   projectsBase,
   certificadosBase,
+  freelanceBase,
   idiomasBase,
   educacionBase,
   skillsBase,

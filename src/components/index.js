@@ -6,9 +6,8 @@ import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Footer from "./Footer";
-import Certificados from './Certificados';
-import Educacion from './Educacion';
-import Idiomas from './Idiomas';
+import Freelance from "./Freelance";
+import Formacion from "./Formacion";
 
 export {
   Hero,
@@ -19,7 +18,6 @@ export {
   Contact,
   Footer,
   CanvasLoader,
-  Certificados,
-  Educacion,
-  Idiomas,
+  Freelance,
+  Formacion,
 };

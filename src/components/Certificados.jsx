@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { drive } from "../assets";
-import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
+import { useResponsive } from "../hooks/useResponsive";
 
 const ProjectCard = ({
   index,
@@ -24,24 +24,24 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className={`bg-tertiary p-5 rounded-2xl shadow-card border border-white/10 ${
-          isTablet ? "sm:w-[400px]" : "sm:w-[360px]"
+        className={`bg-tertiary p-4 rounded-2xl shadow-card border border-white/10 ${
+          isTablet ? "sm:w-[320px]" : "sm:w-[300px]"
         } w-full`}
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[180px]">
           <img
             src={image}
             alt={name}
-            width={360}
-            height={230}
+            width={300}
+            height={180}
             loading="lazy"
             className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+          <div className="absolute inset-0 flex justify-end m-2 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-9 h-9 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
                 src={drive}
@@ -56,11 +56,11 @@ const ProjectCard = ({
         </div>
 
         <div
-          className={`mt-5 ${
+          className={`mt-4 ${
             isMobile || isTablet ? "flex flex-col items-center text-center" : ""
           }`}
         >
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <h3 className="text-white font-bold text-[20px]">{name}</h3>
         </div>
       </Tilt>
     </motion.div>
@@ -70,40 +70,19 @@ const ProjectCard = ({
 const Certificados = () => {
   const { t, data } = useLanguage();
   const certificados = data.certificados;
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 500px)");
-    const tabletQuery = window.matchMedia("(min-width: 500px) and (max-width: 1100px)");
-
-    setIsMobile(mobileQuery.matches);
-    setIsTablet(tabletQuery.matches);
-
-    const handleMobileChange = (event) => setIsMobile(event.matches);
-    const handleTabletChange = (event) => setIsTablet(event.matches);
-
-    mobileQuery.addEventListener("change", handleMobileChange);
-    tabletQuery.addEventListener("change", handleTabletChange);
-
-    return () => {
-      mobileQuery.removeEventListener("change", handleMobileChange);
-      tabletQuery.removeEventListener("change", handleTabletChange);
-    };
-  }, []);
+  const { isMobile, isTablet } = useResponsive();
 
   return (
     <>
       <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
-        <p className={`${styles.sectionSubText} select-none`}>{t("certificates.subtitle")}</p>
-        <h2 className={`${styles.sectionHeadText} select-none`}>{t("certificates.title")}</h2>
+        <h3 className={`${styles.sectionSubHeadText} select-none`}>{t("certificates.title")}</h3>
       </motion.div>
 
       <div
         className={`${
           isMobile || isTablet
-            ? "grid grid-cols-1 gap-7 mt-14 justify-items-center items-center" // Diseño para móvil y tablets (una columna)
-            : "flex flex-wrap gap-7 mt-20" // Diseño para pantallas grandes (flex)
+            ? "grid grid-cols-1 gap-7 mt-8 justify-items-center items-center" // Diseño para móvil y tablets (una columna)
+            : "flex flex-wrap gap-7 mt-10" // Diseño para pantallas grandes (flex)
         }`}
       >
         {certificados.map((certificado, index) => (
@@ -114,4 +93,4 @@ const Certificados = () => {
   );
 };
 
-export default SectionWrapper(Certificados, "certificates");
+export default Certificados;
