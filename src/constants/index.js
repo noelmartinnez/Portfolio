@@ -7,6 +7,8 @@ import {
   altia,
   kubernetes,
   diploma_jenkins,
+  anthropic_ai_fluency,
+  anthropic_logo,
   fundamentia,
   kafka,
   node,
@@ -116,6 +118,12 @@ const projectsBase = [
 ];
 
 const certificadosBase = [
+  {
+    id: "aifluency",
+    image: anthropic_ai_fluency,
+    link_icon: anthropic_logo,
+    source_code_link: "https://verify.skilljar.com/c/enfv9mgx7orz",
+  },
   {
     id: "js",
     image: js,

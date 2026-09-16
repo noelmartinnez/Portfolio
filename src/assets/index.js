@@ -6,6 +6,8 @@ import close from "./close.svg";
 
 import js from "./js.webp";
 import diploma_jenkins from "./diploma-jenkins.webp";
+import anthropic_ai_fluency from "./anthropic-ai-fluency.webp";
+import anthropic_logo from "./anthropic-logo.webp";
 
 import drive from "./drive.webp";
 
@@ -43,6 +45,8 @@ export {
   kubernetes,
   cara,
   diploma_jenkins,
+  anthropic_ai_fluency,
+  anthropic_logo,
   fundamentia,
   kafka,
   UA,

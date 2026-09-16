@@ -13,6 +13,7 @@ const ProjectCard = ({
   description,
   image,
   source_code_link,
+  link_icon,
   isTablet,
   isMobile,
 }) => {
@@ -44,8 +45,8 @@ const ProjectCard = ({
               className="black-gradient w-9 h-9 rounded-full flex justify-center items-center cursor-pointer"
             >
               <img
-                src={drive}
-                alt="github"
+                src={link_icon || drive}
+                alt={link_icon ? "Anthropic" : "Google Drive"}
                 width={20}
                 height={20}
                 loading="lazy"

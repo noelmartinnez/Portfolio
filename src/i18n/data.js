@@ -76,6 +76,11 @@ export const dataTranslations = {
       },
     },
     certificados: {
+      aifluency: {
+        name: "AI Fluency: Framework & Foundations",
+        description:
+          "Certifies the ability to collaborate with AI systems effectively, efficiently, ethically and safely, following Anthropic's AI Fluency framework.",
+      },
       js: {
         name: "JavaScript",
         description:
@@ -250,6 +255,11 @@ export const dataTranslations = {
       },
     },
     certificados: {
+      aifluency: {
+        name: "AI Fluency: Framework & Foundations",
+        description:
+          "Acredita la capacidad de colaborar con sistemas de IA de forma eficaz, eficiente, ética y segura, siguiendo el marco AI Fluency de Anthropic.",
+      },
       js: {
         name: "JavaScript",
         description:
