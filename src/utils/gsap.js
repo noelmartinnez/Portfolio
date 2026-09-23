@@ -17,4 +17,13 @@ export const ANY_MOTION = "(prefers-reduced-motion: no-preference)";
 // Dispositivos sin ratón: la descripción de las tarjetas se abre al tocarlas.
 export const TOUCH = "(hover: none)";
 
+// Entrada al hacer scroll. El estado inicial se fija ya con gsap.set: un
+// from()/fromTo() ligado a ScrollTrigger no lo garantiza hasta que se dispara
+// (sus refresh lo revierten), y el texto se veía, desaparecía y volvía a entrar.
+// La animación se lanza una sola vez al entrar.
+export const reveal = (targets, from, to, trigger) => {
+  gsap.set(targets, from);
+  return ScrollTrigger.create({ ...trigger, once: true, onEnter: () => gsap.to(targets, to) });
+};
+
 export { gsap, ScrollTrigger, useGSAP };

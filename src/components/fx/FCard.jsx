@@ -10,6 +10,25 @@ const TONES = [
   ["#141236", "#08071c", "#a78bfa", "#312e81"],
 ];
 
+// Flecha de enlace externo. Un SVG en el color del texto en lugar del carácter
+// "↗", que iOS pinta como emoji.
+export const LinkArrow = () => (
+  <svg
+    viewBox="0 0 24 24"
+    width="0.8em"
+    height="0.8em"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.25"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+    style={{ display: "inline-block", verticalAlign: "-0.05em", marginLeft: "0.3em" }}
+  >
+    <path d="M7 17 17 7M8 7h9v9" />
+  </svg>
+);
+
 // Tarjeta del sistema .fcard: capa base + capa que se desvela en hover,
 // título, brillo que sigue al cursor y pie de tarjeta (enlazado si hay href).
 const FCard = ({

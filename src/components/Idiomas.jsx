@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
+import { LinkArrow } from "./fx/FCard";
 
 const LanguageCard = ({ index, name, level, source_code_link, t }) => (
   <motion.div variants={fadeIn("up", "tween", index * 0.1, 0.45)} className="h-full w-full max-w-[280px]">
@@ -20,7 +21,8 @@ const LanguageCard = ({ index, name, level, source_code_link, t }) => (
           rel="noopener noreferrer"
           className="mt-4 text-[#915eff] text-[14px] font-medium hover:underline"
         >
-          {t("languages.credential")} →
+          {t("languages.credential")}
+          <LinkArrow />
         </a>
       ) : (
         <span className="mt-4 text-[#915eff] text-[14px] font-medium">

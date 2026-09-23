@@ -1,13 +1,19 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { HCol } from "./fx/HorizontalSection";
-import FCard from "./fx/FCard";
+import FCard, { LinkArrow } from "./fx/FCard";
 
 const SIZES = ["is-low", "is-high", "is-low"];
 
 // Columnas de certificados dentro de la pista horizontal de Formación.
 const Certificados = ({ plain = false }) => {
   const { t, data } = useLanguage();
+  const credential = (
+    <>
+      {t("languages.credential")}
+      <LinkArrow />
+    </>
+  );
 
   return data.certificados.map((certificado, index) => (
     <HCol key={certificado.id}>
@@ -22,8 +28,8 @@ const Certificados = ({ plain = false }) => {
         imageAlt={certificado.name}
         big={certificado.name}
         reveal={plain ? undefined : <p>{certificado.description}</p>}
-        caption={plain ? certificado.name : `${t("languages.credential")} ↗`}
-        captionEnd={plain ? `${t("languages.credential")} ↗` : undefined}
+        caption={plain ? certificado.name : credential}
+        captionEnd={plain ? credential : undefined}
       />
     </HCol>
   ));

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { styles } from "../styles";
 import { useLanguage } from "../context/LanguageContext";
-import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, COMPACT_MOTION } from "../utils/gsap";
+import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, COMPACT_MOTION, reveal } from "../utils/gsap";
 import SplitHeading from "./fx/SplitHeading";
 
 const ExperiencePanel = ({ index, experience }) => (
@@ -92,19 +92,12 @@ const Experience = () => {
         });
         timelineRef.current = tl;
 
-        // Entrada del primer panel. El estado oculto se fija ya (gsap.set es
-        // síncrono y va antes del primer pintado); un from() con scrollTrigger
-        // no lo aplicaría hasta el primer refresh, así que el texto se veía,
-        // desaparecía y volvía a entrar.
-        const intro = panels[0].querySelectorAll(".story-meta > *, li");
-        gsap.set(intro, { autoAlpha: 0, y: 30 });
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top 60%",
-          once: true,
-          onEnter: () =>
-            gsap.to(intro, { autoAlpha: 1, y: 0, stagger: 0.06, duration: 0.8, ease: "power3.out" }),
-        });
+        reveal(
+          panels[0].querySelectorAll(".story-meta > *, li"),
+          { autoAlpha: 0, y: 30 },
+          { autoAlpha: 1, y: 0, stagger: 0.06, duration: 0.8, ease: "power3.out" },
+          { trigger: sectionRef.current, start: "top 60%" }
+        );
 
         return () => {
           timelineRef.current = null;
@@ -116,14 +109,12 @@ const Experience = () => {
       // pastillas de arriba marcan en cuál estás.
       mm.add(COMPACT_MOTION, () => {
         panels.forEach((panel, i) => {
-          // Mismo motivo que en escritorio: estado inicial fijado desde el principio.
-          gsap.set(panel, { y: 60, autoAlpha: 0 });
-          ScrollTrigger.create({
-            trigger: panel,
-            start: "top 85%",
-            once: true,
-            onEnter: () => gsap.to(panel, { y: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out" }),
-          });
+          reveal(
+            panel,
+            { y: 60, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out" },
+            { trigger: panel, start: "top 85%" }
+          );
           gsap.fromTo(
             panel.querySelectorAll(".story-meta > *, .story-points li"),
             { y: 24, autoAlpha: 0 },

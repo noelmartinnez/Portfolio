@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from "react";
-import { gsap, useGSAP, ANY_MOTION } from "../../utils/gsap";
+import { gsap, useGSAP, ANY_MOTION, reveal } from "../../utils/gsap";
 
 // Divide el texto en palabras enmascaradas y las hace subir una a una al entrar
 // en pantalla. Los tramos entre *asteriscos* (o la última palabra con
@@ -33,7 +33,7 @@ const SplitHeading = ({ as: Tag = "h2", text, className = "", accentLast = false
       if (playedRef.current) return;
       const mm = gsap.matchMedia();
       mm.add(ANY_MOTION, () => {
-        gsap.fromTo(
+        reveal(
           ref.current.querySelectorAll(".sw-i"),
           { yPercent: 115, rotate: 4 },
           {
@@ -43,11 +43,11 @@ const SplitHeading = ({ as: Tag = "h2", text, className = "", accentLast = false
             delay,
             ease: "power4.out",
             stagger: 0.07,
-            scrollTrigger: { trigger: ref.current, start: "top 88%", once: true },
             onStart: () => {
               playedRef.current = true;
             },
-          }
+          },
+          { trigger: ref.current, start: "top 88%" }
         );
       });
     },

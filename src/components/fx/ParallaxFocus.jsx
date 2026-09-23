@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { gsap, useGSAP, ScrollTrigger, ANY_MOTION, COMPACT_MOTION, DESKTOP_MOTION } from "../../utils/gsap";
+import { gsap, useGSAP, ScrollTrigger, ANY_MOTION, COMPACT_MOTION, DESKTOP_MOTION, reveal } from "../../utils/gsap";
 import { useLanguage } from "../../context/LanguageContext";
 import SplitHeading from "./SplitHeading";
 
@@ -115,14 +115,12 @@ const ParallaxFocus = () => {
           onToggle: (self) => drifts.forEach((tween) => (self.isActive ? tween.resume() : tween.pause())),
         });
 
-        gsap.from(ref.current.querySelectorAll(".focus-reveal"), {
-          y: 30,
-          autoAlpha: 0,
-          duration: 1,
-          ease: "power3.out",
-          stagger: 0.15,
-          scrollTrigger: { trigger: ref.current, start: "top 60%", once: true },
-        });
+        reveal(
+          ref.current.querySelectorAll(".focus-reveal"),
+          { y: 30, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 1, ease: "power3.out", stagger: 0.15 },
+          { trigger: ref.current, start: "top 60%" }
+        );
       });
     },
     { scope: ref }

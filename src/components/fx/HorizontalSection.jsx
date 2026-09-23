@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, COMPACT_MOTION } from "../../utils/gsap";
+import { gsap, useGSAP, ScrollTrigger, DESKTOP_MOTION, COMPACT_MOTION, reveal } from "../../utils/gsap";
 import { useMediaQuery } from "../../hooks/useResponsive";
 import SplitHeading from "./SplitHeading";
 import { useCarousel, CarouselDots } from "./Carousel";
@@ -95,14 +95,12 @@ const HorizontalSection = ({ id, bg, head, compactHead, children }) => {
           // suben y se enderezan según avanzan por la pista, y terminan de
           // colocarse pronto para que la última quede entera al final.
           if (col.offsetLeft < window.innerWidth * 0.9) {
-            gsap.from(card, {
-              y: 80,
-              rotate: 2,
-              autoAlpha: 0,
-              duration: 1.1,
-              ease: "power3.out",
-              scrollTrigger: { trigger: sectionRef.current, start: "top 65%", once: true },
-            });
+            reveal(
+              card,
+              { y: 80, rotate: 2, autoAlpha: 0 },
+              { y: 0, rotate: 0, autoAlpha: 1, duration: 1.1, ease: "power3.out" },
+              { trigger: sectionRef.current, start: "top 65%" }
+            );
           } else {
             gsap.from(card, {
               y: 140,
@@ -136,14 +134,12 @@ const HorizontalSection = ({ id, bg, head, compactHead, children }) => {
       });
 
       mm.add(COMPACT_MOTION, () => {
-        gsap.from(trackRef.current.querySelectorAll(".h-col:not(.h-head)"), {
-          y: 50,
-          autoAlpha: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.08,
-          scrollTrigger: { trigger: trackRef.current, start: "top 80%", once: true },
-        });
+        reveal(
+          trackRef.current.querySelectorAll(".h-col:not(.h-head)"),
+          { y: 50, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.8, ease: "power3.out", stagger: 0.08 },
+          { trigger: trackRef.current, start: "top 80%" }
+        );
       });
     },
     { scope: sectionRef }

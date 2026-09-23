@@ -3,7 +3,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { useMediaQuery } from "../hooks/useResponsive";
 import { DESKTOP_MOTION } from "../utils/gsap";
 import HorizontalSection, { HCol, HorizontalHead } from "./fx/HorizontalSection";
-import FCard from "./fx/FCard";
+import FCard, { LinkArrow } from "./fx/FCard";
 
 const Freelance = () => {
   const { t, data } = useLanguage();
@@ -41,7 +41,7 @@ const Freelance = () => {
             big={item.name}
             reveal={isPinned ? <p>{item.description}</p> : undefined}
             caption={isPinned ? item.client : item.name}
-            captionEnd={`${t("freelance.viewSite")} ↗`}
+            captionEnd={<>{t("freelance.viewSite")}<LinkArrow /></>}
           />
         </HCol>
       ))}

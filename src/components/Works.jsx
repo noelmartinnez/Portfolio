@@ -1,7 +1,7 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import HorizontalSection, { HCol, HorizontalHead } from "./fx/HorizontalSection";
-import FCard from "./fx/FCard";
+import FCard, { LinkArrow } from "./fx/FCard";
 import ProjectArt from "./fx/ProjectArt";
 
 // Ritmo escalonado de la pista: anchas, altas y bajas alternadas.
@@ -41,7 +41,7 @@ const Works = () => {
             big={project.name}
             art={<ProjectArt id={project.id} />}
             reveal={<p>{project.description}</p>}
-            caption={`${t("works.viewOnGithub")} ↗`}
+            caption={<>{t("works.viewOnGithub")}<LinkArrow /></>}
             captionEnd={project.tags[0]?.name}
           />
         </HCol>

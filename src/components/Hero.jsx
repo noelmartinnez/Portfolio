@@ -63,7 +63,7 @@ const Hero = () => {
     <section
       ref={sectionRef}
       data-bg="#050816"
-      className={`relative w-full ${centered ? 'min-h-[100svh] justify-center' : 'min-h-[80vh]'} mx-auto flex flex-col items-center justify-center ${centered ? 'mt-0 pt-24 pb-10' : 'mt-32 pb-16'}`}
+      className={`relative w-full ${centered ? 'min-h-[100svh] justify-center' : 'min-h-[80vh]'} mx-auto flex flex-col items-center justify-center ${centered ? 'mt-0 pt-40 pb-10' : 'mt-32 pb-16'}`}
     >
       <div className={`${styles.paddingX} ${centered ? 'flex-col items-center justify-center' : 'pt-16 flex-row items-start justify-center gap-12'} max-w-7xl mx-auto flex w-full`}>
         {/* Gradiente + círculo solo en escritorio */}
