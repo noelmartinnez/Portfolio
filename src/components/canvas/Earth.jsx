@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import { hasWebGL } from "../../utils/webgl";
 
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
@@ -31,6 +32,8 @@ const EarthCanvas = ({ active = true }) => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
+  if (!hasWebGL()) return null;
 
   return (
     <Canvas

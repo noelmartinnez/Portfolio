@@ -7,6 +7,7 @@ import { useInView } from "../hooks/useInView";
 import { useMediaQuery } from "../hooks/useResponsive";
 import { gsap, useGSAP, DESKTOP_MOTION } from "../utils/gsap";
 import SplitHeading from "./fx/SplitHeading";
+import ErrorBoundary from "./fx/ErrorBoundary";
 import { useCarousel, CarouselDots } from "./fx/Carousel";
 import SkillArt from "./fx/SkillArt";
 
@@ -211,9 +212,11 @@ const Skills = () => {
               <div className="w-28 h-28" key={technology.name}>
                 {/* Los lienzos se crean al acercarse y luego solo se pausan. */}
                 {ballsSeen && (
-                  <Suspense fallback={null}>
-                    <BallCanvas icon={technology.icon} active={ballsInView} />
-                  </Suspense>
+                  <ErrorBoundary>
+                    <Suspense fallback={null}>
+                      <BallCanvas icon={technology.icon} active={ballsInView} />
+                    </Suspense>
+                  </ErrorBoundary>
                 )}
                 <p className="flex items-center justify-center text-white text-[14px] font-bold select-none">
                   {technology.name}

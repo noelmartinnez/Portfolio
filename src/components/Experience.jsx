@@ -92,13 +92,18 @@ const Experience = () => {
         });
         timelineRef.current = tl;
 
-        gsap.from(panels[0].querySelectorAll(".story-meta > *, li"), {
-          autoAlpha: 0,
-          y: 30,
-          stagger: 0.06,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 60%", once: true },
+        // Entrada del primer panel. El estado oculto se fija ya (gsap.set es
+        // síncrono y va antes del primer pintado); un from() con scrollTrigger
+        // no lo aplicaría hasta el primer refresh, así que el texto se veía,
+        // desaparecía y volvía a entrar.
+        const intro = panels[0].querySelectorAll(".story-meta > *, li");
+        gsap.set(intro, { autoAlpha: 0, y: 30 });
+        ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: "top 60%",
+          once: true,
+          onEnter: () =>
+            gsap.to(intro, { autoAlpha: 1, y: 0, stagger: 0.06, duration: 0.8, ease: "power3.out" }),
         });
 
         return () => {
@@ -111,20 +116,26 @@ const Experience = () => {
       // pastillas de arriba marcan en cuál estás.
       mm.add(COMPACT_MOTION, () => {
         panels.forEach((panel, i) => {
-          gsap.from(panel, {
-            y: 60,
-            autoAlpha: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: { trigger: panel, start: "top 85%", once: true },
+          // Mismo motivo que en escritorio: estado inicial fijado desde el principio.
+          gsap.set(panel, { y: 60, autoAlpha: 0 });
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "top 85%",
+            once: true,
+            onEnter: () => gsap.to(panel, { y: 0, autoAlpha: 1, duration: 0.9, ease: "power3.out" }),
           });
-          gsap.from(panel.querySelectorAll(".story-meta > *, .story-points li"), {
-            y: 24,
-            autoAlpha: 0,
-            stagger: 0.06,
-            ease: "none",
-            scrollTrigger: { trigger: panel, start: "top 85%", end: "top 45%", scrub: 0.4 },
-          });
+          gsap.fromTo(
+            panel.querySelectorAll(".story-meta > *, .story-points li"),
+            { y: 24, autoAlpha: 0 },
+            {
+              y: 0,
+              autoAlpha: 1,
+              stagger: 0.06,
+              ease: "none",
+              immediateRender: true,
+              scrollTrigger: { trigger: panel, start: "top 85%", end: "top 45%", scrub: 0.4 },
+            }
+          );
           ScrollTrigger.create({
             trigger: panel,
             start: "top 60%",

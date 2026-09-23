@@ -7,6 +7,7 @@ import {
   useTexture,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import { hasWebGL } from "../../utils/webgl";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -36,6 +37,8 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon, active = true }) => {
+  if (!hasWebGL()) return null;
+
   return (
     <Canvas
       dpr={[1, 1.5]}

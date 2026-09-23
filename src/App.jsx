@@ -18,6 +18,7 @@ import BgController from "./components/fx/BgController";
 import LanguageScrollKeeper from "./components/fx/LanguageScrollKeeper";
 import Grain from "./components/fx/Grain";
 import ParallaxFocus from "./components/fx/ParallaxFocus";
+import ErrorBoundary from "./components/fx/ErrorBoundary";
 
 const SpheresCanvas = lazy(() => import("./components/canvas/SpheresCanvas"));
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
@@ -83,9 +84,11 @@ const App = () => {
         <Grain />
         <div>
           <div className="relative z-10">
-            <Suspense fallback={null}>
-              <SpheresCanvas />
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <SpheresCanvas />
+              </Suspense>
+            </ErrorBoundary>
             <Navbar />
             <Hero />
           </div>
@@ -93,18 +96,22 @@ const App = () => {
 
         <Experience />
         <Skills />
-        <Suspense fallback={null}>
-          <Demos />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={null}>
+            <Demos />
+          </Suspense>
+        </ErrorBoundary>
         <ParallaxFocus />
         <Works />
         <Freelance />
         <Formacion />
         <div className="relative z-0">
           <Contact />
-          <Suspense fallback={null}>
-            <StarsCanvas />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={null}>
+              <StarsCanvas />
+            </Suspense>
+          </ErrorBoundary>
         </div>
         <div className="w-full" ref={footerRef}>
           <Footer />

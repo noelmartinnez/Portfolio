@@ -7,6 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
 import SplitHeading from "./fx/SplitHeading";
+import ErrorBoundary from "./fx/ErrorBoundary";
 import { useMediaQuery } from "../hooks/useResponsive";
 import { useInView } from "../hooks/useInView";
 
@@ -200,9 +201,11 @@ const Contact = () => {
         >
           {/* El planeta (modelo de ~3 MB) solo se carga al acercarse. */}
           {globeSeen && (
-            <Suspense fallback={null}>
-              <EarthCanvas active={globeInView} />
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <EarthCanvas active={globeInView} />
+              </Suspense>
+            </ErrorBoundary>
           )}
         </motion.div>
       )}

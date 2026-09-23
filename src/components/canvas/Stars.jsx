@@ -2,6 +2,7 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as random from "maath/random/dist/maath-random.esm";
 import { useInView } from "../../hooks/useInView";
+import { hasWebGL } from "../../utils/webgl";
 
 // Menos partículas por debajo de 1100px: el móvil no necesita tantos puntos.
 const POINTS = window.matchMedia("(max-width: 1100px)").matches ? 500 : 1700;
@@ -30,6 +31,8 @@ const Stars = () => {
 
 const StarsCanvas = () => {
   const { ref, inView, seen } = useInView("400px");
+
+  if (!hasWebGL()) return null;
 
   return (
     <div ref={ref} className='w-full h-auto absolute inset-0 z-[-1]'>
