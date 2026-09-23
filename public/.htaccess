@@ -1,0 +1,12 @@
+# El HTML se revalida siempre: si no, el navegador lo guarda en caché y sigue
+# cargando los JS de la versión anterior después de cada despliegue.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+
+  # Los ficheros de /assets llevan hash en el nombre: pueden cachearse para siempre.
+  <FilesMatch "-[0-9a-f]{8}\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

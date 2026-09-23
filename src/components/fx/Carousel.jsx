@@ -18,10 +18,10 @@ export const useCarousel = ({ trackRef, itemSelector, enabled, deps = [] }) => {
 
     const cards = items.map((item) => item.querySelector(".fcard") || item.firstElementChild || item);
     const withMotion = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
-    const setters = cards.map((card) => ({
-      scale: gsap.quickSetter(card, "scale"),
-      opacity: gsap.quickSetter(card, "opacity"),
-    }));
+    // Setter "css" (acepta un objeto): con quickSetter(card, "scale") GSAP
+    // traduce el alias a "scaleX,scaleY" y acaba en setAttribute, que Safari
+    // en iOS rechaza ("Invalid qualified name") y rompía toda la página.
+    const setters = cards.map((card) => gsap.quickSetter(card, "css"));
 
     let frame = 0;
     const update = () => {
@@ -38,8 +38,7 @@ export const useCarousel = ({ trackRef, itemSelector, enabled, deps = [] }) => {
         }
         if (withMotion) {
           const k = Math.min(1, distance / track.clientWidth / 0.6);
-          setters[i].scale(1 - k * 0.12);
-          setters[i].opacity(1 - k * 0.45);
+          setters[i]({ scale: 1 - k * 0.12, opacity: 1 - k * 0.45 });
         }
       });
 

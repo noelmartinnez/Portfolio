@@ -40,14 +40,15 @@ jobs:
           
           # Limpia todo excepto dist
           git rm -rf . || true
-          mv dist/* .
+          # cp -a copia también los ficheros ocultos (.htaccess); mv dist/* no
+          cp -a dist/. .
           rm -rf dist node_modules
           
           # Asegura que .gitignore y .git no se suban
           echo ".gitignore" >> .gitignore
 
           # Añade únicamente los archivos del directorio actual
-          git add *
+          git add -A
           
           # Commit con el contenido de dist
           git commit -m "Deploy dist folder to hostinger branch"
