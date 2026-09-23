@@ -40,6 +40,27 @@ const NavBar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Con el menú abierto se bloquea el scroll de detrás y se cierra con Escape.
+  useEffect(() => {
+    if (!toggle) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event) => event.key === "Escape" && setToggle(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [toggle]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -50,7 +71,9 @@ const NavBar = () => {
   const isMobile = windowWidth <= 1100;
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 bg-primary border-b border-white/10`}>
+    <nav className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 border-b border-white/10 bg-primary transition-[padding] duration-300 ${
+        scrolled ? "py-2" : "py-4"
+      }`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           to="/"
@@ -60,36 +83,42 @@ const NavBar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-24 h-24 object-contain" />
+          <img src={logo} alt="logo" className={`object-contain transition-[width,height] duration-300 ${scrolled ? "w-14 h-14" : "w-24 h-24"}`} />
         </Link>
 
         {isMobile ? (
           <div className="flex flex-1 justify-end items-center gap-4 select-none">
             <LangSwitch lang={lang} setLanguage={setLanguage} t={t} />
-            <img
-              src={toggle ? close : menu}
-              alt="menu"
-              className="w-[28px] h-[28px] object-contain cursor-pointer"
+            <button
+              type="button"
+              aria-label="Menu"
+              aria-expanded={toggle}
+              className="p-2 -m-2"
               onClick={() => setToggle(!toggle)}
-            />
-            <div
-              className={`${
-                !toggle ? "hidden" : "flex"
-              } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
             >
-              <ul className="list-none flex justify-end items-start flex-col gap-4">
-                {navLinks.map((link) => (
-                  <li
-                    key={link.id}
-                    className={`${
-                      active === link.id ? "text-white" : "text-secondary"
-                    } font-poppins font-medium cursor-pointer text-[16px]`}
-                    onClick={() => {
-                      setActive(link.id);
-                      setToggle(false);
-                    }}
-                  >
-                    <a href={`#${link.id}`}>{t(link.titleKey)}</a>
+              <img src={toggle ? close : menu} alt="" className="w-[28px] h-[28px] object-contain" />
+            </button>
+
+            <div
+              className={`nav-sheet${toggle ? " is-open" : ""}`}
+              onClick={() => setToggle(false)}
+              aria-hidden={!toggle}
+            >
+              <ul>
+                {navLinks.map((link, index) => (
+                  <li key={link.id} style={{ "--i": index }}>
+                    <a
+                      href={`#${link.id}`}
+                      className={active === link.id ? "is-active" : ""}
+                      tabIndex={toggle ? 0 : -1}
+                      onClick={() => {
+                        setActive(link.id);
+                        setToggle(false);
+                      }}
+                    >
+                      <span className="n">{String(index + 1).padStart(2, "0")}</span>
+                      {t(link.titleKey)}
+                    </a>
                   </li>
                 ))}
               </ul>

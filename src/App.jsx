@@ -14,6 +14,10 @@ import {
   Freelance,
   Formacion,
 } from "./components";
+import BgController from "./components/fx/BgController";
+import LanguageScrollKeeper from "./components/fx/LanguageScrollKeeper";
+import Grain from "./components/fx/Grain";
+import ParallaxFocus from "./components/fx/ParallaxFocus";
 
 const SpheresCanvas = lazy(() => import("./components/canvas/SpheresCanvas"));
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
@@ -26,6 +30,7 @@ const App = () => {
   const [showMessage, setShowMessage] = useState(true);
   const [buttonStyles, setButtonStyles] = useState({ bottom: "8px", right: "8px" });
   const footerRef = useRef(null);
+  const pageRef = useRef(null);
 
   const updateButtonStyles = useCallback(() => {
     if (!footerRef.current) return;
@@ -74,7 +79,8 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div ref={pageRef} className="relative z-0 flow-root" style={{ backgroundColor: "#050816" }}>
+        <Grain />
         <div>
           <div className="relative z-10">
             <Suspense fallback={null}>
@@ -90,6 +96,7 @@ const App = () => {
         <Suspense fallback={null}>
           <Demos />
         </Suspense>
+        <ParallaxFocus />
         <Works />
         <Freelance />
         <Formacion />
@@ -102,6 +109,9 @@ const App = () => {
         <div className="w-full" ref={footerRef}>
           <Footer />
         </div>
+
+        <BgController targetRef={pageRef} />
+        <LanguageScrollKeeper />
 
         {/* Botón flotante de WhatsApp */}
         {!isMobile && !isTablet && (

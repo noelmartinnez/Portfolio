@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
-import { useResponsive } from "../hooks/useResponsive";
 
 const LanguageCard = ({ index, name, level, source_code_link, t }) => (
-  <motion.div variants={fadeIn("up", "spring", index * 1, 0.75)} className="h-full w-full max-w-[280px]">
+  <motion.div variants={fadeIn("up", "tween", index * 0.1, 0.45)} className="h-full w-full max-w-[280px]">
     <Tilt
       options={{ max: 25, scale: 1, speed: 450 }}
       className="bg-tertiary p-8 rounded-2xl w-full sm:w-[280px] h-full shadow-card flex flex-col items-center text-center"
@@ -35,21 +34,14 @@ const LanguageCard = ({ index, name, level, source_code_link, t }) => (
 const Idiomas = () => {
   const { t, data } = useLanguage();
   const idiomas = data.idiomas;
-  const { isMobile, isTablet } = useResponsive();
 
   return (
     <>
-      <motion.div variants={textVariant()} className={`w-full ${isMobile || isTablet ? 'flex flex-col items-center justify-center text-center' : ''}`}>
+      <motion.div variants={textVariant()} className="w-full flex flex-col items-center justify-center text-center">
         <h3 className={`${styles.sectionSubHeadText} select-none`}>{t("languages.title")}</h3>
       </motion.div>
 
-      <div
-        className={`${
-          isMobile || isTablet
-            ? "grid grid-cols-1 gap-7 mt-8 justify-items-center items-stretch"
-            : "flex flex-wrap items-stretch gap-7 mt-10"
-        }`}
-      >
+      <div className="flex flex-wrap justify-center items-stretch gap-7 mt-10">
         {idiomas.map((idioma, index) => (
           <LanguageCard key={idioma.id} index={index} t={t} {...idioma} />
         ))}

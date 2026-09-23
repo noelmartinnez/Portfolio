@@ -4,7 +4,6 @@ import {
   Decal,
   Float,
   OrbitControls,
-  Preload,
   useTexture,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
@@ -38,13 +37,15 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon, active = true }) => {
   return (
-    <Canvas dpr={[1, 2]} frameloop={active ? "always" : "never"}>
+    <Canvas
+      dpr={[1, 1.5]}
+      gl={{ antialias: false, powerPreference: "default" }}
+      frameloop={active ? "always" : "never"}
+    >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
-      <Preload all />
     </Canvas>
   );
 };

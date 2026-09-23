@@ -7,5 +7,3 @@ export const hashString = (str) => {
   }
   return hash >>> 0;
 };
-
-export const hashToHue = (str) => hashString(str) % 360;

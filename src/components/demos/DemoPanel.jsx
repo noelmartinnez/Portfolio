@@ -1,83 +1,79 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../../utils/motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { widgetRegistry } from "./registry";
 
-const DemoPanel = ({ index, category, categoryLabel, title, subtitle, concept, keyPoints, widgetKey, accent, ui, isMobile }) => {
-  const { t, lang } = useLanguage();
-  const [open, setOpen] = useState(false);
-  const Widget = widgetRegistry[widgetKey];
+// Playground: una única ventana con una pestaña por demo. El widget está
+// siempre montado y listo para usar, sin botón de "probar".
+const DemoPanel = ({ demos }) => {
+  const { lang } = useLanguage();
+  const [active, setActive] = useState(0);
+  const demo = demos[active] ?? demos[0];
+  const Widget = widgetRegistry[demo.widgetKey];
 
-  useEffect(() => {
-    setOpen(false);
-  }, [lang]);
+  const handleKeyDown = (event) => {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    event.preventDefault();
+    const dir = event.key === "ArrowRight" ? 1 : -1;
+    const next = (active + dir + demos.length) % demos.length;
+    setActive(next);
+    event.currentTarget.querySelectorAll('[role="tab"]')[next]?.focus();
+  };
 
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.15, 0.75)}
-      viewport={{ once: true, amount: 0.2 }}
-      className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-8 overflow-hidden"
-      style={{ boxShadow: `0 0 60px -20px ${accent}55` }}
+      variants={fadeIn("up", "spring", 0.1, 0.75)}
+      className="demo-window"
+      style={{ "--accent": demo.accent }}
     >
-      <div
-        className="absolute inset-x-0 top-0 h-[2px]"
-        style={{ background: `linear-gradient(90deg, transparent, ${accent}, transparent)` }}
-      />
-
-      <div className={`flex flex-col gap-1 mb-5 ${isMobile ? "items-center text-center" : ""}`}>
-        <span
-          className="text-[11px] uppercase tracking-wider font-semibold w-fit px-2.5 py-1 rounded-full border"
-          style={{ color: accent, borderColor: `${accent}55`, background: `${accent}14` }}
-        >
-          {categoryLabel}
+      <div className="demo-bar">
+        <span className="demo-dots" aria-hidden="true">
+          <i />
+          <i />
+          <i />
         </span>
-        <h3 className="text-white font-bold text-[22px] sm:text-[24px] mt-2">{title}</h3>
-        <p className="text-secondary text-[14px]">{subtitle}</p>
+        <span className="demo-file">{demo.file}</span>
       </div>
 
-      <p className={`text-white-100 text-[14px] leading-[24px] mb-4 ${isMobile ? "text-center" : ""}`}>{concept}</p>
-
-      {keyPoints?.length > 0 && (
-        <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mb-6">
-          {keyPoints.map((point, i) => (
-            <li key={i} className="text-secondary text-[13px] flex gap-2">
-              <span style={{ color: accent }}>▸</span>
-              {point}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className={`flex ${isMobile ? "justify-center" : "justify-start"}`}>
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className="text-[13px] font-semibold px-4 py-2 rounded-full border transition-colors"
-          style={{
-            color: accent,
-            borderColor: open ? accent : `${accent}55`,
-            background: `${accent}14`,
-          }}
-        >
-          {open ? t("demos.hideLabel") : t("demos.tryLabel")}
-        </button>
-      </div>
-
-      <AnimatePresence initial={false}>
-        {open && Widget && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
+      <div className="demo-tabs" role="tablist" onKeyDown={handleKeyDown} style={{ "--tabs": demos.length }}>
+        {demos.map((item, index) => (
+          <button
+            key={item.id}
+            type="button"
+            role="tab"
+            id={`demo-tab-${item.id}`}
+            aria-selected={index === active}
+            aria-controls={`demo-panel-${item.id}`}
+            tabIndex={index === active ? 0 : -1}
+            className={`demo-tab${index === active ? " is-active" : ""}`}
+            style={{ "--accent": item.accent }}
+            onClick={() => setActive(index)}
           >
-            <div className="border-t border-white/10 mt-5 pt-5">
-              <Widget ui={ui} />
-            </div>
-          </motion.div>
-        )}
+            <span className="demo-tab-num">/{String(index + 1).padStart(2, "0")}</span>
+            {/* En táctil, título corto (si lo hay) para que quepan las pestañas. */}
+            <span className={item.shortTitle ? "demo-tab-full" : undefined}>{item.title}</span>
+            {item.shortTitle && <span className="demo-tab-short">{item.shortTitle}</span>}
+          </button>
+        ))}
+      </div>
+
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={demo.id}
+          id={`demo-panel-${demo.id}`}
+          role="tabpanel"
+          aria-labelledby={`demo-tab-${demo.id}`}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="demo-body"
+        >
+          <p className="demo-concept">{demo.concept}</p>
+          {/* Con el idioma cambia el texto de ejemplo: se remonta el widget. */}
+          {Widget && <Widget key={`${demo.id}-${lang}`} ui={demo.ui} />}
+        </motion.div>
       </AnimatePresence>
     </motion.div>
   );

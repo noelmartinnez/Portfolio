@@ -6,12 +6,16 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { useLanguage } from "../context/LanguageContext";
+import SplitHeading from "./fx/SplitHeading";
+import { useMediaQuery } from "../hooks/useResponsive";
+import { useInView } from "../hooks/useInView";
 
 const EarthCanvas = lazy(() => import("./canvas/Earth"));
 
 const Contact = () => {
   const { t } = useLanguage();
   const formRef = useRef();
+  const { ref: globeRef, inView: globeInView, seen: globeSeen } = useInView("600px");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,9 +24,11 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  // El globo 3D es lo más pesado de la página: fuera en móvil.
+  const showGlobe = useMediaQuery("(min-width: 701px)");
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const mobileQuery = window.matchMedia("(max-width: 1100px)");
     setIsMobile(mobileQuery.matches);
 
     const handleMobileChange = (event) => setIsMobile(event.matches);
@@ -115,7 +121,7 @@ const Contact = () => {
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={`${styles.sectionSubText} text-center xl:text-left select-none`}>{t("contact.subtitle")}</p>
-        <h3 className={`${styles.sectionHeadText} text-center xl:text-left select-none`}>{t("contact.title")}</h3>
+        <SplitHeading as="h3" text={t("contact.title")} className={`${styles.sectionHeadText} text-center xl:text-left select-none`} />
 
         <form
           ref={formRef}
@@ -133,7 +139,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder=""
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium text-[16px]"
             />
           </label>
           <label className="flex flex-col">
@@ -173,7 +179,7 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder={isMobile ? "" : t("contact.messagePlaceholder")}
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium text-[16px]"
               style={{ resize: "none" }}
             />
           </label>
@@ -186,16 +192,22 @@ const Contact = () => {
           </button>
         </form>
       </motion.div>
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-      >
-        <Suspense fallback={null}>
-          <EarthCanvas />
-        </Suspense>
-      </motion.div>
+      {showGlobe && (
+        <motion.div
+          ref={globeRef}
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        >
+          {/* El planeta (modelo de ~3 MB) solo se carga al acercarse. */}
+          {globeSeen && (
+            <Suspense fallback={null}>
+              <EarthCanvas active={globeInView} />
+            </Suspense>
+          )}
+        </motion.div>
+      )}
     </div>
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(Contact, "contact", "#050816");

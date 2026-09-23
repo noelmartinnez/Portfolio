@@ -45,6 +45,9 @@ export const LanguageProvider = ({ children }) => {
 
   const setLanguage = useCallback((next) => {
     if (!SUPPORTED.includes(next)) return;
+    // Aviso con el DOM aún en el idioma anterior: LanguageScrollKeeper anota
+    // dónde está el usuario para devolverlo ahí tras recalcular ScrollTrigger.
+    window.dispatchEvent(new Event("portfolio:before-lang-change"));
     setLang(next);
     try {
       localStorage.setItem("lang", next);
@@ -52,11 +55,6 @@ export const LanguageProvider = ({ children }) => {
       /* ignore */
     }
   }, []);
-
-  const toggleLang = useCallback(
-    () => setLanguage(lang === "es" ? "en" : "es"),
-    [lang, setLanguage]
-  );
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -89,8 +87,8 @@ export const LanguageProvider = ({ children }) => {
   const cvUrl = t("meta.cvUrl");
 
   const value = useMemo(
-    () => ({ lang, setLanguage, toggleLang, t, data, cvUrl }),
-    [lang, setLanguage, toggleLang, t, data, cvUrl]
+    () => ({ lang, setLanguage, t, data, cvUrl }),
+    [lang, setLanguage, t, data, cvUrl]
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;

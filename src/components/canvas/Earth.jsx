@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
@@ -12,7 +12,9 @@ const Earth = () => {
   );
 };
 
-const EarthCanvas = () => {
+// `active`: solo se renderiza mientras está en pantalla (el autoRotate
+// obligaría a pintar a 60 fps aunque no se vea).
+const EarthCanvas = ({ active = true }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -32,9 +34,8 @@ const EarthCanvas = () => {
 
   return (
     <Canvas
-      shadows
-      frameloop="demand"
-      dpr={[1, 2]}
+      frameloop={active ? "always" : "never"}
+      dpr={[1, 1.5]}
       camera={{
         fov: 45,
         near: 0.1,
@@ -53,7 +54,6 @@ const EarthCanvas = () => {
           touchEnabled={!isMobile}    // Desactiva la interacción táctil en móviles
         />
         <Earth />
-        <Preload all />
       </Suspense>
     </Canvas>
   );

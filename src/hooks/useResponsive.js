@@ -1,32 +1,17 @@
 import { useState, useEffect } from "react";
 
-// Breakpoints compartidos por todas las secciones: por debajo de 1100px las
-// rejillas pasan a una sola columna y las tarjetas se centran.
-const MOBILE_QUERY = "(max-width: 500px)";
-const TABLET_QUERY = "(min-width: 500px) and (max-width: 1100px)";
-
-export const useResponsive = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+// Suscripción genérica a una media query (p. ej. DESKTOP_MOTION de utils/gsap).
+export const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia(MOBILE_QUERY);
-    const tabletQuery = window.matchMedia(TABLET_QUERY);
+    const mediaQuery = window.matchMedia(query);
+    const handleChange = (event) => setMatches(event.matches);
 
-    setIsMobile(mobileQuery.matches);
-    setIsTablet(tabletQuery.matches);
+    setMatches(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [query]);
 
-    const handleMobileChange = (event) => setIsMobile(event.matches);
-    const handleTabletChange = (event) => setIsTablet(event.matches);
-
-    mobileQuery.addEventListener("change", handleMobileChange);
-    tabletQuery.addEventListener("change", handleTabletChange);
-
-    return () => {
-      mobileQuery.removeEventListener("change", handleMobileChange);
-      tabletQuery.removeEventListener("change", handleTabletChange);
-    };
-  }, []);
-
-  return { isMobile, isTablet };
+  return matches;
 };

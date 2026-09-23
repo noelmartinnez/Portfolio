@@ -1,14 +1,13 @@
 import {
   java,
+  python,
   js,
   docker,
   spring,
-  springai,
   altia,
   kubernetes,
   diploma_jenkins,
   anthropic_ai_fluency,
-  anthropic_logo,
   fundamentia,
   kafka,
   node,
@@ -53,7 +52,7 @@ export const navLinks = [
 const technologies = [
   { name: "Java", icon: java },
   { name: "Spring Boot", icon: spring },
-  { name: "Spring AI", icon: springai },
+  { name: "Python", icon: python },
   { name: "Node.js", icon: node },
   { name: "Kafka", icon: kafka },
   { name: "Docker", icon: docker },
@@ -63,57 +62,60 @@ const technologies = [
 // Invariant bases (icons/images/links). Translated text lives in src/i18n/data.js
 // keyed by the same `id`; LanguageContext zips them together.
 const experiencesBase = [
-  { id: "fundamentia", icon: fundamentia, iconBg: "#383E56" },
+  // logoWordmark: el logo es una palabra pequeña sobre mucho blanco; se amplía
+  // dentro de la misma caja cuadrada que el resto.
+  { id: "fundamentia", icon: fundamentia, iconBg: "#ffffff", logoWordmark: true },
   { id: "altia", icon: altia, iconBg: "#383E56" },
 ];
 
 const projectsBase = [
+  // Los proyectos del CV van primero.
+  {
+    id: "imgtwin",
+    tags: [
+      { name: "python" },
+      { name: "tensorflow" },
+      { name: "faiss" },
+    ],
+    source_code_link: "https://github.com/noelmartinnez/ImgTwin",
+  },
+  {
+    id: "autobnb",
+    tags: [
+      { name: "java" },
+      { name: "springboot" },
+      { name: "hibernate" },
+    ],
+    source_code_link: "https://github.com/noelmartinnez/AutoBnB",
+  },
   {
     id: "connect4",
-    tags: [{ name: "python", color: "blue-text-gradient" }],
+    tags: [{ name: "python" }],
     source_code_link: "https://github.com/noelmartinnez/Connect-Four-AI-with-Python",
   },
   {
     id: "starwars",
     tags: [
-      { name: "ionic", color: "green-text-gradient" },
-      { name: "angular", color: "pink-text-gradient" },
+      { name: "ionic" },
+      { name: "angular" },
     ],
     source_code_link: "https://github.com/noelmartinnez/StarWars-Ionic-APP",
   },
   {
-    id: "autobnb",
-    tags: [
-      { name: "java", color: "blue-text-gradient" },
-      { name: "springboot", color: "green-text-gradient" },
-      { name: "javascript", color: "pink-text-gradient" },
-    ],
-    source_code_link: "https://github.com/noelmartinnez/AutoBnB",
-  },
-  {
     id: "mnist",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "deeplearning", color: "green-text-gradient" },
+      { name: "python" },
+      { name: "deeplearning" },
     ],
     source_code_link: "https://github.com/noelmartinnez/MNIST-with-Python",
   },
   {
     id: "backprop",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "neuralnetworks", color: "green-text-gradient" },
+      { name: "python" },
+      { name: "neuralnetworks" },
     ],
     source_code_link: "https://github.com/noelmartinnez/Backpropagation-with-Python",
-  },
-  {
-    id: "imgtwin",
-    tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "tensorflow", color: "green-text-gradient" },
-      { name: "faiss", color: "pink-text-gradient" },
-    ],
-    source_code_link: "https://github.com/noelmartinnez/ImgTwin",
   },
 ];
 
@@ -121,7 +123,6 @@ const certificadosBase = [
   {
     id: "aifluency",
     image: anthropic_ai_fluency,
-    link_icon: anthropic_logo,
     source_code_link: "https://verify.skilljar.com/c/enfv9mgx7orz",
   },
   {
@@ -164,22 +165,20 @@ const idiomasBase = [
 
 const educacionBase = [{ id: "ua", image: UA }];
 
-// Real-time demos: invariant metadata only. Title/subtitle/concept/ui text live in
-// src/i18n/data.js keyed by the same `id`; widget positions/vectors live in
-// src/components/demos/lib (also invariant, so switching language never remounts WebGL).
+// Real-time demos: invariant metadata only. Title/concept/ui text live in
+// src/i18n/data.js keyed by the same `id`; `file` is the path shown in the window bar.
 const demosBase = [
-  { id: "ner", category: "nlp", widgetKey: "ner", accent: "#915eff" },
-  { id: "rag", category: "llm", widgetKey: "rag", accent: "#c084fc" },
-  { id: "tokenizer", category: "llm", widgetKey: "tokenizer", accent: "#a78bfa" },
+  { id: "ner", widgetKey: "ner", file: "privacyshield/ner.demo", accent: "#915eff" },
+  { id: "tokenizer", widgetKey: "tokenizer", file: "playground/tokenizer.demo", accent: "#a78bfa" },
 ];
 
 // Full skill set shown as category badges (tech names not translated; category titles are).
 const skillsBase = [
-  { id: "ai", skills: ["Spring AI", "Azure AI Foundry", "LLMs", "Prompt Engineering", "NER", "Python", "PyTorch", "Hugging Face"] },
-  { id: "backend", skills: ["Java", "Spring Boot", "Spring Framework", "Spring Security", "Spring Cloud", "REST APIs", "Microservices"] },
-  { id: "data", skills: ["Kafka", "MySQL", "PostgreSQL", "Oracle", "XML/JSON"] },
-  { id: "devops", skills: ["Docker", "Kubernetes", "Jenkins", "Harbor", "Argo CD", "JUnit", "Mockito"] },
-  { id: "automation", skills: ["RPA", "Node.js", "Selenium", "Puppeteer", "Camunda"] },
+  { id: "languages", skills: ["Java", "Python", "JavaScript (Node.js)", "SQL"] },
+  { id: "backend", skills: ["Spring Boot", "Spring Cloud", "Spring Security", "Hibernate", "Camunda (BPM)", "REST APIs", "Microservices"] },
+  { id: "data", skills: ["Kafka", "MySQL", "PostgreSQL", "Oracle"] },
+  { id: "ai", skills: ["Spring AI", "Azure AI Foundry", "vLLM", "Prompt Engineering", "NER", "PyTorch", "Hugging Face"] },
+  { id: "devops", skills: ["Docker", "Kubernetes", "Jenkins", "Harbor", "Argo CD", "JUnit", "Mockito", "Selenium", "Puppeteer"] },
 ];
 
 export {

@@ -2,9 +2,9 @@
 // Array content (experiences, projects, skills…) lives in ./data.js.
 
 const CV_URL_ES =
-  "https://drive.google.com/file/d/1AdvH3PKfyYpfM55UzUSZmY6woxLcwpxc/view?usp=sharing";
+  "https://drive.google.com/file/d/1g2QrZlhga14KXghBpJxlaSK7VLpUIOaY/view?usp=sharing";
 const CV_URL_EN =
-  "https://drive.google.com/file/d/1U5LfuY1GLbxdxLtDZaogoJCisrTSN7fO/view?usp=sharing";
+  "https://drive.google.com/file/d/1Gezppmza-NC5tQ7LWIHb3CHSLn8r7SzS/view?usp=sharing";
 
 export const translations = {
   en: {
@@ -37,6 +37,8 @@ export const translations = {
         { text: "Spring AI", bold: true },
         { text: ", " },
         { text: "Azure AI Foundry", bold: true },
+        { text: ", " },
+        { text: "vLLM", bold: true },
         { text: ") with measurable results." },
       ],
     },
@@ -51,9 +53,6 @@ export const translations = {
     demos: {
       subtitle: "See it live",
       title: "Real-time Demos",
-      categories: { nlp: "NLP", llm: "LLM" },
-      tryLabel: "Try demo",
-      hideLabel: "Hide demo",
     },
     freelance: {
       subtitle: "Client work",
@@ -69,18 +68,9 @@ export const translations = {
     certificates: {
       subtitle: "Learning",
       title: "Certificates",
-      paragraph:
-        "Certifications are key to my professional development, reflecting my commitment to continuous improvement and lifelong learning. Each one supports my dedication to staying up to date and honing my skills in various areas.",
-    },
-    education: {
-      subtitle: "Academic background",
-      title: "Education",
     },
     languages: {
-      subtitle: "Learning",
       title: "Languages",
-      paragraph:
-        "In this section, I highlight my language skills, which reflect my ability to communicate in various contexts and my commitment to continuous learning.",
       credential: "View credential",
       noCredential: "No credential",
     },
@@ -88,9 +78,7 @@ export const translations = {
       subtitle: "My work",
       title: "Proyects",
       p1:
-        "The following projects support my skills and experience, and demonstrate my ability to solve complex problems while working with diverse technologies.",
-      p2:
-        "I enjoy working on challenging projects that give me the opportunity to continuously learn and grow.",
+        "The following projects demonstrate my ability to solve complex problems while working with diverse technologies.",
       viewOnGithub: "View on GitHub",
     },
     contact: {
@@ -112,8 +100,17 @@ export const translations = {
       github: "GitHub account",
       linkedin: "LinkedIn profile",
     },
+    focus: {
+      title: "I wire LLMs into *real* backends.",
+      lead: "Microservices, queues, pipelines and the metrics that prove they work.",
+    },
+    fx: {
+      dragHint: "Scroll →",
+      swipeHint: "Swipe →",
+      formacionText: "Degree, certifications and languages: the foundation I build on.",
+    },
     whatsapp: { message: "Can we talk?" },
-    lang: { toggleAriaLabel: "Switch language", es: "Español", en: "English" },
+    lang: { es: "Español", en: "English" },
   },
 
   es: {
@@ -149,6 +146,8 @@ export const translations = {
         { text: "Spring AI", bold: true },
         { text: ", " },
         { text: "Azure AI Foundry", bold: true },
+        { text: ", " },
+        { text: "vLLM", bold: true },
         { text: ") con resultados medibles." },
       ],
     },
@@ -163,9 +162,6 @@ export const translations = {
     demos: {
       subtitle: "Pruébalo en directo",
       title: "Demos en tiempo real",
-      categories: { nlp: "NLP", llm: "LLM" },
-      tryLabel: "Probar demo",
-      hideLabel: "Ocultar demo",
     },
     freelance: {
       subtitle: "Trabajos para clientes",
@@ -181,18 +177,9 @@ export const translations = {
     certificates: {
       subtitle: "Aprendizaje",
       title: "Certificados",
-      paragraph:
-        "Las certificaciones son clave en mi desarrollo profesional y reflejan mi compromiso con la mejora continua y el aprendizaje a lo largo de la vida. Cada una respalda mi dedicación a mantenerme actualizado y perfeccionar mis habilidades en diversas áreas.",
-    },
-    education: {
-      subtitle: "Formación académica",
-      title: "Educación",
     },
     languages: {
-      subtitle: "Aprendizaje",
       title: "Idiomas",
-      paragraph:
-        "En esta sección destaco mis competencias lingüísticas, que reflejan mi capacidad para comunicarme en distintos contextos y mi compromiso con el aprendizaje continuo.",
       credential: "Ver credencial",
       noCredential: "Sin credencial",
     },
@@ -200,9 +187,7 @@ export const translations = {
       subtitle: "Mi trabajo",
       title: "Proyectos",
       p1:
-        "Los siguientes proyectos avalan mis habilidades y experiencia, y demuestran mi capacidad para resolver problemas complejos trabajando con tecnologías diversas.",
-      p2:
-        "Disfruto trabajando en proyectos desafiantes que me dan la oportunidad de aprender y crecer de forma continua.",
+        "Los siguientes proyectos demuestran mi capacidad para resolver problemas complejos trabajando con tecnologías diversas.",
       viewOnGithub: "Ver en GitHub",
     },
     contact: {
@@ -224,7 +209,16 @@ export const translations = {
       github: "Cuenta de GitHub",
       linkedin: "Perfil de LinkedIn",
     },
+    focus: {
+      title: "Integro LLMs en backends *reales.*",
+      lead: "Microservicios, colas, pipelines y las métricas que demuestran que funcionan.",
+    },
+    fx: {
+      dragHint: "Haz scroll →",
+      swipeHint: "Desliza →",
+      formacionText: "Grado, certificaciones e idiomas: la base sobre la que construyo.",
+    },
     whatsapp: { message: "¿Hablamos?" },
-    lang: { toggleAriaLabel: "Cambiar idioma", es: "Español", en: "English" },
+    lang: { es: "Español", en: "English" },
   },
 };

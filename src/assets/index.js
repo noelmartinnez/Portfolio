@@ -7,16 +7,12 @@ import close from "./close.svg";
 import js from "./js.webp";
 import diploma_jenkins from "./diploma-jenkins.webp";
 import anthropic_ai_fluency from "./anthropic-ai-fluency.webp";
-import anthropic_logo from "./anthropic-logo.webp";
 
-import drive from "./drive.webp";
 
-import javascript from "./tech/javascript.png";
 import python from "./tech/python.png";
 import java from "./tech/java.png";
 import docker from "./tech/docker.png";
 import spring from "./tech/spring.png";
-import springai from "./tech/springai.webp";
 import node from "./tech/node.png";
 import kubernetes from "./tech/kubernetes.png";
 import kafka from "./tech/kafka.png";
@@ -34,11 +30,8 @@ export {
   logo,
   menu,
   close,
-  javascript,
-  drive,
   js,
   spring,
-  springai,
   docker,
   node,
   altia,
@@ -46,7 +39,6 @@ export {
   cara,
   diploma_jenkins,
   anthropic_ai_fluency,
-  anthropic_logo,
   fundamentia,
   kafka,
   UA,

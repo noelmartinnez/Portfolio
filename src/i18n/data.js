@@ -9,12 +9,18 @@ export const dataTranslations = {
         company_name: "Fundamentia Business Consulting",
         date: "March 2025 - August 2026",
         points: [
-          "Led backend development on a European project focused on entity anonymisation and AI/LLM integration.",
-          "Implemented the backend architecture, microservices and REST APIs using Java, Spring Boot, Kafka and MySQL.",
-          "Integrated Spring AI with Azure AI Foundry to evaluate LLMs applied to entity extraction and anonymisation, achieving 99% accuracy in identifying entities specified in the input prompts.",
-          "Fine-tuned NER models (Python, PyTorch, Hugging Face) to a 90% F1-score, designing and optimising prompts based on precision, recall, latency and cost metrics.",
-          "Developed RPA solutions (Node.js, Selenium, Puppeteer) that automated the processing of ~400 XML files per month without manual intervention.",
-          "Participated in architectural decisions and presented technical results to the team.",
+          {
+            label: "PrivacyShield · European AI anonymisation SaaS",
+            text: "Fine-tuned NER models (PyTorch, Hugging Face), reaching a 90% F1. Led the project's backend development on a microservices architecture with Java, Spring Boot, Kafka and MySQL, and integrated LLMs through Spring AI and Azure AI Foundry to detect and anonymise 20+ types of entities, both simple and complex, achieving a 99% F1. Optimised prompts by evaluating precision, recall, latency and cost, cutting inference time and cost through caching. I also prepared service versioning for deployment on Kubernetes.",
+          },
+          {
+            label: "Document-processing RPA",
+            text: "Built Java and MySQL microservices that sent data as XML to Node.js RPA bots which, using Selenium and Puppeteer, filled in web forms automatically. They processed ~400 documents a month, saving ~100 hours of manual work.",
+          },
+          {
+            label: "SimplyData · Intelligent Document Processing for banking",
+            text: "Built Java microservices and solutions with open-source LLMs (Qwen, Gemma) using vLLM to extract information from documents, on a production platform in the banking sector.",
+          },
         ],
       },
       altia: {
@@ -22,10 +28,10 @@ export const dataTranslations = {
         company_name: "Altia Consultores",
         date: "September 2024 - March 2025",
         points: [
-          "Developed microservices with Java, Spring Boot, and Spring Cloud, applying a layered architecture and best practices.",
-          "Integrated relational databases (PostgreSQL and Oracle), designing schemas and optimizing queries.",
-          "Deployed and orchestrated Docker containers on Kubernetes, and maintained CI/CD pipelines with Jenkins, Harbor, and Argo CD.",
-          "Modeled business processes with Camunda (BPM) and developed tests with Mockito and JUnit, increasing code coverage to 85%.",
+          {
+            label: "HUNTERS · Altia's corporate intranet",
+            text: "Built new features, improvements and fixes on Java, Spring Boot and Spring Cloud microservices, with PostgreSQL and Oracle databases where I designed schemas and optimised queries. Modelled business processes with Camunda (BPM) and raised test coverage to 85% with JUnit and Mockito. Deployed services as Docker containers on Kubernetes and maintained CI/CD pipelines with Jenkins, Harbor and Argo CD.",
+          },
         ],
       },
     },
@@ -33,7 +39,7 @@ export const dataTranslations = {
       connect4: {
         name: "Connect Four AI",
         description:
-          "I have developed an artificial intelligence algorithm to play Connect 4, using classic adversarial search techniques. The decision engine is based on the MinMax algorithm optimised using Alpha-Beta pruning.",
+          "An artificial intelligence algorithm that plays Connect 4 using classic adversarial search techniques. Its decision engine is based on the MinMax algorithm optimised with Alpha-Beta pruning.",
       },
       starwars: {
         name: "StarWars APP",
@@ -43,7 +49,7 @@ export const dataTranslations = {
       autobnb: {
         name: "AutoBnB",
         description:
-          "A multi-platform web application inspired by the Airbnb business model, but focused on vehicles. It lets users and owners easily manage renting cars, motorcycles, or other vehicles in a flexible, self-managed way.",
+          "Vehicle rental platform (Final Degree Project, 9/10): a full-stack, Airbnb-style web app built with Java, Spring Boot and Hibernate, with listing, search and time-slot booking plus dynamic pricing.",
       },
       mnist: {
         name: "MNIST Digit Classifier",
@@ -58,7 +64,7 @@ export const dataTranslations = {
       imgtwin: {
         name: "ImgTwin",
         description:
-          "A lightweight tool that detects and removes duplicate or near-duplicate images. It extracts MobileNet embeddings, compresses them with PCA, and indexes them with FAISS for fast similarity search, offering an interactive Matplotlib UI to review and delete matches.",
+          "A tool that detects duplicate images: it extracts image embeddings with MobileNet (TensorFlow), compresses them with PCA and indexes them with FAISS for fast similarity search. It includes an interface to review and delete the matches.",
       },
     },
     freelance: {
@@ -97,7 +103,7 @@ export const dataTranslations = {
         institution: "University of Alicante",
         degree: "Bachelor's Degree in Computer Engineering",
         date: "2020 - 2024",
-        details: "GPA: 7.5/10 · Final Degree Project: 9/10",
+        details: "Final Degree Project: 9/10",
       },
     },
     idiomas: {
@@ -106,18 +112,18 @@ export const dataTranslations = {
       valenciano: { name: "Valencian", level: "C1" },
     },
     skills: {
-      ai: { category: "AI & LLMs" },
+      languages: { category: "Languages" },
       backend: { category: "Backend" },
       data: { category: "Data & Messaging" },
-      devops: { category: "DevOps & Testing" },
-      automation: { category: "Automation & BPM" },
+      ai: { category: "AI & LLMs" },
+      devops: { category: "DevOps, Testing & RPA" },
     },
     demos: {
       ner: {
         title: "Live NER + Anonymization",
-        subtitle: "Type text, watch entities light up",
+        shortTitle: "Anonymizer",
         concept:
-          "A miniature version of the NER + anonymization pipeline I built for a European entity-anonymization project: it detects people, emails, dates, ID numbers, phone numbers and IBANs, then can redact them into consistent pseudonyms.",
+          "A miniature version of the NER and anonymisation pipeline I built for PrivacyShield. Type whatever you like and watch the entities get anonymised.",
         ui: {
           sampleText:
             "Please contact John Miller at john.miller@example.com or call +1 415-555-0182. His ID number is 12345678Z, born on 03/14/1990. IBAN: ES91 2100 0418 4502 0005 1332.",
@@ -134,41 +140,9 @@ export const dataTranslations = {
           placeholder: "Type or paste text with personal data…",
         },
       },
-      rag: {
-        title: "RAG Pipeline",
-        subtitle: "From query to grounded answer",
-        concept:
-          "The classic Retrieval-Augmented Generation flow, staged step by step: the query is embedded, the closest documents are retrieved by cosine similarity, folded into an augmented prompt, and a final answer is generated.",
-        ui: {
-          query: "How do I bring AI models to production?",
-          steps: {
-            query: "Query",
-            retrieve: "Retrieve",
-            augment: "Augment",
-            generate: "Generate",
-          },
-          retrievedIntro: "Retrieved context:",
-          corpusLabels: {
-            c1: "Java microservices",
-            c2: "Event streaming with Kafka",
-            c3: "Docker containers",
-            c4: "Kubernetes orchestration",
-            c5: "REST APIs at scale",
-            c6: "Named entity recognition",
-            c7: "LLMs with Spring AI",
-            c8: "Embeddings & RAG",
-            c9: "Fine-tuning with PyTorch",
-            c10: "Prompt engineering",
-          },
-          answer:
-            "Combine Spring AI with your existing Docker/Kubernetes pipeline: containerize the fine-tuned model, expose it behind a REST API, and monitor it like any other microservice.",
-          replayLabel: "Replay",
-          nextLabel: "Next step",
-        },
-      },
       tokenizer: {
         title: "Live Tokenizer",
-        subtitle: "See how text becomes tokens",
+        shortTitle: "Tokenizer",
         concept:
           "Type anything and watch it get split into tokens the way an LLM would see it. Switch between word, subword and character segmentation to see how the same sentence turns into a very different number of tokens - and a different cost.",
         ui: {
@@ -188,12 +162,18 @@ export const dataTranslations = {
         company_name: "Fundamentia Business Consulting",
         date: "Marzo 2025 - Agosto 2026",
         points: [
-          "Lideré el desarrollo backend de un proyecto europeo de anonimización de entidades e integración de IA/LLMs.",
-          "Diseñé e implementé la arquitectura backend, microservicios y APIs REST con Java, Spring Boot, Kafka y MySQL.",
-          "Integré Spring AI con Azure AI Foundry para evaluar LLMs aplicados a extracción y anonimización de entidades, alcanzando un 99% de precisión en la identificación de entidades especificadas en los prompts.",
-          "Realicé fine-tuning de modelos NER (Python, PyTorch, Hugging Face) con un F1-score del 90%, diseñando y optimizando prompts mediante métricas de precision, recall, tiempos y costes.",
-          "Desarrollé soluciones RPA (Node.js, Selenium, Puppeteer) que automatizan el procesamiento de ~400 XMLs al mes sin intervención manual.",
-          "Participé en decisiones de arquitectura y presenté resultados técnicos ante el equipo.",
+          {
+            label: "PrivacyShield · SaaS europeo de anonimización con IA",
+            text: "Realicé fine-tuning de modelos NER (PyTorch, Hugging Face) hasta obtener un F1 del 90%. Lideré el desarrollo backend del proyecto, con una arquitectura de microservicios en Java, Spring Boot, Kafka y MySQL, e integré LLMs mediante Spring AI y Azure AI Foundry para detectar y anonimizar +20 tipos de entidades, tanto simples como complejas, consiguiendo un F1 del 99%. Optimicé los prompts evaluando precision, recall, latencia y coste, reduciendo tiempos y costes de inferencia mediante caché. Además, preparé el versionado de los servicios para su despliegue en Kubernetes.",
+          },
+          {
+            label: "RPA de trámites documentales",
+            text: "Desarrollé microservicios en Java y MySQL que transmitían datos en XML a bots RPA en Node.js que, con Selenium y Puppeteer, rellenaban automáticamente los trámites web. Procesaban ~400 documentos mensuales, con un ahorro de ~100 horas de trabajo manual.",
+          },
+          {
+            label: "SimplyData · Intelligent Document Processing para banca",
+            text: "Desarrollé microservicios en Java y soluciones con LLMs open-source (Qwen, Gemma) utilizando vLLM para la extracción de información de documentos, en una plataforma en producción del sector bancario.",
+          },
         ],
       },
       altia: {
@@ -201,10 +181,10 @@ export const dataTranslations = {
         company_name: "Altia Consultores",
         date: "Septiembre 2024 - Marzo 2025",
         points: [
-          "Desarrollé microservicios con Java, Spring Boot y Spring Cloud, aplicando arquitectura por capas y buenas prácticas.",
-          "Integré bases de datos relacionales (PostgreSQL y Oracle), diseñando esquemas y optimizando consultas.",
-          "Desplegué y orquesté contenedores Docker en Kubernetes, y mantuve pipelines CI/CD con Jenkins, Harbor y Argo CD.",
-          "Modelé procesos de negocio con Camunda (BPM) y desarrollé pruebas con Mockito y JUnit, incrementando la cobertura de código hasta el 85%.",
+          {
+            label: "HUNTERS · Intranet corporativa de Altia",
+            text: "Desarrollé nuevas funcionalidades, mejoras y correcciones sobre microservicios en Java, Spring Boot y Spring Cloud, con bases de datos PostgreSQL y Oracle en las que diseñé esquemas y optimicé consultas. Modelé procesos de negocio con Camunda (BPM) y aumenté la cobertura de tests hasta el 85% con JUnit y Mockito. Desplegué servicios como contenedores Docker en Kubernetes y mantuve pipelines CI/CD con Jenkins, Harbor y Argo CD.",
+          },
         ],
       },
     },
@@ -212,7 +192,7 @@ export const dataTranslations = {
       connect4: {
         name: "IA Conecta Cuatro",
         description:
-          "He desarrollado un algoritmo de inteligencia artificial para jugar al Conecta 4, empleando técnicas clásicas de búsqueda adversaria. El motor de decisión se basa en el algoritmo MinMax optimizado mediante poda Alfa-Beta.",
+          "Algoritmo de inteligencia artificial que juega al Conecta 4 mediante técnicas clásicas de búsqueda adversaria. Su motor de decisión se basa en el algoritmo MinMax optimizado con poda Alfa-Beta.",
       },
       starwars: {
         name: "StarWars APP",
@@ -222,7 +202,7 @@ export const dataTranslations = {
       autobnb: {
         name: "AutoBnB",
         description:
-          "Una aplicación web multiplataforma inspirada en el modelo de negocio de Airbnb, pero enfocada en vehículos. Permite a usuarios y propietarios gestionar fácilmente el alquiler de coches, motos u otros vehículos de forma flexible y autogestionada.",
+          "Plataforma de alquiler de vehículos (TFG, 9/10): aplicación web full-stack al estilo de Airbnb desarrollada con Java, Spring Boot e Hibernate, con publicación, búsqueda y reserva por franjas horarias y precios dinámicos.",
       },
       mnist: {
         name: "Clasificador de dígitos MNIST",
@@ -237,7 +217,7 @@ export const dataTranslations = {
       imgtwin: {
         name: "ImgTwin",
         description:
-          "Herramienta ligera que detecta y elimina imágenes duplicadas o muy similares. Extrae embeddings con MobileNet, los comprime con PCA y los indexa con FAISS para una búsqueda de similitud rápida, con una interfaz interactiva en Matplotlib para revisar y eliminar coincidencias.",
+          "Herramienta de detección de imágenes duplicadas: extrae embeddings de imágenes con MobileNet (TensorFlow), los comprime con PCA y los indexa con FAISS para buscar similitudes rápidamente. Incluye una interfaz para revisar y eliminar las coincidencias.",
       },
     },
     freelance: {
@@ -276,7 +256,7 @@ export const dataTranslations = {
         institution: "Universidad de Alicante",
         degree: "Grado en Ingeniería Informática",
         date: "2020 - 2024",
-        details: "Nota media: 7,5/10 · TFG: 9/10",
+        details: "TFG: 9/10",
       },
     },
     idiomas: {
@@ -285,18 +265,21 @@ export const dataTranslations = {
       valenciano: { name: "Valenciano", level: "C1" },
     },
     skills: {
-      ai: { category: "IA y LLMs" },
-      backend: { category: "Backend" },
-      data: { category: "Datos y Mensajería" },
-      devops: { category: "DevOps y Testing" },
-      automation: { category: "Automatización y BPM" },
+      languages: { category: "Lenguajes" },
+      backend: {
+        category: "Backend",
+        skills: ["Spring Boot", "Spring Cloud", "Spring Security", "Hibernate", "Camunda (BPM)", "APIs REST", "Microservicios"],
+      },
+      data: { category: "Datos & Mensajería" },
+      ai: { category: "IA & LLMs" },
+      devops: { category: "DevOps, Testing & RPA" },
     },
     demos: {
       ner: {
         title: "NER y anonimización en vivo",
-        subtitle: "Escribe texto y observa cómo se iluminan las entidades",
+        shortTitle: "Anonimizador",
         concept:
-          "Una versión en miniatura del pipeline de NER y anonimización que construí para un proyecto europeo de anonimización de entidades: detecta personas, emails, fechas, números de identificación, teléfonos e IBANs, y puede sustituirlos por pseudónimos consistentes.",
+          "Una versión en miniatura del pipeline de NER y anonimización que construí para PrivacyShield. Escribe el texto que quieras y observa cómo se anonimizan las entidades.",
         ui: {
           sampleText:
             "Por favor, contacta con María García en maria.garcia@example.com o llama al 612 345 678. Su DNI es 12345678Z y nació el 14/03/1990. IBAN: ES91 2100 0418 4502 0005 1332.",
@@ -313,41 +296,9 @@ export const dataTranslations = {
           placeholder: "Escribe o pega texto con datos personales…",
         },
       },
-      rag: {
-        title: "Pipeline RAG",
-        subtitle: "De la consulta a una respuesta fundamentada",
-        concept:
-          "El flujo clásico de Retrieval-Augmented Generation, mostrado paso a paso: la consulta se convierte en vector, se recuperan los documentos más cercanos por similitud coseno, se integran en un prompt aumentado y se genera una respuesta final.",
-        ui: {
-          query: "¿Cómo llevo modelos de IA a producción?",
-          steps: {
-            query: "Consulta",
-            retrieve: "Recuperar",
-            augment: "Aumentar",
-            generate: "Generar",
-          },
-          retrievedIntro: "Contexto recuperado:",
-          corpusLabels: {
-            c1: "Microservicios en Java",
-            c2: "Streaming de eventos con Kafka",
-            c3: "Contenedores Docker",
-            c4: "Orquestación con Kubernetes",
-            c5: "APIs REST a gran escala",
-            c6: "Reconocimiento de entidades (NER)",
-            c7: "LLMs con Spring AI",
-            c8: "Embeddings y RAG",
-            c9: "Fine-tuning con PyTorch",
-            c10: "Ingeniería de prompts",
-          },
-          answer:
-            "Combina Spring AI con tu pipeline de Docker/Kubernetes: containeriza el modelo afinado, expónlo tras una API REST y monitorízalo como a cualquier otro microservicio.",
-          replayLabel: "Repetir",
-          nextLabel: "Siguiente paso",
-        },
-      },
       tokenizer: {
         title: "Tokenizador en vivo",
-        subtitle: "Descubre cómo el texto se convierte en tokens",
+        shortTitle: "Tokenizador",
         concept:
           "Escribe lo que quieras y observa cómo se divide en tokens, tal y como lo vería un LLM. Cambia entre segmentación por palabra, subpalabra y carácter para ver cómo la misma frase se convierte en un número de tokens - y un coste - muy distinto.",
         ui: {

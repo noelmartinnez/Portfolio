@@ -50,7 +50,7 @@ const Footer = () => {
           </a>
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/noel-mart%C3%ADnez-pomares-5a6703230/"
+            href="https://www.linkedin.com/in/noelmartinezpomares"
             className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
           >
             <svg
