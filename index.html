@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <title>Noel Martínez</title>
+    <script type="module" crossorigin src="/assets/index-d8148b77.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-1fdcfe5a.js">
+    <link rel="modulepreload" crossorigin href="/assets/motion-ea7efab9.js">
+    <link rel="stylesheet" href="/assets/index-d729fe31.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Si la app no llega a montarse (p. ej. un error al cargar el JS en un
+         navegador concreto), se muestra el motivo en lugar de una pantalla negra. -->
+    <script>
+      (function () {
+        var first = null;
+        window.addEventListener("error", function (e) {
+          if (!first) first = e.message || (e.target && e.target.src) || "error";
+        }, true);
+        window.addEventListener("unhandledrejection", function (e) {
+          if (!first) first = String((e.reason && e.reason.message) || e.reason);
+        });
+        setTimeout(function () {
+          var root = document.getElementById("root");
+          if (!root || root.childNodes.length) return;
+          root.innerHTML =
+            '<div style="min-height:100vh;display:grid;place-content:center;gap:1rem;padding:2rem;text-align:center;color:#fff;font-family:sans-serif">' +
+            '<p style="font-size:1.25rem;font-weight:700">Algo ha fallado al cargar la web.</p>' +
+            '<button onclick="location.reload()" style="justify-self:center;padding:.6rem 1.4rem;border-radius:.5rem;background:#915eff;color:#fff;border:0">Recargar</button>' +
+            '<code style="font-size:.75rem;color:#aaa6c3;word-break:break-word"></code></div>';
+          root.querySelector("code").textContent = first || "La aplicación no se ha iniciado.";
+        }, 8000);
+      })();
+    </script>
+    
+  </body>
+</html>
