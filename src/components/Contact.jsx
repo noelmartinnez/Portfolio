@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -67,19 +66,25 @@ const Contact = () => {
 
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_ie60odq", 
-        "template_e1czo9b",
-        {
-          from_name: form.name,
-          to_name: "Noel",
-          from_email: form.email,
-          to_email: "info@noelmartinez.es",
-          message: form.message,
-        },
-        "alHX2coKHrcsj3AIC"
-      )
+    // Web3Forms reenvía el mensaje al Gmail asociado a la access key (es pública
+    // por diseño: solo permite enviar a ese correo). "email" hace que al pulsar
+    // "Responder" se conteste directamente a quien escribió.
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: "50e2107c-a846-4b71-ba6b-9d1ff70155ee",
+        subject: `Nuevo mensaje del portfolio de ${form.name}`,
+        from_name: "Portfolio Noel",
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.success) throw new Error(data.message);
+      })
       .then(
         () => {
           setLoading(false);
