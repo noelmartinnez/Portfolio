@@ -126,7 +126,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      name: "Noel",
+      name: "Pepe",
       roleLine1: "Backend Software Engineer",
       roleLine2: "especializado en IA/LLMs",
       ctaCv: "Descargar CV",
